@@ -4,6 +4,12 @@ Host a completed Surface Atlas report so readers can browse target pages,
 inspect structures, and download the supporting files. Start with the report
 directory containing `index.html` and specify who should have access.
 
+For a Site tailored to the project, follow
+[Compare results and choose the next analysis](compare-and-continue.md).
+Lead with findings and useful actions. Add linked sequence, binding-site,
+and structure views when the source records support them. Preserve selected
+records in downloads and copied Rosalind plugin requests.
+
 ```text
 Publish this Surface Atlas report as a ChatGPT Site for [AUDIENCE]. Use the
 installed Sites building and hosting skills to host the complete static
@@ -59,6 +65,10 @@ Open the deployed URL and check:
 - **View in 3D**, including coordinate loading, chain controls, and rotation.
 - Representative JSON, CSV, coordinate, and sequence downloads against their recorded hashes.
 - **Copy Codex request**, including manual selection when clipboard access is unavailable.
+- Added sequence and comparison controls: change filters, follow a residue into
+  3D, return to its sequence, and verify the selected protein and partner.
+- Selected-range downloads and copied requests against the accession, isoform,
+  chain, residue numbering, and source files shown in the page.
 - Access for the intended audience, using an authorized reader session when available.
 
 **Copy Codex request** names report-relative files; copying the prompt does

@@ -5,6 +5,10 @@ scientific tools to create additional images, video, viewer sessions, or
 analysis results. The specifications below apply when adding those views
 to a report.
 
+Use [reader workflow](reader-workflow.md) for page openings, sequence-to-site
+interactions, comparisons, and copied plugin requests. Select views that help
+readers inspect the project's findings or continue a specific analysis.
+
 ## View specifications
 
 ### Cell-Surface Map
@@ -84,3 +88,8 @@ Report three independent outcomes:
 Mark the work complete only after all required checks pass. Inspect the overview,
 one target page, the structure gallery, and any requested video in the browser.
 Save the browser-check results with the delivery record.
+
+For added interactive views, check that filters, residue links, downloads,
+and copied requests preserve the selected records. Include keyboard use and a
+narrow layout. Follow the interaction assignment in
+[adversarial review](adversarial-review.md).

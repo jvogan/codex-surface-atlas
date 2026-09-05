@@ -15,7 +15,7 @@
       "kind": "binary",
       "path": ".github/assets/surface-atlas-banner.jpg",
       "reviewed_binary": true,
-      "sha256": "f7eca79c2ce6fde2b6b64c727bc9da3a3ea7f880b820436874b42562d5372ed7"
+      "sha256": "d1de907f4d38aeb36c889412bca3c48910e905d5c896ddb1c29c6f70926d7965"
     },
     {
       "kind": "binary",
@@ -58,7 +58,7 @@
     {
       "kind": "config",
       "path": "MANIFEST.in",
-      "sha256": "208147bc7e24565a8eb17063963c7cc696bb5e12e8d8ead17df86b444d5a1e7e"
+      "sha256": "f22180ed078795f530288e7f15c57912b10726eef4ea3e78c99ce1ae8cc86097"
     },
     {
       "kind": "text",
@@ -73,7 +73,7 @@
     {
       "kind": "text",
       "path": "docs/adversarial-review.md",
-      "sha256": "11dc845982e463a0de86a813f1472bb4b4f42bf7ac93b85475dadafd4695c7ad"
+      "sha256": "b408775fa67893aa49836488528b0d1ebf1e27186323e554c4c4e0865abc08f7"
     },
     {
       "kind": "text",
@@ -148,7 +148,7 @@
     {
       "kind": "text",
       "path": "docs/recipes/README.md",
-      "sha256": "e5b28cdf95ade4b6b6b60dddc24bbab88a09953742dd62a768e840805a08b155"
+      "sha256": "53fa9baaa32a6ed8c58118f17769abb4140d12e3a3463acc03379b77a0f4631a"
     },
     {
       "kind": "text",
@@ -158,7 +158,12 @@
     {
       "kind": "text",
       "path": "docs/recipes/chatgpt-site.md",
-      "sha256": "448f57f29218928dfd7c9f95c89a4709df1b8b95708d54004d7e9669af1e2ef6"
+      "sha256": "99f0c7dd6017a773ee6faf5e437d3935a5eef22f870e12038d1e6199e738f18b"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/compare-and-continue.md",
+      "sha256": "a5c42224dcc00f73da8debe0bb0d59629adaab9960851ea3a2e7b3808ff59fd4"
     },
     {
       "kind": "text",
@@ -178,7 +183,7 @@
     {
       "kind": "text",
       "path": "docs/recipes/sequences-structures-sites.md",
-      "sha256": "92b29bfba5ccb2f01202334d1b24813c4691d67a5577544a38036791da66b608"
+      "sha256": "f856d6ece9e43e3fb9f7dfeb8a6e9adb93823a1cb644bb5836d5795a0e1c58a0"
     },
     {
       "kind": "text",
@@ -193,7 +198,7 @@
     {
       "kind": "text",
       "path": "docs/report.md",
-      "sha256": "9e41a7c726d5cba29703ec7b9ec280d10a1e81d3d95d397b601caa8a4104871e"
+      "sha256": "78c876814887c403d7c26a2d4125b441528b4a9ac16b93bc80c8bd633c144016"
     },
     {
       "kind": "text",
@@ -576,7 +581,7 @@
     {
       "kind": "text",
       "path": "skills/codex-surface-targets/SKILL.md",
-      "sha256": "4b67313d1fd1785eeba431dca094c99f93d4c5f4adc3e1735e2408570b4df776"
+      "sha256": "296a436701d9264f554fee270bfad6b8dac250eb2928018705ccb03cae240715"
     },
     {
       "kind": "text",
@@ -621,7 +626,7 @@
     {
       "kind": "text",
       "path": "skills/codex-surface-targets/references/adversarial-review.md",
-      "sha256": "11dc845982e463a0de86a813f1472bb4b4f42bf7ac93b85475dadafd4695c7ad"
+      "sha256": "b408775fa67893aa49836488528b0d1ebf1e27186323e554c4c4e0865abc08f7"
     },
     {
       "kind": "text",
@@ -651,12 +656,17 @@
     {
       "kind": "text",
       "path": "skills/codex-surface-targets/references/plugin-routing.md",
-      "sha256": "925935aaffd181814b0b19c93b9603f9367921d5a42aec17fd2c1ea89644f040"
+      "sha256": "488c282a3cc0585ed1145369919f562ef6550bfc460d3c109721215daa81efed"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/reader-workflow.md",
+      "sha256": "4f97ccb6c7fe10b905b8f88c719e9fb7633774b52f00226bb0a439646aeddcaa"
     },
     {
       "kind": "text",
       "path": "skills/codex-surface-targets/references/report-presentation.md",
-      "sha256": "b33fb4fb1ee259023d0c5d091ae6978846449078c9009090351c28419f5b939b"
+      "sha256": "e9af51e41dfd7597483a9a5938fdb3af24d5484a8511c882c8aabca2eae6aea4"
     },
     {
       "kind": "text",
@@ -681,7 +691,7 @@
     {
       "kind": "text",
       "path": "skills/codex-surface-targets/references/visual-delivery.md",
-      "sha256": "55eebe9667f33e9b193246b6ff72fc91d5fe9063584a2ada8db74722b3f06483"
+      "sha256": "255969829acbed96b939c44a169100eb88856ea8c9ee954650553a0e6a01633b"
     },
     {
       "kind": "text",
@@ -929,7 +939,7 @@
     {
       "kind": "text",
       "path": "src/surface_atlas/skill/SKILL.md",
-      "sha256": "4b67313d1fd1785eeba431dca094c99f93d4c5f4adc3e1735e2408570b4df776"
+      "sha256": "296a436701d9264f554fee270bfad6b8dac250eb2928018705ccb03cae240715"
     },
     {
       "kind": "text",
@@ -974,7 +984,7 @@
     {
       "kind": "text",
       "path": "src/surface_atlas/skill/references/adversarial-review.md",
-      "sha256": "11dc845982e463a0de86a813f1472bb4b4f42bf7ac93b85475dadafd4695c7ad"
+      "sha256": "b408775fa67893aa49836488528b0d1ebf1e27186323e554c4c4e0865abc08f7"
     },
     {
       "kind": "text",
@@ -1004,12 +1014,17 @@
     {
       "kind": "text",
       "path": "src/surface_atlas/skill/references/plugin-routing.md",
-      "sha256": "925935aaffd181814b0b19c93b9603f9367921d5a42aec17fd2c1ea89644f040"
+      "sha256": "488c282a3cc0585ed1145369919f562ef6550bfc460d3c109721215daa81efed"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/reader-workflow.md",
+      "sha256": "4f97ccb6c7fe10b905b8f88c719e9fb7633774b52f00226bb0a439646aeddcaa"
     },
     {
       "kind": "text",
       "path": "src/surface_atlas/skill/references/report-presentation.md",
-      "sha256": "b33fb4fb1ee259023d0c5d091ae6978846449078c9009090351c28419f5b939b"
+      "sha256": "e9af51e41dfd7597483a9a5938fdb3af24d5484a8511c882c8aabca2eae6aea4"
     },
     {
       "kind": "text",
@@ -1034,7 +1049,7 @@
     {
       "kind": "text",
       "path": "src/surface_atlas/skill/references/visual-delivery.md",
-      "sha256": "55eebe9667f33e9b193246b6ff72fc91d5fe9063584a2ada8db74722b3f06483"
+      "sha256": "255969829acbed96b939c44a169100eb88856ea8c9ee954650553a0e6a01633b"
     },
     {
       "kind": "text",
@@ -1200,8 +1215,8 @@
   ],
   "limits": {
     "max_file_bytes": 4515536,
-    "max_files": 235,
-    "max_total_bytes": 11684173
+    "max_files": 238,
+    "max_total_bytes": 11549191
   },
   "version": 1
 }

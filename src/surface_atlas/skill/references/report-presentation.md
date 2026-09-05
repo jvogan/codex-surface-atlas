@@ -1,5 +1,10 @@
 # Report presentation
 
+Open each page with its recorded finding and a useful action. Use
+[reader workflow](reader-workflow.md) to choose comparisons, linked molecular
+views, and follow-up analyses for the project. Keep source measurements and
+scientific files accessible from the findings they support.
+
 Build the report from normalized atlas records after local validation:
 
 ```bash

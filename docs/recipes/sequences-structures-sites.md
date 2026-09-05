@@ -25,6 +25,15 @@ hashes, bound partners, and missing regions in `structures.json` and the target
 record. Record the site and intended action in `opportunities.json` when a
 molecule or binder route is selected.
 
+When extending the report, connect sequence ranges and recorded contacts to
+their mapped residues in 3D. Keep the accession, isoform, chain, and numbering
+convention with each selection. Check the sequence against the coordinates
+before linking positions. Preserve gaps and ambiguous mappings in the view.
+Offer downloads and Codex requests for the selected region with its source
+files and hashes. The
+[reader workflow guide](../../skills/codex-surface-targets/references/reader-workflow.md)
+describes these extensions and their interaction checks.
+
 Continue with [Supplied libraries and screening](supplied-libraries-screening.md)
 for small molecules or [Protein-binder design](protein-binder-design.md) for a
 protein interface.

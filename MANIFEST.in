@@ -8,6 +8,7 @@ include .gitattributes
 recursive-include .github/workflows *.yml
 recursive-include .codex-plugin *.json
 include .github/assets/surface-atlas-banner.jpg
+include .github/assets/surface-atlas-social-preview.jpg
 include .github/assets/surface-atlas-icon-256.png
 include .github/assets/surface-atlas-icon-512.png
 recursive-include src/surface_atlas/assets/report/vendor *.js *.txt *.md

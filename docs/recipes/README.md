@@ -21,6 +21,7 @@ Disease and surface census
 - [Supplied libraries and screening](supplied-libraries-screening.md)
 - [Protein-binder design](protein-binder-design.md)
 - [Experiments and report](experiments-and-report.md)
+- [Compare results and choose the next analysis](compare-and-continue.md)
 - [Publish a report as a ChatGPT Site](chatgpt-site.md)
 
 Use [adversarial review](../adversarial-review.md) at the relevant decision

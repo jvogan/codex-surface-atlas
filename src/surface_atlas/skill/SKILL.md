@@ -126,6 +126,18 @@ and [compute budget](references/compute-budget.md) first.
 
 ## Validate and deliver
 
+Read [reader workflow](references/reader-workflow.md) when preparing the report.
+Open pages with their recorded findings and useful actions. Build comparisons
+around the user's intended action, and identify the next measurement that
+could change a target or candidate selection. Name the corresponding Rosalind
+plugin recipe and its required inputs.
+
+When interactive exploration fits the project, connect sequence regions,
+binding sites, and structures through verified residue maps. Preserve the
+reader's selection and required files in copied Codex requests. Have an
+independent reviewer check filters, residue links, downloads, and requests
+against the source records. Choose extensions that fit the available data.
+
 Use the package CLI for local validation and report assembly:
 
 ```bash

@@ -4,6 +4,11 @@ Choose a starting point below and replace the bracketed inputs. Combine the
 steps that fit the project; carry each target's identity and source references
 into the next step.
 
+To compare existing results and select the next measurement, use
+[reader workflow](reader-workflow.md). It also describes how to carry a
+sequence or binding-site selection into a plugin request with the required
+files and residue numbering.
+
 ## Discover surface targets
 
 ```text

@@ -7,6 +7,11 @@ download the underlying files.
 To share the report through a hosted URL, follow
 [Publish a report as a ChatGPT Site](recipes/chatgpt-site.md).
 
+To tailor the report's comparisons, molecular views, and follow-up analyses,
+use [Compare results and choose the next analysis](recipes/compare-and-continue.md).
+That recipe asks Codex to extend the generated report for your project and
+check the resulting interactions against the source records.
+
 ## Compact, navigable report
 
 The overview summarizes the disease and target census. The target explorer
