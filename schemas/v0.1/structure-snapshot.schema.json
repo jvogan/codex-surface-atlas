@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jvogan/codex-surface-atlas/blob/main/schemas/v0.1/structure-snapshot.schema.json",
+  "title": "Codex Surface Atlas structure snapshot v0.1",
+  "description": "Optional, verified structure styling metadata. Coordinates remain ordinary record artifacts and are copied only after their hashes are checked.",
+  "type": "object",
+  "required": ["schema_version", "coordinate_sources", "layers"],
+  "properties": {
+    "schema_version": {"const": "codex-surface-structure-snapshot/v0.1"},
+    "preview_id": {"type": "string", "minLength": 1, "maxLength": 160},
+    "title": {"type": "string", "minLength": 1, "maxLength": 300},
+    "evidence_class": {"type": "string", "minLength": 1, "maxLength": 300},
+    "coordinate_sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/coordinateSource"}
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {"$ref": "#/$defs/layer"}
+    },
+    "sequence_artifact": {"$ref": "#/$defs/sequenceArtifact"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))(?!.*\\\\)"
+    },
+    "coordinateSource": {
+      "type": "object",
+      "required": ["path", "sha256", "bytes", "format", "object_name", "state"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "bytes": {"type": "integer", "minimum": 0, "maximum": 8388608},
+        "format": {"enum": ["pdb", "cif", "mmcif", "sdf"]},
+        "object_name": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"},
+        "state": {"const": 1}
+      },
+      "additionalProperties": true
+    },
+    "sequenceArtifact": {
+      "type": "object",
+      "required": ["path", "sha256", "bytes"],
+      "properties": {
+        "path": {"$ref": "#/$defs/relativePath", "pattern": "\\.(?:fasta|fa|faa)$"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sequence_id": {"type": "string", "minLength": 1},
+        "chain": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "layer": {
+      "type": "object",
+      "required": ["object_name", "selection", "color", "representation", "color_mode"],
+      "properties": {
+        "object_name": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"},
+        "selection": {"type": "string", "minLength": 1, "maxLength": 400},
+        "color": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"},
+        "representation": {"enum": ["cartoon", "stick", "sticks"]},
+        "color_mode": {"enum": ["solid", "carbon-and-elements"]},
+        "opacity": {"type": "number", "minimum": 0, "maximum": 1},
+        "transparency": {"type": "number", "minimum": 0, "maximum": 1},
+        "label": {"type": "string", "minLength": 1, "maxLength": 300},
+        "description": {"type": "string", "minLength": 1, "maxLength": 300},
+        "name": {"type": "string", "minLength": 1, "maxLength": 300}
+      },
+      "anyOf": [{"required": ["opacity"]}, {"required": ["transparency"]}],
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,1201 @@
+{
+  "deny_terms": [],
+  "files": [
+    {
+      "kind": "json",
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "f9b03100366e8fc02f56753034dae0ba02464d644bd35900c2fbbdee6939e27c"
+    },
+    {
+      "kind": "config",
+      "path": ".gitattributes",
+      "sha256": "819f54ec331ec35bb8a3e167c3c7fc5f3939d6c430b98e260607621be73bb4dc"
+    },
+    {
+      "kind": "binary",
+      "path": ".github/assets/surface-atlas-banner.jpg",
+      "reviewed_binary": true,
+      "sha256": "d1de907f4d38aeb36c889412bca3c48910e905d5c896ddb1c29c6f70926d7965"
+    },
+    {
+      "kind": "binary",
+      "path": ".github/assets/surface-atlas-icon-256.png",
+      "reviewed_binary": true,
+      "sha256": "efa696cfab496f27ea73cda0687200eb9fed78d6fe23dd8b081df2b29c744879"
+    },
+    {
+      "kind": "binary",
+      "path": ".github/assets/surface-atlas-icon-512.png",
+      "reviewed_binary": true,
+      "sha256": "250f7bacd983fbfbb6c84caace3f4cf8f7c5a810bf6fd77a02d33b94ce814e93"
+    },
+    {
+      "kind": "text",
+      "path": ".github/workflows/test.yml",
+      "sha256": "05136f2a16970390132d2c9450e27d47c818f0ac9718cf64a99daf340d295e0d"
+    },
+    {
+      "kind": "config",
+      "path": ".gitignore",
+      "sha256": "5d0051b9f1559621604c602f72f797971fb430d2d1465b544a3b65c6c12ba9a3"
+    },
+    {
+      "kind": "text",
+      "path": "CONTRIBUTING.md",
+      "sha256": "de24363d53ccc635fe2b51e75ef9c9f6c0d24a0f563b754395233c5e9ee96669"
+    },
+    {
+      "kind": "license",
+      "path": "LICENSE",
+      "sha256": "52fa71a7595486923afc191231ce487fe6755dd86d5a35a59c092dae15fead89"
+    },
+    {
+      "kind": "config",
+      "path": "MANIFEST.in",
+      "sha256": "208147bc7e24565a8eb17063963c7cc696bb5e12e8d8ead17df86b444d5a1e7e"
+    },
+    {
+      "kind": "text",
+      "path": "NOTICE.md",
+      "sha256": "7d07a35041102436c51565818d747a5f4ae8f7e84ca3f75141fa881f2047dc0a"
+    },
+    {
+      "kind": "text",
+      "path": "README.md",
+      "sha256": "831a7c2db75a0922f6ef41b5b0ac63c454eff6d78adf47cef3b79c5e40fded1d"
+    },
+    {
+      "kind": "text",
+      "path": "docs/adversarial-review.md",
+      "sha256": "11dc845982e463a0de86a813f1472bb4b4f42bf7ac93b85475dadafd4695c7ad"
+    },
+    {
+      "kind": "text",
+      "path": "docs/cli.md",
+      "sha256": "736b97022366ad4957ba106eada2ca99131e592d627cfad6b875a0a1d3e5f2da"
+    },
+    {
+      "kind": "text",
+      "path": "docs/evidence-and-decisions.md",
+      "sha256": "f706f8cdcd0a4fdb62f00c7c2b5579e62596c95b96ce639c1a35f16b5cbe5a12"
+    },
+    {
+      "kind": "text",
+      "path": "docs/export-reference.md",
+      "sha256": "cf1abec6d4239f9e5f63249fb4255ab5e1269d6db34b5f84e99e90cf85c5e8b4"
+    },
+    {
+      "kind": "excalidraw",
+      "path": "docs/figures/research-routes.excalidraw",
+      "sha256": "c49c1104c3a56f935d7836bf2ea0a1884db918325f4a9a54375db45cf854b57d"
+    },
+    {
+      "kind": "svg",
+      "path": "docs/figures/research-routes.svg",
+      "sha256": "3bf6fbb14285294873419c1cac7ef378dd789e480b7d3c2aab23c924e4a5ed1e"
+    },
+    {
+      "kind": "excalidraw",
+      "path": "docs/figures/target-record.excalidraw",
+      "sha256": "1a028335d61ff9c2905581ead083a119549fb05e8b904890e96db4745b68ffc6"
+    },
+    {
+      "kind": "svg",
+      "path": "docs/figures/target-record.svg",
+      "sha256": "2f8f10e03c22eaa0c8c7a0210de1102cc0bb92f2026c36ed8ca77948f40dc1dc"
+    },
+    {
+      "kind": "excalidraw",
+      "path": "docs/figures/tool-map.excalidraw",
+      "sha256": "f276120b808a23c742413cb4d4d291433c0b9fa4b2c1cb037d86178f460e08a2"
+    },
+    {
+      "kind": "svg",
+      "path": "docs/figures/tool-map.svg",
+      "sha256": "a30074228161478ead4f1eafc4d40e1d541db6ceeb57a48c272bb11e135053a5"
+    },
+    {
+      "kind": "excalidraw",
+      "path": "docs/figures/workflow.excalidraw",
+      "sha256": "0491a584eeb621fcbd6bc93cd5a5d92db356885f5067eec261ed5acc02c17a40"
+    },
+    {
+      "kind": "svg",
+      "path": "docs/figures/workflow.svg",
+      "sha256": "a21a918c5d969bca0f1bc13708b372bccc5f9b346c1d3fbbdc718fe82cdc5377"
+    },
+    {
+      "kind": "text",
+      "path": "docs/getting-started.md",
+      "sha256": "4ad6ed6eebe9a77dcc2b55623bf71d2d19c400d7385a38bd0bd71c6ca4672137"
+    },
+    {
+      "kind": "text",
+      "path": "docs/integrations.md",
+      "sha256": "73a30a989b9fbf92f1d67d19cd2498790f5cc7ddd888f0321c445e687adc8d31"
+    },
+    {
+      "kind": "text",
+      "path": "docs/multi-run-research.md",
+      "sha256": "6adb9616329c3b92b16cbf8cf739b426f3d52ae380dcf4e42c26217b3155ae3a"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/README.md",
+      "sha256": "e5b28cdf95ade4b6b6b60dddc24bbab88a09953742dd62a768e840805a08b155"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/cell-populations.md",
+      "sha256": "2585d5abaef1a70859f2c7818fec9921c42d034e238d7de60580a7fc8fe9cd41"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/chatgpt-site.md",
+      "sha256": "448f57f29218928dfd7c9f95c89a4709df1b8b95708d54004d7e9669af1e2ef6"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/disease-surface-census.md",
+      "sha256": "e6dd9854939b852e01b77e78beacc268d2ba8f31bd20c407e3c5a90ffb0a0862"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/experiments-and-report.md",
+      "sha256": "d47ed5b174bc0ebc381f5961f7484e0362bf09f6f5d336a2a03421f7f45b8e03"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/protein-binder-design.md",
+      "sha256": "81b5ff6ac2788ff236b924fb7913bb636feeee4c924c62d0b4e4387aa644a29b"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/sequences-structures-sites.md",
+      "sha256": "92b29bfba5ccb2f01202334d1b24813c4691d67a5577544a38036791da66b608"
+    },
+    {
+      "kind": "text",
+      "path": "docs/recipes/supplied-libraries-screening.md",
+      "sha256": "92eebdfaafd914f3707406af041e1b27666a6a28e1dfaa9abb2a682acd5e4c59"
+    },
+    {
+      "kind": "text",
+      "path": "docs/releasing.md",
+      "sha256": "7cfa521cd0d8f17e49d427433ce241cd7eb3c74a85758d9f09e3676e986e833d"
+    },
+    {
+      "kind": "text",
+      "path": "docs/report.md",
+      "sha256": "9e41a7c726d5cba29703ec7b9ec280d10a1e81d3d95d397b601caa8a4104871e"
+    },
+    {
+      "kind": "text",
+      "path": "docs/supplied-libraries.md",
+      "sha256": "2d807f21a5587c2201a76b8d13f189bfd41a6d19ac37f619a039a45a7be8f5a8"
+    },
+    {
+      "kind": "text",
+      "path": "docs/workflow.md",
+      "sha256": "e914d1328db774254c3c50ca336b74c407cb3c1528f1939e6a2ca25d6857ad45"
+    },
+    {
+      "kind": "text",
+      "path": "examples/research-case/NOTICE.md",
+      "sha256": "bb69448069910732e807cc15e1b4cafa05d799c1441b811f033911e8c9d88524"
+    },
+    {
+      "kind": "text",
+      "path": "examples/research-case/README.md",
+      "sha256": "6591f7ff2b2e97ed73053b031e8346b90513c46f0028201e1227850157bf257e"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/artifact-manifest.json",
+      "sha256": "c85ad2d16ef5dcbe2395d2963171d227763b8442e6df37b60dd17caa9388d18a"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/atlas-plan.json",
+      "sha256": "1ddae4b6ee07609c0475c6dab450f7075d2257edcfa9085a5594fbb50b840732"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/binder-controls.json",
+      "sha256": "d62e42043142ec4e8896a9ee9b25357946727301f2802c7f79cb1d42dc5427e2"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/binders.json",
+      "sha256": "4701cd685ae30bcb184c94fe7b8e98455e459d561fe3cd5d0856db0cb7ba9066"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/capabilities.json",
+      "sha256": "5678c5ff88b2f22fb4358727ea9cc417fdf6f8c0881f28658e3baec74b5fb7da"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/discovered-entities.json",
+      "sha256": "717396654c6d211b09a2515fb1e1268360d59bb236cbd4b7abf9b3a0180a865f"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/excluded-targets.json",
+      "sha256": "6f82cf562dd14d4d1c5eaf97b5ba4720bb42dbca54bde9e4df5f11d62629a65c"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/interventions.json",
+      "sha256": "12b2cdf3269b3b23f3f9847183a7aea7e0af9c9584e7882686b2600b6ecd58c0"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/ceacam5-8bw0-complex.png",
+      "reviewed_binary": true,
+      "sha256": "9e9ec6513d7df8ef1f58f8d78afb710c16e55421a3d0802322cbb8bc723fa843"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/ceacam5-8bw0-complex.preview.json",
+      "sha256": "97fbfb5225bac68b2b23289219a223b710a37ce815b07969daaed814c6c4c656"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/ceacam5-8bw0-interface.png",
+      "reviewed_binary": true,
+      "sha256": "5a9bbac28995da1598ec78cc2929b7fe4f2c52a2cbb9d54b2524c24b15fd2087"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/ceacam5-8bw0-interface.preview.json",
+      "sha256": "2da5a430520f63625b0cf99a209b6c2ad748e4023de1e43f31698db2096bba1d"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/ceacam5-boltzgen-03.png",
+      "reviewed_binary": true,
+      "sha256": "6a04133da7d48e76481a40843a00a8743229ddf1b20e0cb3c23d3ab2d5b2cd23"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/ceacam5-boltzgen-03.preview.json",
+      "sha256": "789c2fbf7243018e020644bbfb30340eb8d7c755483e564acf7361455556296b"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/ceacam5-shuffled-vh-control.png",
+      "reviewed_binary": true,
+      "sha256": "f2da051a659c7d40d08a3b9e2cd52c869c81b916a429aed58016cdde96b849e4"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/ceacam5-shuffled-vh-control.preview.json",
+      "sha256": "68319a44821a1f56355ef1f93beb71886f315dcb9b2e8766a4431805e712a781"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/ceacam5-8bw0.cif",
+      "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/ceacam5-boltzgen-03.pdb",
+      "sha256": "0e344a2524ff99d74110e42d4fe72978231ffad71fde81e2066fa96ccd59aff3"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/ceacam5-shuffled-vh-control.pdb",
+      "sha256": "b7d6789c49c4a3d5b3321bc6e21c73c5c3d4e1a8dd04d7dadce178a02e196bd1"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/fap-6y0f.cif",
+      "sha256": "c8c1bf28d029050f89ab35090bdb059cd3909aa71b2070cf05bc1cbcd516b574"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/fap-egcg-pose-ensemble.sdf",
+      "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/fap-prepared-receptor.pdb",
+      "sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/itgb6-8tcg.cif",
+      "sha256": "d20de7d83575386cdaacb2cde9131984f2c306ea4806330dc35bcb98cb7f642e"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/coordinates/itgb6-prepared-target.pdb",
+      "sha256": "d75553018fdedd33abb9e97015ad88773eef30b5f79944590d95db97e78cc1ec"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/fap-6y0f-linagliptin.png",
+      "reviewed_binary": true,
+      "sha256": "72aade9955cc9032c454319c326bdb0f76cd4ad8c60f472f92430c99d814292b"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/fap-6y0f-linagliptin.preview.json",
+      "sha256": "40731d583022f7cd82ef14a778bd626db1114cfeac90299a2e0842a4751f0cac"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/fap-egcg-docked.png",
+      "reviewed_binary": true,
+      "sha256": "817862539e1be8e92700f15339bc634ea11c2bbeb55c2963247c57650cc3fdcb"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/fap-egcg-docked.preview.json",
+      "sha256": "3c09806f796a76a6a03c049ecd02f9183490917b167aac76b763343ff74c3096"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/itgb6-8tcg-complex.png",
+      "reviewed_binary": true,
+      "sha256": "329608c1351d3a57b73cdeb4e4697ed5d0688f8632e1a8f3772edf39024b0f96"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/itgb6-8tcg-complex.preview.json",
+      "sha256": "1df4caac67fd002a32e61243ca7ee7b31dc558efad9ccb0504ece34cb28d661f"
+    },
+    {
+      "kind": "binary",
+      "path": "examples/research-case/media/itgb6-prepared-target.png",
+      "reviewed_binary": true,
+      "sha256": "ca46a0186b6d00534bab6bc34510935f6d20c04da03e992e0e2cabf82a8f6360"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/itgb6-prepared-target.preview.json",
+      "sha256": "dd717b66e090d2f48666e1f4255181f27fe20648a569abcba92a26a12b67c2cc"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/media/previews.json",
+      "sha256": "869101f45f010bf0720e7f993b29b0b931beeb36bda983b20a8bd9264a9cec54"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/sequences/ceacam5-boltzgen-03.fasta",
+      "sha256": "c6012178fe0017812e3561fce30552b697d4ac2f4de1c39742cb9fbe29982541"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/research-case/media/sequences/ceacam5-shuffled-vh-control.fasta",
+      "sha256": "831790ee74355ac177930cd8b9fb7b4a4c71f9b3b1e903224dad6c232277933c"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/molecular-library.json",
+      "sha256": "d86f2cc68e5215ed0e247fc00ee1d63d0bcdee77207263242b22c760a6a0190e"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/opportunities.json",
+      "sha256": "92f47322619a607baf334b689413001cc04d80aea70c3cede05b85055d345346"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/screening-results.json",
+      "sha256": "be7570a38934c712c94b4c9f16611381261fb5bb7282dd37fee5e1e773465d8a"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/search-ledger.json",
+      "sha256": "0077a457208d6c49fc2910ec5316011a4553e2ad710b522dfae4921d9dfe92d6"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/structures.json",
+      "sha256": "a8eea467f532b3deed01b5a7841ce8bbb20e1c73978a6ef49b1a3cde0c78c24f"
+    },
+    {
+      "kind": "json",
+      "path": "examples/research-case/targets.json",
+      "sha256": "0644b1df606c15c65395ceae01b0e4cc2116358fae45b8c1906b77602e58f978"
+    },
+    {
+      "kind": "text",
+      "path": "examples/screen-merge/README.md",
+      "sha256": "5e029193b6ef7c4a20bfcee96aaae8213c6f815c9ab6a2ee507a72484fec3afa"
+    },
+    {
+      "kind": "json",
+      "path": "examples/screen-merge/run-a.json",
+      "sha256": "4fd00b948f9201733beae0c53233a4a74d18a187dd76d58c285514ac1607a3e8"
+    },
+    {
+      "kind": "json",
+      "path": "examples/screen-merge/run-b.json",
+      "sha256": "10934ac51bb2a187a1addbbf9a9809901661b37d02b5fe67102fc1424e79b624"
+    },
+    {
+      "kind": "text",
+      "path": "examples/supplied-library/README.md",
+      "sha256": "ee1bdf5813fe47caec3f55b02d92fd28ef906dca4b0df551a9b8a5283a0f7bbc"
+    },
+    {
+      "kind": "csv",
+      "path": "examples/supplied-library/compounds.csv",
+      "sha256": "b7f4b87063e89e4180a6e9655fd6654bea3180f42da6425afb51c5e66b377026"
+    },
+    {
+      "kind": "molecular-text",
+      "path": "examples/supplied-library/peptides.fasta",
+      "sha256": "41eebceb87aca4a3c287bd0d7af602a6d97f2e14bbb6f9576518561f3787d612"
+    },
+    {
+      "kind": "json",
+      "path": "examples/supplied-library/registration.json",
+      "sha256": "0f539110caf0faee821c0e3195ccb6a66fd9eacad3d826a99dc22f03abe1c8da"
+    },
+    {
+      "kind": "text",
+      "path": "examples/synthetic-atlas/README.md",
+      "sha256": "9208b5a3de25290b7e91de1a3f1b1606b11593db40a4aed000d3e2cd2a4006f0"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/atlas-plan.json",
+      "sha256": "989ffaba3826ec742653f5cc547ff2f8fae792b9b32e3f930a32eb85c3533f34"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/capabilities.json",
+      "sha256": "d763e3e2bda01e3fb4ffb9cf1691a80d0e8eaa40e53402d378cc104812ffeb41"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/discovered-entities.json",
+      "sha256": "14d4c6d427b65511cdb45a518cb67501228cd413118b15cb7c3a7f9d635c0f8f"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/excluded-targets.json",
+      "sha256": "ff80e5b7aaf87d5391dbfdfe7f0c05d5ee24718944b45798210da171e6a6311e"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/interventions.json",
+      "sha256": "f2eba4418fd102ac419f110fe4a2c7b17bf82d5d89fff2baf66d39b8db66d6fe"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/molecular-library.json",
+      "sha256": "b98085f9c088ec1a2adc385f3473a953d00d808909f92d789fbcab94b962c0d2"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/opportunities.json",
+      "sha256": "031ff7fc42725990607c5507d5f4517f531774f5c8252305efa9105128e287a9"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/screening-results.json",
+      "sha256": "9188d984f4b9beb019d04f6aae30096d6a8ca910e0284cdc4e7c7b5f251b728b"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/search-ledger.json",
+      "sha256": "aad07ee147ef92a3ceba53c43226902b6d048718d020fa59879c7ae02cba1dd8"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/structures.json",
+      "sha256": "4b8276c751331ab16418eed94fb2a05a2cd347d350d3f9329e9376e60103ef5a"
+    },
+    {
+      "kind": "json",
+      "path": "examples/synthetic-atlas/targets.json",
+      "sha256": "032da8ee3f1733c5bc15709b61ed5ebfd83414c07d66c068090b43ce07a6c260"
+    },
+    {
+      "kind": "text",
+      "path": "pyproject.toml",
+      "sha256": "a12f16d7e7977cac8bdf956bce614d575d2d7f62e1f25e6c15867e41142e7927"
+    },
+    {
+      "kind": "text",
+      "path": "schemas/README.md",
+      "sha256": "43c21246f5ec8ef40b686578c3f4eef79cc72147a286bfa7e5187392e762ca4f"
+    },
+    {
+      "kind": "text",
+      "path": "schemas/v0.1/README.md",
+      "sha256": "f02eeac222d4ffe124bd4a4c68a74fd2b01a57e682c506fc9f2ec4f525dc9004"
+    },
+    {
+      "kind": "json-schema",
+      "path": "schemas/v0.1/atlas-plan.schema.json",
+      "sha256": "3443680574a34957b5607417a34b6651960bda281fae466c826b9fbd090b72ae"
+    },
+    {
+      "kind": "json-schema",
+      "path": "schemas/v0.1/collection.schema.json",
+      "sha256": "3cd9de7c5c83ecc9a3018d96358d3659d5d6a2a49ca8b91ffc656b74d270f3a2"
+    },
+    {
+      "kind": "json-schema",
+      "path": "schemas/v0.1/search-ledger.schema.json",
+      "sha256": "628d1a375db69c893f1144b104ca5c3c5e33f93dc63810a383398395340a2e27"
+    },
+    {
+      "kind": "json-schema",
+      "path": "schemas/v0.1/structure-snapshot.schema.json",
+      "sha256": "d938a50512f8cd2404a4eac9869f59f67d5ab1b4769a5c3796fddcad095de034"
+    },
+    {
+      "kind": "python",
+      "path": "scripts/check_distribution.py",
+      "sha256": "81d4432cfb6169172d460178dca3020c1a0b7f60a7581731ba92a440781f7565"
+    },
+    {
+      "kind": "python",
+      "path": "scripts/check_repository.py",
+      "sha256": "ccbe1e40593efe6ca6bb663c62599a1f68dac62fe61c076ecc1882096196d5e2"
+    },
+    {
+      "kind": "python",
+      "path": "scripts/check_source_archive.py",
+      "sha256": "975cbc8cd2c0471d3150592f7b12fc7d3946c140b660e8ee15b94ae4decbbb9f"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/SKILL.md",
+      "sha256": "4b67313d1fd1785eeba431dca094c99f93d4c5f4adc3e1735e2408570b4df776"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/agents/openai.yaml",
+      "sha256": "276b9b990d981f7f0fc3fcb829e376e6efba1cb504dae7725dfa7f08f2be1ff5"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/atlas-plan.template.json",
+      "sha256": "9f6c3c42c81edffa4f6002d10a8fbc1a73fe25d1412c1a600730d879fdf20ec1"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/binder-request.template.json",
+      "sha256": "16964167a170a174bb9c3d8d15fa787907dfb372cbe78fd668d6c6cc7d573b7a"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/collection.template.json",
+      "sha256": "9c25b44274c6bae90c79d18b0adbece3d0a75219359619ce6a2a07431de2e477"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/run-manifest.template.json",
+      "sha256": "f9dd0659e59998a82df6c1d214e35262cbb0c71de62a0bcc476192de0417746a"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/search-ledger.template.json",
+      "sha256": "be51fa8310d338ddf3893e88405bd29ffdfef8dcd7543d4f16861e1ba1ceeb5a"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/source-registry.template.json",
+      "sha256": "e949f710de0e81528b68bda541e3509e25a0a4b0ae704604b442ab2c5ad3bac4"
+    },
+    {
+      "kind": "json-template",
+      "path": "skills/codex-surface-targets/assets/supplied-library-registration.template.json",
+      "sha256": "e05b9f63aefcd26486360444875a727e4227ade6f7ff1c9962695cbac17f5501"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/adversarial-review.md",
+      "sha256": "11dc845982e463a0de86a813f1472bb4b4f42bf7ac93b85475dadafd4695c7ad"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/compute-budget.md",
+      "sha256": "7c174f04f3e1f4423a523dde21e85642544f834f12bfe23cc5d2ba6519ea7778"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/data-contracts.md",
+      "sha256": "adee5d44c3271414ff7d48f19230361270cdfe0222dc14f0f275a2e3817af188"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/evidence-model.md",
+      "sha256": "7ff6e85d5c5047725b2a9605f1af9e0d1e198d4503899804ca2a751b914bb9cf"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/molecular-library-screening.md",
+      "sha256": "39be7129a8087f5bb8acfa7dc6b20f4305fdbf7f5c84bec04f9da4f2462fecbc"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/multi-run-research.md",
+      "sha256": "1719edc7c5512a3c9c52d3b06def7151c5e32664078b4b5108ae2337bb26e3d6"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/plugin-routing.md",
+      "sha256": "925935aaffd181814b0b19c93b9603f9367921d5a42aec17fd2c1ea89644f040"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/report-presentation.md",
+      "sha256": "b33fb4fb1ee259023d0c5d091ae6978846449078c9009090351c28419f5b939b"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/research-protocol.md",
+      "sha256": "2fe50edd746790f3bab9d304c0b8a2e87fb5114284037ef281e654c35ed74c65"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/structure-atlas.md",
+      "sha256": "351edbeef29ae57797e87f9aba66784d8872c7762f149f111bda3c3e493cf1c9"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/structure-design-program.md",
+      "sha256": "5d68eb83bc5fd4240c958efb450f30f98f70593bc2746ecf838ac56b1ea8af43"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/target-reconciliation.md",
+      "sha256": "5c283861fd33694cb58a41dae75e58130239936afe664255905af934b2a7cf65"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/visual-delivery.md",
+      "sha256": "55eebe9667f33e9b193246b6ff72fc91d5fe9063584a2ada8db74722b3f06483"
+    },
+    {
+      "kind": "text",
+      "path": "skills/codex-surface-targets/references/workflow.md",
+      "sha256": "c503777becc298be22feaab469da1d97a3a88d5ed9b67579c97b285a7ccfa866"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/__init__.py",
+      "sha256": "163b78fd1f0683bbe643b57b93dbd9365960937002b06ff93ad3bf2527e0b8d0"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/__main__.py",
+      "sha256": "724d6faa5e0fc629acb23f3d6088c02699bfdb01fa30b2bc8b915cc459d8f9a0"
+    },
+    {
+      "kind": "css",
+      "path": "src/surface_atlas/assets/report/diagrams.css",
+      "sha256": "1668dafe1c663959dd13b639f2b929f950e74c99225ef599cbea6fa07c692aa6"
+    },
+    {
+      "kind": "css",
+      "path": "src/surface_atlas/assets/report/presentation.css",
+      "sha256": "1ccdd987c12e624c72f74c90056e76fb58189715095698ba042b49b467e0d2d8"
+    },
+    {
+      "kind": "javascript",
+      "path": "src/surface_atlas/assets/report/presentation.js",
+      "sha256": "21288e0870faf5e31c453b99cc0657419262f05db85080b90f67e4cbb953cfc6"
+    },
+    {
+      "kind": "css",
+      "path": "src/surface_atlas/assets/report/report.css",
+      "sha256": "82484195524582084171f0bcf2dc0979c59b731e1703932f1ee1562ef7d70438"
+    },
+    {
+      "kind": "javascript",
+      "path": "src/surface_atlas/assets/report/report.js",
+      "sha256": "fd1c7dfa2da32f7a822f258fadd174d8532de6b0c5b6351fc68cd11f1d3c2c5a"
+    },
+    {
+      "kind": "css",
+      "path": "src/surface_atlas/assets/report/structure-preview.css",
+      "sha256": "9d2cf98c828fe2a9b3519a4ac3bea65c9eacc3812f069ab4361751ae68c26a0e"
+    },
+    {
+      "kind": "javascript",
+      "path": "src/surface_atlas/assets/report/structure-preview.js",
+      "sha256": "cb28d7d6a0733b4025651f7ad27948079a45eedc72d2ad317752f08f78264f5d"
+    },
+    {
+      "kind": "javascript",
+      "path": "src/surface_atlas/assets/report/vendor/3Dmol-2.5.5.min.js",
+      "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/assets/report/vendor/3Dmol-LICENSE.txt",
+      "sha256": "4c6eaaed856f3f28a3b1a98e74f4a8a71618de7d51ea4155c29f6f793bcef861"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/assets/report/vendor/3Dmol-min.js.LICENSE.txt",
+      "sha256": "ae3bfc688d0c9687b76e0ecc7fece0b393bcb4acf2aee09e19dda697eaa10b16"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/assets/report/vendor/README.md",
+      "sha256": "9fff1cbbe5924909c0f71b6a2c067db2b444dfca6e22ebf66061a2b008963353"
+    },
+    {
+      "kind": "css",
+      "path": "src/surface_atlas/assets/report/workflows.css",
+      "sha256": "90205e92b8ee67f7cd5abcb15b8ea653f872512e1ff7f46d2f889aa1fb477e78"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/assets/synthetic-atlas/README.md",
+      "sha256": "9208b5a3de25290b7e91de1a3f1b1606b11593db40a4aed000d3e2cd2a4006f0"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/atlas-plan.json",
+      "sha256": "989ffaba3826ec742653f5cc547ff2f8fae792b9b32e3f930a32eb85c3533f34"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/capabilities.json",
+      "sha256": "d763e3e2bda01e3fb4ffb9cf1691a80d0e8eaa40e53402d378cc104812ffeb41"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/discovered-entities.json",
+      "sha256": "14d4c6d427b65511cdb45a518cb67501228cd413118b15cb7c3a7f9d635c0f8f"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/excluded-targets.json",
+      "sha256": "ff80e5b7aaf87d5391dbfdfe7f0c05d5ee24718944b45798210da171e6a6311e"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/interventions.json",
+      "sha256": "f2eba4418fd102ac419f110fe4a2c7b17bf82d5d89fff2baf66d39b8db66d6fe"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/molecular-library.json",
+      "sha256": "b98085f9c088ec1a2adc385f3473a953d00d808909f92d789fbcab94b962c0d2"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/opportunities.json",
+      "sha256": "031ff7fc42725990607c5507d5f4517f531774f5c8252305efa9105128e287a9"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/screening-results.json",
+      "sha256": "9188d984f4b9beb019d04f6aae30096d6a8ca910e0284cdc4e7c7b5f251b728b"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/search-ledger.json",
+      "sha256": "aad07ee147ef92a3ceba53c43226902b6d048718d020fa59879c7ae02cba1dd8"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/structures.json",
+      "sha256": "4b8276c751331ab16418eed94fb2a05a2cd347d350d3f9329e9376e60103ef5a"
+    },
+    {
+      "kind": "json",
+      "path": "src/surface_atlas/assets/synthetic-atlas/targets.json",
+      "sha256": "032da8ee3f1733c5bc15709b61ed5ebfd83414c07d66c068090b43ce07a6c260"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/atlas-plan.template.json",
+      "sha256": "9f6c3c42c81edffa4f6002d10a8fbc1a73fe25d1412c1a600730d879fdf20ec1"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/binder-request.template.json",
+      "sha256": "16964167a170a174bb9c3d8d15fa787907dfb372cbe78fd668d6c6cc7d573b7a"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/collection.template.json",
+      "sha256": "9c25b44274c6bae90c79d18b0adbece3d0a75219359619ce6a2a07431de2e477"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/run-manifest.template.json",
+      "sha256": "f9dd0659e59998a82df6c1d214e35262cbb0c71de62a0bcc476192de0417746a"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/search-ledger.template.json",
+      "sha256": "be51fa8310d338ddf3893e88405bd29ffdfef8dcd7543d4f16861e1ba1ceeb5a"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/source-registry.template.json",
+      "sha256": "e949f710de0e81528b68bda541e3509e25a0a4b0ae704604b442ab2c5ad3bac4"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/assets/templates/supplied-library-registration.template.json",
+      "sha256": "e05b9f63aefcd26486360444875a727e4227ade6f7ff1c9962695cbac17f5501"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/cli.py",
+      "sha256": "daad8e4b73bfb2d124951a427d5a2d77e40d913162a2256a4a471fe8b46f87cf"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/diagram_routes.py",
+      "sha256": "ddfec491d610194e6af0d0850bfefa9b7df3e55a323220edc352a797a5e1494b"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/example.py",
+      "sha256": "929ceb2dbd85fa0b618d34c4ccbda612124c141b39b122117537574e26c716d7"
+    },
+    {
+      "allow_findings": [
+        "private_path"
+      ],
+      "kind": "python",
+      "path": "src/surface_atlas/export.py",
+      "sha256": "52428fd09c441d3a6760fd62862e43479ae72f76a9580e780b69da62d569102d"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/installer.py",
+      "sha256": "b505d78ed6ad24df956c8e4e6bb9c4b975d3e1710487644470c4bb9c888cd462"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/library_registration.py",
+      "sha256": "d155c744e28b4c27fc8321c5553d6bed2632778cdc2156457738bd416ad8c45e"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/report.py",
+      "sha256": "49e3d26e24281e4eb67c88f7c28d42087e4ee5979717e0d663f9544c09f6c0bd"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/report_builder.py",
+      "sha256": "8278fb86bfebeb180bec71987d0ff3e6fdb97d30b9ce8a1b8e17214ff4515839"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/report_diagrams.py",
+      "sha256": "43d0c979342b319bf6227e91e392b81706205f297f341a74b58b93347d99bcd2"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/report_presentation.py",
+      "sha256": "4592ad6cb1007cbbfb7705ba0dfe35c43ddab2eecfdf5923c8cba2a8b8218d0c"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/report_workflows.py",
+      "sha256": "e1cc039606205b0f20aa27748e73d372cffda245d37eebd0912da5e7d7a5322f"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/schemas.py",
+      "sha256": "97144a291d2c7b5e26d13eb56b29a4007d7f3b4bdbf323ce63275a65c3401a0c"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/screening_context.py",
+      "sha256": "4606c55036e11dffab22d5dd102e35ec58b02c8dba3fca23a4c340dcfc16aadc"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/screening_merge.py",
+      "sha256": "4e007ea8e1f3396c3fedf61bbb4114f0b3099848cfabfcbe97f550fbc201b771"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/SKILL.md",
+      "sha256": "4b67313d1fd1785eeba431dca094c99f93d4c5f4adc3e1735e2408570b4df776"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/agents/openai.yaml",
+      "sha256": "276b9b990d981f7f0fc3fcb829e376e6efba1cb504dae7725dfa7f08f2be1ff5"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/atlas-plan.template.json",
+      "sha256": "9f6c3c42c81edffa4f6002d10a8fbc1a73fe25d1412c1a600730d879fdf20ec1"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/binder-request.template.json",
+      "sha256": "16964167a170a174bb9c3d8d15fa787907dfb372cbe78fd668d6c6cc7d573b7a"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/collection.template.json",
+      "sha256": "9c25b44274c6bae90c79d18b0adbece3d0a75219359619ce6a2a07431de2e477"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/run-manifest.template.json",
+      "sha256": "f9dd0659e59998a82df6c1d214e35262cbb0c71de62a0bcc476192de0417746a"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/search-ledger.template.json",
+      "sha256": "be51fa8310d338ddf3893e88405bd29ffdfef8dcd7543d4f16861e1ba1ceeb5a"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/source-registry.template.json",
+      "sha256": "e949f710de0e81528b68bda541e3509e25a0a4b0ae704604b442ab2c5ad3bac4"
+    },
+    {
+      "kind": "json-template",
+      "path": "src/surface_atlas/skill/assets/supplied-library-registration.template.json",
+      "sha256": "e05b9f63aefcd26486360444875a727e4227ade6f7ff1c9962695cbac17f5501"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/adversarial-review.md",
+      "sha256": "11dc845982e463a0de86a813f1472bb4b4f42bf7ac93b85475dadafd4695c7ad"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/compute-budget.md",
+      "sha256": "7c174f04f3e1f4423a523dde21e85642544f834f12bfe23cc5d2ba6519ea7778"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/data-contracts.md",
+      "sha256": "adee5d44c3271414ff7d48f19230361270cdfe0222dc14f0f275a2e3817af188"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/evidence-model.md",
+      "sha256": "7ff6e85d5c5047725b2a9605f1af9e0d1e198d4503899804ca2a751b914bb9cf"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/molecular-library-screening.md",
+      "sha256": "39be7129a8087f5bb8acfa7dc6b20f4305fdbf7f5c84bec04f9da4f2462fecbc"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/multi-run-research.md",
+      "sha256": "1719edc7c5512a3c9c52d3b06def7151c5e32664078b4b5108ae2337bb26e3d6"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/plugin-routing.md",
+      "sha256": "925935aaffd181814b0b19c93b9603f9367921d5a42aec17fd2c1ea89644f040"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/report-presentation.md",
+      "sha256": "b33fb4fb1ee259023d0c5d091ae6978846449078c9009090351c28419f5b939b"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/research-protocol.md",
+      "sha256": "2fe50edd746790f3bab9d304c0b8a2e87fb5114284037ef281e654c35ed74c65"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/structure-atlas.md",
+      "sha256": "351edbeef29ae57797e87f9aba66784d8872c7762f149f111bda3c3e493cf1c9"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/structure-design-program.md",
+      "sha256": "5d68eb83bc5fd4240c958efb450f30f98f70593bc2746ecf838ac56b1ea8af43"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/target-reconciliation.md",
+      "sha256": "5c283861fd33694cb58a41dae75e58130239936afe664255905af934b2a7cf65"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/visual-delivery.md",
+      "sha256": "55eebe9667f33e9b193246b6ff72fc91d5fe9063584a2ada8db74722b3f06483"
+    },
+    {
+      "kind": "text",
+      "path": "src/surface_atlas/skill/references/workflow.md",
+      "sha256": "c503777becc298be22feaab469da1d97a3a88d5ed9b67579c97b285a7ccfa866"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/skill_installer.py",
+      "sha256": "aec177a242e4a484e5bd51b00a51bad83c87a978013616322350a561c9ae95ab"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/structure_preview.py",
+      "sha256": "7d9e8f76638e453e362c2924db41de6fd05f537779e6293980be391db0ed1a75"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/validator.py",
+      "sha256": "feccb44ce98615bdb8ccdfde127f69d084baf23efcbf107cbfeb78c5bdb0426a"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/version.py",
+      "sha256": "c13ec28fce1a5e2605e76515c8c8b0b1e6281af4ce64818ec2d16afd40fbd8ed"
+    },
+    {
+      "kind": "python",
+      "path": "src/surface_atlas/workspace.py",
+      "sha256": "63b67184565ec4ace1a977e36fbe0cd821704d5b6e74e0a2c38abecd069fdcd9"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_cli.py",
+      "sha256": "d96ed5289d236c6f8d0ac49695f022fe1b1087f0e864a3c0b1c20f069f9388ac"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_distribution_check.py",
+      "sha256": "569058e76e0f1b2b857a071ec3e1fe024bdf9ee4b265fde5cb7b4b16719e261a"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_explorer_missing_evidence.py",
+      "sha256": "8025c7ab1b5d660b702bd00be3168a47fc0aa2e8591551b280b114bfd8ede4a9"
+    },
+    {
+      "allow_findings": [
+        "private_path"
+      ],
+      "kind": "python",
+      "path": "tests/test_export.py",
+      "sha256": "86b9d247cab4b19c392f8ba50f279a4c59deac74dd748e8b65266fdaae5b1679"
+    },
+    {
+      "allow_findings": [
+        "private_path"
+      ],
+      "kind": "python",
+      "path": "tests/test_input_validation.py",
+      "sha256": "db1eb70a32c66e360267a8ae70d743bf2d0e1f8b067b1a0ceeb36a9936c0064b"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_library_registration.py",
+      "sha256": "36fc280b02586a69cf6df90ca057799a895703e1158a64474e2171d68e354254"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_package.py",
+      "sha256": "e2e30b1486b20b4f3180b14d777b61c8a3e1da3406f69e19d3379ff269a659a0"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_plugin_layout.py",
+      "sha256": "5a86d612acfe5a195c27a6e9d7f6269bf11078f984e56fd6f4227b6c00a4eb31"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_registered_library_report.py",
+      "sha256": "50b0e5e6433e4134c726775d9eeca4c4da77f9b6deab033ad61c08720dd3d880"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_report.py",
+      "sha256": "904b91431d73c763e875d4ccbada70982e1c0567a7faaf400524d02b8f93f5ef"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_report_example_labels.py",
+      "sha256": "f9119bb28b1c715edf194ea5f1266e10f5245df91feaf1086dbb35871f93b6a8"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_report_presentation.py",
+      "sha256": "821d41f7cbfe54d66bcffda6e0dcf8c47c6d42c3b462b8c3f4ee68d691f9c5da"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_report_workflows.py",
+      "sha256": "3239b650664d88b7a98aa70b055e49a394589464a7373b1bb7c3e0cc3aae6df4"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_repository_check.py",
+      "sha256": "e47228a5517755d58cb2f86d8c67ce62dfa4f92ab51d9d4df5ecc319b3ba9874"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_research_case_presentation.py",
+      "sha256": "8a23d5ae28b5adf53ab49ae95896156a934493b43dae74f2366443c505b71094"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_research_source_details.py",
+      "sha256": "01f7f600bba00074f576792c0340238fd79f511bc8fd0911f0080798f43d5952"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_screen_merge_example.py",
+      "sha256": "74c3d2248f9b802cbf643bedbe6f5a89b274f34b35e365b11f6e1d1120cdced2"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_screening_merge.py",
+      "sha256": "b14665e530a42dd32866801f167a01f6ebf41a6a4c570fd7675524e15cc87d2e"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_screening_provenance.py",
+      "sha256": "11c6c0c752c8f4a788c119d41c80c0a1ca1759004b7adc5c0fb484cbef93dcec"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_screening_tables.py",
+      "sha256": "ba98f9ba69cd4f646cace1be93a84425bf987b602f596c73f1f35257bdacd09c"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_screening_validation.py",
+      "sha256": "e795c7696e4eb7c13e9e77422c916c8e10985c1eec107bc7ea5325c07eb952b4"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_source_archive.py",
+      "sha256": "106cc40eadf3587f89c37e635f1cae5dae2c5c78471ed90515e3bc390057f47d"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_structure_preview.py",
+      "sha256": "41c71a42f53cae83416a7630bd665fb0653f2a84d1c14a41ba39eb6887005f76"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_structure_preview_validation.py",
+      "sha256": "4ed5197c7f3d07557579deef1d73f58f1d0be8a94f910894f7e4e6786c886846"
+    },
+    {
+      "kind": "python",
+      "path": "tests/test_target_research_context.py",
+      "sha256": "2f4401160afa3bae205fb39680fd45cef0a825a132bdbbe6e9957e329bfe04bc"
+    }
+  ],
+  "limits": {
+    "max_file_bytes": 4515536,
+    "max_files": 234,
+    "max_total_bytes": 11316713
+  },
+  "version": 1
+}

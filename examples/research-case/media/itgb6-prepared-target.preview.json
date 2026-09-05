@@ -1,0 +1,38 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "itgb6-prepared-target",
+  "title": "Integrin alpha-v beta-6: prepared target",
+  "caption": "Target-only coordinates derived from deposited structure 8TCG. The design input retains alpha-v chain A and beta-6 chain B.",
+  "target_id": "T-ENSG00000115221",
+  "target_name": "ITGB6",
+  "complex_partner": {
+    "gene_symbol": "ITGAV",
+    "role": "alpha-v heterodimer partner in the deposited source complex"
+  },
+  "pdb_id": "8TCG",
+  "coordinate_kind": "derived-target-only",
+  "evidence_class": "experimental-source-coordinate-derived-view",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": null
+  },
+  "image": {
+    "path": "media/itgb6-prepared-target.png",
+    "storage": "workspace",
+    "bytes": 221883,
+    "sha256": "ca46a0186b6d00534bab6bc34510935f6d20c04da03e992e0e2cabf82a8f6360",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/itgb6-prepared-target.pdb",
+      "storage": "workspace",
+      "bytes": 426960,
+      "sha256": "d75553018fdedd33abb9e97015ad88773eef30b5f79944590d95db97e78cc1ec",
+      "role": "derived-target-coordinate"
+    }
+  ]
+}

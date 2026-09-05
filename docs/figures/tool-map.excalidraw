@@ -1,0 +1,602 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "appState": {
+    "viewBackgroundColor": "#0b0d10",
+    "exportBackground": true
+  },
+  "files": {},
+  "elements": [
+    {
+      "id": "e000",
+      "type": "text",
+      "x": 60,
+      "y": 35,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "text": "CODEX + ROSALIND WORKBENCH",
+      "fontSize": 17,
+      "fontFamily": 2
+    },
+    {
+      "id": "e001",
+      "type": "text",
+      "x": 60,
+      "y": 78,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Use the tools available in your Codex task",
+      "fontSize": 40,
+      "fontFamily": 2
+    },
+    {
+      "id": "e002",
+      "type": "text",
+      "x": 60,
+      "y": 142,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "The skill connects scientific work through shared records and files.",
+      "fontSize": 24,
+      "fontFamily": 2
+    },
+    {
+      "id": "e003",
+      "type": "text",
+      "x": 60,
+      "y": 215,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "text": "AVAILABLE CAPABILITIES",
+      "fontSize": 17,
+      "fontFamily": 2
+    },
+    {
+      "id": "e004",
+      "type": "rectangle",
+      "x": 60,
+      "y": 255,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "width": 420,
+      "height": 125,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e005",
+      "type": "text",
+      "x": 82,
+      "y": 277,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Retrieve evidence",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e006",
+      "type": "text",
+      "x": 82,
+      "y": 325,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Databases, literature, and omics",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e007",
+      "type": "rectangle",
+      "x": 60,
+      "y": 425,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "width": 420,
+      "height": 125,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e008",
+      "type": "text",
+      "x": 82,
+      "y": 447,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Inspect molecules",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e009",
+      "type": "text",
+      "x": 82,
+      "y": 495,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Sequence and structure viewers",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e010",
+      "type": "rectangle",
+      "x": 60,
+      "y": 595,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "width": 420,
+      "height": 125,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e011",
+      "type": "text",
+      "x": 82,
+      "y": 617,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Design and evaluate",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e012",
+      "type": "text",
+      "x": 82,
+      "y": 665,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Local tools, model APIs, cloud jobs",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e013",
+      "type": "rectangle",
+      "x": 595,
+      "y": 255,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "width": 300,
+      "height": 465,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e014",
+      "type": "text",
+      "x": 620,
+      "y": 282,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "text": "SURFACE ATLAS",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e015",
+      "type": "text",
+      "x": 620,
+      "y": 341,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Plan the stages",
+      "fontSize": 26,
+      "fontFamily": 2
+    },
+    {
+      "id": "e016",
+      "type": "text",
+      "x": 620,
+      "y": 397,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Connect the records",
+      "fontSize": 24,
+      "fontFamily": 2
+    },
+    {
+      "id": "e017",
+      "type": "text",
+      "x": 620,
+      "y": 453,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Compare options",
+      "fontSize": 26,
+      "fontFamily": 2
+    },
+    {
+      "id": "e018",
+      "type": "text",
+      "x": 620,
+      "y": 509,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Select tools",
+      "fontSize": 26,
+      "fontFamily": 2
+    },
+    {
+      "id": "e019",
+      "type": "text",
+      "x": 620,
+      "y": 565,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Track results",
+      "fontSize": 26,
+      "fontFamily": 2
+    },
+    {
+      "id": "e020",
+      "type": "text",
+      "x": 620,
+      "y": 650,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Run from a Codex task",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e021",
+      "type": "arrow",
+      "x": 480,
+      "y": 317,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "width": 115,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e022",
+      "type": "arrow",
+      "x": 480,
+      "y": 487,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "width": 115,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e023",
+      "type": "arrow",
+      "x": 480,
+      "y": 657,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "width": 115,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e024",
+      "type": "text",
+      "x": 1010,
+      "y": 215,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "text": "PORTABLE OUTPUTS",
+      "fontSize": 17,
+      "fontFamily": 2
+    },
+    {
+      "id": "e025",
+      "type": "rectangle",
+      "x": 1010,
+      "y": 255,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "width": 370,
+      "height": 125,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e026",
+      "type": "text",
+      "x": 1032,
+      "y": 277,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Target atlas",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e027",
+      "type": "text",
+      "x": 1032,
+      "y": 325,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Sources, interventions, sites",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e028",
+      "type": "arrow",
+      "x": 895,
+      "y": 317,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "width": 115,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e029",
+      "type": "rectangle",
+      "x": 1010,
+      "y": 425,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "width": 370,
+      "height": 125,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e030",
+      "type": "text",
+      "x": 1032,
+      "y": 447,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Computational results",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e031",
+      "type": "text",
+      "x": 1032,
+      "y": 495,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Sequences, structures, scores",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e032",
+      "type": "arrow",
+      "x": 895,
+      "y": 487,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "width": 115,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e033",
+      "type": "rectangle",
+      "x": 1010,
+      "y": 595,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "width": 370,
+      "height": 125,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e034",
+      "type": "text",
+      "x": 1032,
+      "y": 617,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Navigable report",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e035",
+      "type": "text",
+      "x": 1032,
+      "y": 665,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "HTML, figures, linked files",
+      "fontSize": 20,
+      "fontFamily": 2
+    },
+    {
+      "id": "e036",
+      "type": "arrow",
+      "x": 895,
+      "y": 657,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "width": 115,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e037",
+      "type": "rectangle",
+      "x": 60,
+      "y": 795,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "width": 1320,
+      "height": 130,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "dashed"
+    },
+    {
+      "id": "e038",
+      "type": "text",
+      "x": 84,
+      "y": 819,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Choose tools by the job they can perform.",
+      "fontSize": 25,
+      "fontFamily": 2
+    },
+    {
+      "id": "e039",
+      "type": "text",
+      "x": 84,
+      "y": 865,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Skills, MCP tools, plugins, CLIs, and APIs can supply a step. Keep the same atlas when the route changes.",
+      "fontSize": 21,
+      "fontFamily": 2
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "codex-surface-opportunity-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "opportunity_id": "O-EMBER-01",
+      "target_id": "T-EMBER",
+      "molecular_job": "occupancy",
+      "modality": "illustrative fragment",
+      "binding_site": "invented extracellular pocket",
+      "rationale": "Fixture record showing how a target, action, and site are linked.",
+      "leading_risk": "normal-tissue context is not measured",
+      "next_step": "replace the fixture with source-reviewed evidence",
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "opportunity_id": "O-LANTERN-01",
+      "target_id": "T-LANTERN",
+      "molecular_job": "payload delivery",
+      "modality": "illustrative binder",
+      "binding_site": "invented extracellular loop",
+      "rationale": "Fixture record showing how an accessibility hypothesis is separated from efficacy.",
+      "leading_risk": "internalization and shedding are not measured",
+      "next_step": "define a construct and control set",
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": "codex-surface-atlas-plan/v0.1",
+  "atlas_id": "__ATLAS_ID__",
+  "created_at": "__CREATED_AT__",
+  "mode": "plan-only",
+  "disease": {
+    "name": "__DISEASE__",
+    "subtype": null,
+    "organism": "Homo sapiens",
+    "population": null,
+    "ontology_ids": []
+  },
+  "scope": {
+    "purpose": "research",
+    "data_posture": "public",
+    "evidence_cutoff": "__EVIDENCE_CUTOFF__",
+    "research_target_cap": null,
+    "completeness_language": "searched-in-scope target census",
+    "coverage_claim": "planned",
+    "requested_actions": [],
+    "requested_formats": []
+  },
+  "resource_profile": {
+    "name": "__PROFILE__",
+    "structure_tiers": [
+      {
+        "tier_id": "structure-a",
+        "max_targets": __TIER_A__,
+        "depth": "full"
+      },
+      {
+        "tier_id": "structure-b",
+        "max_targets": __TIER_B__,
+        "depth": "focused"
+      },
+      {
+        "tier_id": "structure-c",
+        "max_targets": __TIER_C__,
+        "depth": "best-available"
+      }
+    ],
+    "design_max_targets": __DESIGN_MAX__
+  },
+  "external_work": {
+    "compute_authorized": false,
+    "experimental_submission_authorized": false,
+    "currency": "USD",
+    "budget_ledgers": [],
+    "data_destinations": []
+  },
+  "stages": [
+    {
+      "stage_id": "G0",
+      "name": "lock-research-contract",
+      "state": "in-progress",
+      "depends_on": []
+    },
+    {
+      "stage_id": "G1",
+      "name": "register-query-and-source-plan",
+      "state": "pending",
+      "depends_on": ["G0"]
+    },
+    {
+      "stage_id": "G2",
+      "name": "retrieve-literature-preprints-and-data",
+      "state": "pending",
+      "depends_on": ["G1"]
+    },
+    {
+      "stage_id": "G3",
+      "name": "build-uncapped-disease-entity-ledger",
+      "state": "pending",
+      "depends_on": ["G2"]
+    },
+    {
+      "stage_id": "G4",
+      "name": "confirm-surface-accessibility-and-context",
+      "state": "pending",
+      "depends_on": ["G3"]
+    },
+    {
+      "stage_id": "G5",
+      "name": "map-interventions-and-molecule-libraries",
+      "state": "pending",
+      "depends_on": ["G4"]
+    },
+    {
+      "stage_id": "G6",
+      "name": "reconcile-and-lock-census",
+      "state": "pending",
+      "depends_on": ["G4", "G5"]
+    },
+    {
+      "stage_id": "G7",
+      "name": "assign-structure-resource-tiers",
+      "state": "pending",
+      "depends_on": ["G6"],
+      "blocked_by": []
+    },
+    {
+      "stage_id": "G8",
+      "name": "build-structure-atlas",
+      "state": "pending",
+      "depends_on": ["G7"]
+    },
+    {
+      "stage_id": "G9",
+      "name": "select-actions-modalities-sites-and-screens",
+      "state": "pending",
+      "depends_on": ["G5", "G8"]
+    },
+    {
+      "stage_id": "G10",
+      "name": "prepare-or-run-design",
+      "state": "blocked",
+      "depends_on": ["G9"],
+      "blocked_by": ["external-work-not-authorized"]
+    },
+    {
+      "stage_id": "G11",
+      "name": "build-shareable-atlas",
+      "state": "pending",
+      "depends_on": ["G6", "G8", "G9"]
+    }
+  ],
+  "claim_ceiling": "plan-only"
+}

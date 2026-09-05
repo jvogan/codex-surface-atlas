@@ -1,0 +1,26 @@
+{
+  "schema_version": "codex-surface-search-ledger/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "as_of": "2026-01-15",
+  "coverage_state": "complete_within_recorded_scope",
+  "planned_source_classes": ["synthetic fixture"],
+  "sources": [
+    {
+      "query_id": "Q-SYNTHETIC-FIXTURE",
+      "source_class": "synthetic fixture",
+      "status": "complete",
+      "retrieved_at": "2026-01-15T00:00:00Z",
+      "records": 3,
+      "detail": "Invented records created for package testing; no external retrieval."
+    }
+  ],
+  "counts": {
+    "raw_records": 3,
+    "duplicate_records": 0,
+    "normalized_discovered_entities": 3,
+    "surface_targets": 3,
+    "excluded_from_surface_universe": 0,
+    "unresolved_records": 0
+  },
+  "limitations": ["All records are invented and do not represent biological, clinical, or computational evidence."]
+}

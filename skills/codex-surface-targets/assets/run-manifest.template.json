@@ -1,0 +1,91 @@
+{
+  "schema_version": "surface-atlas-design-run/v1",
+  "run_id": null,
+  "created_at": null,
+  "updated_at": null,
+  "state": "planned",
+  "request": {
+    "path": null,
+    "sha256": null,
+    "size_bytes": null
+  },
+  "artifact_store": {
+    "policy": "external-ssd-preferred",
+    "store_id": null,
+    "runtime_root_recorded_outside_portable_manifest": true,
+    "paths_are_relative": true
+  },
+  "route": {
+    "capability_id": null,
+    "provider": null,
+    "route_kind": null,
+    "model": null,
+    "model_version": null,
+    "checkpoint": null,
+    "precision": null,
+    "hardware": null,
+    "region": null,
+    "data_destination": null,
+    "scientific_qualification_state": "unbound"
+  },
+  "execution": {
+    "mode": "plan",
+    "request_count": 0,
+    "seeds": [],
+    "retry_limit": 0,
+    "started_at": null,
+    "finished_at": null,
+    "cleanup_state": "not-started"
+  },
+  "cost": {
+    "currency": "USD",
+    "ledger_id": null,
+    "ceiling": null,
+    "untouched_reserve": null,
+    "quoted": null,
+    "authorized": null,
+    "settled": 0,
+    "unsettled": 0,
+    "credits_used": 0,
+    "cash_charge": 0,
+    "worst_case_in_flight": 0,
+    "price_source": null,
+    "price_checked_at": null
+  },
+  "inputs": [],
+  "receipts": [],
+  "outputs": [],
+  "candidate_counts": {
+    "requested": 0,
+    "generated": 0,
+    "validated": 0,
+    "passed": 0,
+    "promoted": 0,
+    "delivered": 0
+  },
+  "validation": {
+    "target_identity": "pending",
+    "artifact_integrity": "pending",
+    "locked_site_contact": "pending",
+    "control_separation": "pending",
+    "independent_predictor": null,
+    "primary_metric": null,
+    "ranking_state": "unranked",
+    "browser_delivery": "pending"
+  },
+  "render_contract": {
+    "background": "#FFFFFF",
+    "background_alpha": 1,
+    "camera": "fixed-within-comparison",
+    "projection": "fixed-within-comparison",
+    "lighting": "fixed-within-comparison"
+  },
+  "stop": {
+    "triggered": false,
+    "rule_id": null,
+    "observed_at": null,
+    "details": null,
+    "further_submissions_blocked": false
+  },
+  "claim_ceiling": "plan-only"
+}

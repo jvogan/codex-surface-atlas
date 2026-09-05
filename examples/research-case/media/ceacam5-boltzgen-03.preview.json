@@ -1,0 +1,36 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "ceacam5-boltzgen-03",
+  "title": "CEACAM5 · BoltzGen 03",
+  "caption": "Boltz2-predicted CEACAM5 complex from the three-arm checkpoint. The campaign control gate failed; no candidate was promoted.",
+  "target_id": "T-ENSG00000105388",
+  "target_name": "CEACAM5",
+  "source_candidate_id": "ceacam5-cp3-boltzgen-03",
+  "coordinate_kind": "predicted",
+  "evidence_class": "computational-structure-hypothesis",
+  "status": "scored",
+  "promotion_state": "none",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": 20260931
+  },
+  "image": {
+    "path": "media/ceacam5-boltzgen-03.png",
+    "storage": "workspace",
+    "bytes": 102023,
+    "sha256": "6a04133da7d48e76481a40843a00a8743229ddf1b20e0cb3c23d3ab2d5b2cd23",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/ceacam5-boltzgen-03.pdb",
+      "storage": "workspace",
+      "bytes": 144808,
+      "sha256": "0e344a2524ff99d74110e42d4fe72978231ffad71fde81e2066fa96ccd59aff3",
+      "role": "predicted-complex-coordinate"
+    }
+  ]
+}

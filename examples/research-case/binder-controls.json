@@ -1,0 +1,146 @@
+{
+  "schema_version": "codex-surface-binder-control-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "binder_id": "control-negative-8bw0-vh-composition-shuffle",
+      "candidate_id": "control-negative-8bw0-vh-composition-shuffle",
+      "target_id": "T-ENSG00000105388",
+      "target_symbol": "CEACAM5",
+      "target_name": "CEACAM5",
+      "name": "Shuffled tusamitamab VH",
+      "preferred_name": "Shuffled tusamitamab VH",
+      "sequence": "DEYLPGYGNRVVGSLSSQCESGTWVHVGVRLREYTLYLPTRYSGLSMYSYCANASTGGASKLFFQGITAPTDIVTNGKMAAQAGTGAPGKSEPLVSSFSAVSWYQLVFTWDGQVSFS",
+      "sequence_length": 117,
+      "sequence_sha256": "892c0955f046338f0572371a87127b4cc966459921d72dff52cbb9b0c57e55aa",
+      "molecular_format": "shuffled antibody variable-domain sequence",
+      "screen_role": "negative-control",
+      "control_class": "negative-control",
+      "control_method": "amino-acid-composition-preserving sequence shuffle",
+      "complex_prediction_method": "Boltz2",
+      "execution_state": "scored",
+      "promotion_state": "none",
+      "evidence_class": "computational-control-hypothesis",
+      "aggregate_metrics": {
+        "ipsae_min_median": 0.0,
+        "target_contact_recall_median": 0.764706,
+        "scored_observation_count": 1,
+        "failed_observation_count": 0,
+        "aggregation_scope": "selected single scored observation"
+      },
+      "cofold_observations": [
+        {
+          "candidate_id": "control-negative-8bw0-vh-composition-shuffle",
+          "target_id": "T-ENSG00000105388",
+          "target_symbol": "CEACAM5",
+          "status": "scored",
+          "phase": "screen",
+          "seed": 20260931,
+          "predictor": "boltz2",
+          "model_revision": "boltz-2.2.1+cb04aeccdd480fd4db707f0bbafde538397fa2ac",
+          "sequence_sha256": "892c0955f046338f0572371a87127b4cc966459921d72dff52cbb9b0c57e55aa",
+          "predicted_complex_sha256": "b7d6789c49c4a3d5b3321bc6e21c73c5c3d4e1a8dd04d7dadce178a02e196bd1",
+          "ipsae_min": 0.0,
+          "target_contact_recall": 0.764706,
+          "target_contact_precision": 0.419355,
+          "target_alignment_rmsd": 1.9697,
+          "contact_count": 91,
+          "clash_count": 0,
+          "hotspot_recovery": 0.636364,
+          "site_contact_iou": 0.371429,
+          "offsite_contact_fraction": 0.580645,
+          "iptm": 0.237014,
+          "ptm": 0.613606,
+          "interface_plddt": 52.497049,
+          "interface_pae": 22.244377,
+          "dockq": 0.0261,
+          "metric_source_sha256": "ef3581816874ec9a2eda39048ee513027d6b31f5e741021eaca8d0fb2207a83a"
+        }
+      ],
+      "claim_ceiling": "negative control for the completed prediction checkpoint",
+      "artifacts": [
+        {
+          "path": "media/ceacam5-shuffled-vh-control.png",
+          "storage": "workspace",
+          "bytes": 111863,
+          "sha256": "f2da051a659c7d40d08a3b9e2cd52c869c81b916a429aed58016cdde96b849e4",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/ceacam5-shuffled-vh-control.preview.json",
+          "storage": "workspace",
+          "bytes": 1313,
+          "sha256": "68319a44821a1f56355ef1f93beb71886f315dcb9b2e8766a4431805e712a781",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/ceacam5-shuffled-vh-control.pdb",
+          "storage": "workspace",
+          "bytes": 176666,
+          "sha256": "b7d6789c49c4a3d5b3321bc6e21c73c5c3d4e1a8dd04d7dadce178a02e196bd1",
+          "role": "predicted-control-complex-coordinate"
+        },
+        {
+          "path": "media/sequences/ceacam5-shuffled-vh-control.fasta",
+          "storage": "workspace",
+          "bytes": 164,
+          "sha256": "831790ee74355ac177930cd8b9fb7b4a4c71f9b3b1e903224dad6c232277933c",
+          "role": "exact-sequence",
+          "media_type": "text/x-fasta"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "ceacam5-shuffled-vh-control",
+          "title": "CEACAM5 · shuffled VH control",
+          "evidence_class": "computational-structure-hypothesis",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/ceacam5-shuffled-vh-control.pdb",
+              "storage": "workspace",
+              "bytes": 176666,
+              "sha256": "b7d6789c49c4a3d5b3321bc6e21c73c5c3d4e1a8dd04d7dadce178a02e196bd1",
+              "role": "predicted-control-complex-coordinate",
+              "format": "pdb",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "chain A",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "CEACAM5 A3-B3 target construct, 177 residues · chain A"
+            },
+            {
+              "object_name": "complex",
+              "selection": "chain B",
+              "color": "#526A92",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "Composition-shuffled VH negative control · chain B"
+            }
+          ],
+          "sequence_artifact": {
+            "path": "media/sequences/ceacam5-shuffled-vh-control.fasta",
+            "storage": "workspace",
+            "bytes": 164,
+            "sha256": "831790ee74355ac177930cd8b9fb7b4a4c71f9b3b1e903224dad6c232277933c",
+            "role": "exact-sequence",
+            "media_type": "text/x-fasta",
+            "sequence_id": "control-negative-8bw0-vh-composition-shuffle",
+            "chain": "B"
+          }
+        }
+      ]
+    }
+  ]
+}

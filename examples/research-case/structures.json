@@ -1,0 +1,816 @@
+{
+  "schema_version": "codex-surface-structure-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "structure_id": "S-RCSB-6Y0F",
+      "target_id": "T-ENSG00000078098",
+      "target_ids": [
+        "T-ENSG00000078098"
+      ],
+      "target_symbols": [
+        "FAP"
+      ],
+      "primary_target_symbol": "FAP",
+      "accession": "6Y0F",
+      "source_database": "RCSB Protein Data Bank",
+      "source_url": "https://www.rcsb.org/structure/6Y0F",
+      "retrieval_date": "2026-09-04",
+      "source_revision": "2026-03-25T00:00:00.000+00:00",
+      "structure_class": "experimental drug/small-molecule complex",
+      "evidence_class": "experimental drug/small-molecule complex",
+      "construct": {
+        "construct_id": "RCSB:6Y0F:DEPOSITED",
+        "description": "Deposited experimental construct; exact polymer entities and chains are retained below.",
+        "isoform": null,
+        "sequence_state": "available-in-source-mmcif-and-entity-snapshots"
+      },
+      "chains": [
+        {
+          "campaign_chain_id": "A",
+          "entity_id": "1",
+          "label": "FAP soluble ectodomain tetramer in the asymmetric unit",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "A",
+          "uniprot_ids": [
+            "Q12884"
+          ]
+        },
+        {
+          "campaign_chain_id": "B",
+          "entity_id": "1",
+          "label": "FAP soluble ectodomain tetramer in the asymmetric unit",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "B",
+          "uniprot_ids": [
+            "Q12884"
+          ]
+        },
+        {
+          "campaign_chain_id": "C",
+          "entity_id": "1",
+          "label": "FAP soluble ectodomain tetramer in the asymmetric unit",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "C",
+          "uniprot_ids": [
+            "Q12884"
+          ]
+        },
+        {
+          "campaign_chain_id": "D",
+          "entity_id": "1",
+          "label": "FAP soluble ectodomain tetramer in the asymmetric unit",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "D",
+          "uniprot_ids": [
+            "Q12884"
+          ]
+        }
+      ],
+      "biological_assembly": {
+        "assembly_id": null,
+        "state": "not-resolved-by-anchor-manifest"
+      },
+      "interaction_class": "small-molecule-complex",
+      "polymer_entities": [
+        {
+          "auth_asym_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "entity_id": "1",
+          "manifest_label": "FAP soluble ectodomain tetramer in the asymmetric unit",
+          "partner_type": null,
+          "rcsb_description": "Prolyl endopeptidase FAP",
+          "role": "target",
+          "uniprot_ids": [
+            "Q12884"
+          ]
+        }
+      ],
+      "nonpolymer_entities": [
+        {
+          "auth_asym_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "comp_id": "NAG",
+          "entity_id": "5",
+          "name": "2-acetamido-2-deoxy-beta-D-glucopyranose",
+          "role": "glycan"
+        },
+        {
+          "auth_asym_ids": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "comp_id": "356",
+          "entity_id": "6",
+          "name": "8-[(3R)-3-Aminopiperidin-1-yl]-7-but-2-yn-1-yl-3-methyl-1-[(4-methylquinazolin-2-yl)methyl]-3,7-dihydro-1H-purine-2,6-d ione",
+          "role": "small-molecule-inhibitor"
+        }
+      ],
+      "selection_reason": "Human FAPalpha bound to linagliptin provides a deposited non-metal extracellular enzyme pocket and a redocking control.",
+      "limitations": [
+        "Biological assembly identity was not resolved by the anchor manifest.",
+        "Author-to-canonical residue mapping requires a target-specific preparation step.",
+        "Membrane orientation and material coordinate omissions require target-specific review."
+      ],
+      "claim_ceiling": "verified deposited experimental structure",
+      "name": "FAP with linagliptin (6Y0F)",
+      "bound_partner": "Linagliptin",
+      "artifacts": [
+        {
+          "path": "media/fap-6y0f-linagliptin.png",
+          "storage": "workspace",
+          "bytes": 323617,
+          "sha256": "72aade9955cc9032c454319c326bdb0f76cd4ad8c60f472f92430c99d814292b",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/fap-6y0f-linagliptin.preview.json",
+          "storage": "workspace",
+          "bytes": 1088,
+          "sha256": "40731d583022f7cd82ef14a778bd626db1114cfeac90299a2e0842a4751f0cac",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/fap-6y0f.cif",
+          "storage": "workspace",
+          "bytes": 4515536,
+          "sha256": "c8c1bf28d029050f89ab35090bdb059cd3909aa71b2070cf05bc1cbcd516b574",
+          "role": "deposited-coordinate"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "fap-6y0f-linagliptin",
+          "title": "FAP with linagliptin",
+          "evidence_class": "experimental-source-coordinate",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/fap-6y0f.cif",
+              "storage": "workspace",
+              "bytes": 4515536,
+              "sha256": "c8c1bf28d029050f89ab35090bdb059cd3909aa71b2070cf05bc1cbcd516b574",
+              "role": "deposited-coordinate",
+              "format": "cif",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain A+B+C+D",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "FAP \u00b7 chains A, B, C, D"
+            },
+            {
+              "object_name": "complex",
+              "selection": "resn 356",
+              "color": "#B98235",
+              "representation": "sticks",
+              "color_mode": "carbon-and-elements",
+              "transparency": 0.0,
+              "description": "Linagliptin \u00b7 carbon in ochre; oxygen red; nitrogen blue"
+            }
+          ]
+        }
+      ],
+      "resolution_angstrom": 2.924,
+      "resolution_source_field": "_refine.ls_d_res_high"
+    },
+    {
+      "structure_id": "S-RCSB-8BW0",
+      "target_id": "T-ENSG00000105388",
+      "target_ids": [
+        "T-ENSG00000105388"
+      ],
+      "target_symbols": [
+        "CEACAM5"
+      ],
+      "primary_target_symbol": "CEACAM5",
+      "accession": "8BW0",
+      "source_database": "RCSB Protein Data Bank",
+      "source_url": "https://www.rcsb.org/structure/8BW0",
+      "retrieval_date": "2026-09-04",
+      "source_revision": "2024-11-13T00:00:00.000+00:00",
+      "structure_class": "experimental antibody, peptide or other binder complex",
+      "evidence_class": "experimental antibody, peptide or other binder complex",
+      "construct": {
+        "construct_id": "RCSB:8BW0:DEPOSITED",
+        "description": "Deposited experimental construct; exact polymer entities and chains are retained below.",
+        "isoform": null,
+        "sequence_state": "available-in-source-mmcif-and-entity-snapshots"
+      },
+      "chains": [
+        {
+          "campaign_chain_id": "H",
+          "entity_id": "1",
+          "label": "tusamitamab Fab heavy chain",
+          "partner_type": "antibody-heavy-chain",
+          "role": "binder",
+          "source_chain_id": "H",
+          "uniprot_ids": []
+        },
+        {
+          "campaign_chain_id": "L",
+          "entity_id": "2",
+          "label": "tusamitamab Fab light chain",
+          "partner_type": "antibody-light-chain",
+          "role": "binder",
+          "source_chain_id": "L",
+          "uniprot_ids": []
+        },
+        {
+          "campaign_chain_id": "C",
+          "entity_id": "3",
+          "label": "CEACAM5 A3-B3 domains",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "C",
+          "uniprot_ids": [
+            "P06731"
+          ]
+        }
+      ],
+      "biological_assembly": {
+        "assembly_id": null,
+        "state": "not-resolved-by-anchor-manifest"
+      },
+      "interaction_class": "therapeutic-antibody-complex",
+      "polymer_entities": [
+        {
+          "auth_asym_ids": [
+            "H"
+          ],
+          "entity_id": "1",
+          "manifest_label": "tusamitamab Fab heavy chain",
+          "partner_type": "antibody-heavy-chain",
+          "rcsb_description": "Tusamitamab Fab heavy Chain",
+          "role": "therapeutic-binder",
+          "uniprot_ids": []
+        },
+        {
+          "auth_asym_ids": [
+            "L"
+          ],
+          "entity_id": "2",
+          "manifest_label": "tusamitamab Fab light chain",
+          "partner_type": "antibody-light-chain",
+          "rcsb_description": "Tusamitamab Light Chain",
+          "role": "therapeutic-binder",
+          "uniprot_ids": []
+        },
+        {
+          "auth_asym_ids": [
+            "C"
+          ],
+          "entity_id": "3",
+          "manifest_label": "CEACAM5 A3-B3 domains",
+          "partner_type": null,
+          "rcsb_description": "Carcinoembryonic antigen-related cell adhesion molecule 5",
+          "role": "target",
+          "uniprot_ids": [
+            "P06731"
+          ]
+        }
+      ],
+      "nonpolymer_entities": [
+        {
+          "auth_asym_ids": [
+            "C"
+          ],
+          "comp_id": "NAG",
+          "entity_id": "6",
+          "name": "2-acetamido-2-deoxy-beta-D-glucopyranose",
+          "role": "glycan"
+        }
+      ],
+      "selection_reason": "CEACAM5 A3-B3 domains bound by tusamitamab Fab.",
+      "limitations": [
+        "Biological assembly identity was not resolved by the anchor manifest.",
+        "Author-to-canonical residue mapping requires a target-specific preparation step.",
+        "Membrane orientation and material coordinate omissions require target-specific review."
+      ],
+      "claim_ceiling": "verified deposited experimental structure",
+      "name": "CEACAM5 with tusamitamab Fab (8BW0)",
+      "bound_partner": "Tusamitamab Fab",
+      "artifacts": [
+        {
+          "path": "media/ceacam5-8bw0-complex.png",
+          "storage": "workspace",
+          "bytes": 139717,
+          "sha256": "9e9ec6513d7df8ef1f58f8d78afb710c16e55421a3d0802322cbb8bc723fa843",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/ceacam5-8bw0-complex.preview.json",
+          "storage": "workspace",
+          "bytes": 1085,
+          "sha256": "97fbfb5225bac68b2b23289219a223b710a37ce815b07969daaed814c6c4c656",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/ceacam5-8bw0.cif",
+          "storage": "workspace",
+          "bytes": 405502,
+          "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+          "role": "deposited-coordinate"
+        },
+        {
+          "path": "media/ceacam5-8bw0-interface.png",
+          "storage": "workspace",
+          "bytes": 260415,
+          "sha256": "5a9bbac28995da1598ec78cc2929b7fe4f2c52a2cbb9d54b2524c24b15fd2087",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/ceacam5-8bw0-interface.preview.json",
+          "storage": "workspace",
+          "bytes": 1122,
+          "sha256": "2da5a430520f63625b0cf99a209b6c2ad748e4023de1e43f31698db2096bba1d",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/ceacam5-8bw0.cif",
+          "storage": "workspace",
+          "bytes": 405502,
+          "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+          "role": "deposited-coordinate"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "ceacam5-8bw0-complex",
+          "title": "CEACAM5 with tusamitamab",
+          "evidence_class": "experimental-source-coordinate",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/ceacam5-8bw0.cif",
+              "storage": "workspace",
+              "bytes": 405502,
+              "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+              "role": "deposited-coordinate",
+              "format": "cif",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain H",
+              "color": "#526A92",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "tusamitamab Fab heavy chain \u00b7 chain H"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain L",
+              "color": "#A95F58",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "tusamitamab Fab light chain \u00b7 chain L"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain C",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "CEACAM5 A3-B3 domains \u00b7 chain C"
+            }
+          ]
+        },
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "ceacam5-8bw0-interface",
+          "title": "Where tusamitamab contacts CEACAM5",
+          "evidence_class": "experimental-source-coordinate",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/ceacam5-8bw0.cif",
+              "storage": "workspace",
+              "bytes": 405502,
+              "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+              "role": "deposited-coordinate",
+              "format": "cif",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain H",
+              "color": "#526A92",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.68,
+              "description": "tusamitamab Fab heavy chain \u00b7 chain H"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain L",
+              "color": "#A95F58",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.68,
+              "description": "tusamitamab Fab light chain \u00b7 chain L"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain C",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "CEACAM5 A3-B3 domains \u00b7 chain C"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain C and resi 511+590+621-625+635-641+659-661",
+              "color": "#B98235",
+              "representation": "sticks",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "CEACAM5 contact residues"
+            }
+          ]
+        }
+      ],
+      "resolution_angstrom": 3.11,
+      "resolution_source_field": "_em_3d_reconstruction.resolution"
+    },
+    {
+      "structure_id": "S-RCSB-8TCG",
+      "target_id": "T-ENSG00000115221",
+      "target_ids": [
+        "T-ENSG00000115221",
+        "T-ENSG00000138448"
+      ],
+      "target_symbols": [
+        "ITGB6",
+        "ITGAV"
+      ],
+      "primary_target_symbol": "ITGB6",
+      "accession": "8TCG",
+      "source_database": "RCSB Protein Data Bank",
+      "source_url": "https://www.rcsb.org/structure/8TCG",
+      "retrieval_date": "2026-09-04",
+      "source_revision": "2024-11-06T00:00:00.000+00:00",
+      "structure_class": "experimental antibody, peptide or other binder complex",
+      "evidence_class": "experimental antibody, peptide or other binder complex",
+      "construct": {
+        "construct_id": "RCSB:8TCG:DEPOSITED",
+        "description": "Deposited experimental construct; exact polymer entities and chains are retained below.",
+        "isoform": null,
+        "sequence_state": "available-in-source-mmcif-and-entity-snapshots"
+      },
+      "chains": [
+        {
+          "campaign_chain_id": "A",
+          "entity_id": "1",
+          "label": "integrin alpha-V",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "A",
+          "uniprot_ids": [
+            "P06756"
+          ]
+        },
+        {
+          "campaign_chain_id": "B",
+          "entity_id": "2",
+          "label": "integrin beta-6",
+          "partner_type": null,
+          "role": "target",
+          "source_chain_id": "B",
+          "uniprot_ids": [
+            "P18564"
+          ]
+        },
+        {
+          "campaign_chain_id": "C",
+          "entity_id": "3",
+          "label": "B6_BP_dslf minibinder",
+          "partner_type": "miniprotein",
+          "role": "binder",
+          "source_chain_id": "C",
+          "uniprot_ids": []
+        }
+      ],
+      "biological_assembly": {
+        "assembly_id": null,
+        "state": "not resolved in the selected evidence"
+      },
+      "interaction_class": "miniprotein-complex",
+      "polymer_entities": [
+        {
+          "auth_asym_ids": [
+            "A"
+          ],
+          "entity_id": "1",
+          "manifest_label": "integrin alpha-V",
+          "partner_type": null,
+          "rcsb_description": "Integrin alpha-V heavy chain",
+          "role": "target",
+          "uniprot_ids": [
+            "P06756"
+          ]
+        },
+        {
+          "auth_asym_ids": [
+            "B"
+          ],
+          "entity_id": "2",
+          "manifest_label": "integrin beta-6",
+          "partner_type": null,
+          "rcsb_description": "Integrin beta-6",
+          "role": "target",
+          "uniprot_ids": [
+            "P18564"
+          ]
+        },
+        {
+          "auth_asym_ids": [
+            "C"
+          ],
+          "entity_id": "3",
+          "manifest_label": "B6_BP_dslf minibinder",
+          "partner_type": "miniprotein",
+          "rcsb_description": "Minibinder B6_BP_dslf",
+          "role": "research-binder",
+          "uniprot_ids": []
+        }
+      ],
+      "nonpolymer_entities": [
+        {
+          "auth_asym_ids": [
+            "A"
+          ],
+          "comp_id": "CA",
+          "entity_id": "5",
+          "name": "CALCIUM ION",
+          "role": "structural-cofactor"
+        },
+        {
+          "auth_asym_ids": [
+            "A"
+          ],
+          "comp_id": "NAG",
+          "entity_id": "6",
+          "name": "2-acetamido-2-deoxy-beta-D-glucopyranose",
+          "role": "glycan"
+        },
+        {
+          "auth_asym_ids": [
+            "B"
+          ],
+          "comp_id": "MN",
+          "entity_id": "7",
+          "name": "MANGANESE (II) ION",
+          "role": "structural-cofactor"
+        }
+      ],
+      "selection_reason": "Integrin alpha-v beta-6 bound by an engineered minibinder.",
+      "limitations": [
+        "Biological assembly identity was not resolved by the anchor manifest.",
+        "Author-to-canonical residue mapping requires a target-specific preparation step.",
+        "Membrane orientation and material coordinate omissions require target-specific review."
+      ],
+      "claim_ceiling": "verified deposited experimental structure",
+      "name": "ITGB6\u2013ITGAV complex with engineered minibinder (8TCG)",
+      "bound_partner": "B6_BP_dslf engineered minibinder",
+      "artifacts": [
+        {
+          "path": "media/itgb6-8tcg-complex.png",
+          "storage": "workspace",
+          "bytes": 240109,
+          "sha256": "329608c1351d3a57b73cdeb4e4697ed5d0688f8632e1a8f3772edf39024b0f96",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/itgb6-8tcg-complex.preview.json",
+          "storage": "workspace",
+          "bytes": 1218,
+          "sha256": "1df4caac67fd002a32e61243ca7ee7b31dc558efad9ccb0504ece34cb28d661f",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/itgb6-8tcg.cif",
+          "storage": "workspace",
+          "bytes": 1231531,
+          "sha256": "d20de7d83575386cdaacb2cde9131984f2c306ea4806330dc35bcb98cb7f642e",
+          "role": "deposited-coordinate"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "itgb6-8tcg-complex",
+          "title": "Integrin alpha-v beta-6 with a minibinder",
+          "evidence_class": "experimental-source-coordinate",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/itgb6-8tcg.cif",
+              "storage": "workspace",
+              "bytes": 1231531,
+              "sha256": "d20de7d83575386cdaacb2cde9131984f2c306ea4806330dc35bcb98cb7f642e",
+              "role": "deposited-coordinate",
+              "format": "cif",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain A",
+              "color": "#A5BAB5",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "integrin alpha-V \u00b7 chain A"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain B",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "integrin beta-6 \u00b7 chain B"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain C",
+              "color": "#526A92",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "B6_BP_dslf minibinder \u00b7 chain C"
+            }
+          ]
+        }
+      ],
+      "resolution_angstrom": 3.4,
+      "resolution_source_field": "_em_3d_reconstruction.resolution"
+    },
+    {
+      "structure_id": "S-RCSB-8TCG-RFD3-AB",
+      "target_id": "T-ENSG00000115221",
+      "target_ids": [
+        "T-ENSG00000115221",
+        "T-ENSG00000138448"
+      ],
+      "accession": "8TCG",
+      "source_database": "RCSB Protein Data Bank",
+      "source_url": "https://www.rcsb.org/structure/8TCG",
+      "retrieval_date": "2026-09-04",
+      "source_revision": "2024-11-06T00:00:00.000+00:00",
+      "structure_class": "derived target-only design preparation",
+      "evidence_class": "derived from an experimental deposited binder complex",
+      "construct": {
+        "construct_id": "RCSB:8TCG:TARGET-AB",
+        "coordinate_format": "pdb",
+        "description": "Deposited integrin alpha-v beta-6 target complex with minibinder chain C removed; chain A contains author residues 1-440 and chain B contains author residues 113-354.",
+        "isoform": "RCSB 8TCG deposited constructs",
+        "preparation": "First deposited model; standard polymer residues and heavy atoms from author chains A and B; author residue and chain identifiers retained.",
+        "source_coordinate_format": "mmcif"
+      },
+      "chains": [
+        {
+          "campaign_chain_id": "A",
+          "role": "target",
+          "source_chain_id": "A"
+        },
+        {
+          "campaign_chain_id": "B",
+          "role": "target",
+          "source_chain_id": "B"
+        }
+      ],
+      "interaction_class": "target-only design input",
+      "source_interaction_class": "miniprotein-complex",
+      "coordinate_role": "target-only design input derived from a deposited target-binder complex",
+      "source_structure_id": "S-RCSB-8TCG",
+      "reference_interface": {
+        "binder_interface_residue_count": 16,
+        "contact_threshold_angstrom": 5.0,
+        "design_hotspot_count": 10,
+        "evidence_class": "experimental-reference-binder-interface",
+        "interface_id": "IF-RCSB-8TCG-AB-C",
+        "residue_contact_pair_count": 60,
+        "target_interface_residue_count": 33
+      },
+      "limitations": [
+        "The deposited complex is a 3.4 angstrom cryo-EM coordinate model.",
+        "The conditioning subset is restricted to beta-6 chain B for the single-design-chain RFdiffusion3 input, while alpha-v chain A remains in the receptor coordinate as structural context.",
+        "The target-only compatibility PDB omits deposited minibinder chain C, glycans, and metal ions; the source mmCIF remains the canonical experimental coordinate record."
+      ],
+      "claim_ceiling": "target-only preparation derived from deposited 8TCG; interface measurements describe the deposited complex",
+      "name": "ITGB6\u2013ITGAV prepared target from 8TCG",
+      "bound_partner": "No bound partner (minibinder removed)",
+      "target_symbols": [
+        "ITGB6",
+        "ITGAV"
+      ],
+      "primary_target_symbol": "ITGB6",
+      "artifacts": [
+        {
+          "path": "media/itgb6-prepared-target.png",
+          "storage": "workspace",
+          "bytes": 221883,
+          "sha256": "ca46a0186b6d00534bab6bc34510935f6d20c04da03e992e0e2cabf82a8f6360",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/itgb6-prepared-target.preview.json",
+          "storage": "workspace",
+          "bytes": 1332,
+          "sha256": "dd717b66e090d2f48666e1f4255181f27fe20648a569abcba92a26a12b67c2cc",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/itgb6-prepared-target.pdb",
+          "storage": "workspace",
+          "bytes": 426960,
+          "sha256": "d75553018fdedd33abb9e97015ad88773eef30b5f79944590d95db97e78cc1ec",
+          "role": "derived-target-coordinate"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "itgb6-prepared-target",
+          "title": "Integrin alpha-v beta-6: prepared target",
+          "evidence_class": "experimental-source-coordinate-derived-view",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/itgb6-prepared-target.pdb",
+              "storage": "workspace",
+              "bytes": 426960,
+              "sha256": "d75553018fdedd33abb9e97015ad88773eef30b5f79944590d95db97e78cc1ec",
+              "role": "derived-target-coordinate",
+              "format": "pdb",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain A",
+              "color": "#A5BAB5",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "Integrin alpha-v \u00b7 chain A"
+            },
+            {
+              "object_name": "complex",
+              "selection": "polymer.protein and chain B",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "Integrin beta-6 \u00b7 chain B"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

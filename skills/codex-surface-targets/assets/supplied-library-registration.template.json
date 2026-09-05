@@ -1,0 +1,40 @@
+{
+  "schema_version": "surface-atlas-supplied-library-registration/v1",
+  "atlas_id": "ATLAS_ID",
+  "library_id": "SUPPLIED_LIBRARY_ID",
+  "purpose": "Register supplied molecule or sequence identities before site-scoped screening.",
+  "inputs": [
+    {
+      "input_library_id": "supplied-sdf",
+      "format": "sdf",
+      "molecular_class": "small-molecule",
+      "path": "inputs/compounds.sdf",
+      "panel": "user-supplied"
+    },
+    {
+      "input_library_id": "supplied-smiles",
+      "format": "smiles",
+      "molecular_class": "natural-product",
+      "path": "inputs/natural-products.smi",
+      "panel": "user-supplied"
+    },
+    {
+      "input_library_id": "supplied-csv",
+      "format": "csv",
+      "molecular_class": "metabolite",
+      "path": "inputs/metabolites.csv",
+      "smiles_column": "smiles",
+      "id_column": "id",
+      "name_column": "name",
+      "panel": "user-supplied"
+    },
+    {
+      "input_library_id": "supplied-binders",
+      "format": "fasta",
+      "molecular_class": "modified-peptide",
+      "path": "inputs/binders.fasta",
+      "modification_sidecar": "inputs/binder-modifications.json",
+      "panel": "user-supplied"
+    }
+  ]
+}

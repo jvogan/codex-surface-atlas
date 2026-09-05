@@ -1,0 +1,75 @@
+{
+  "schema_version": "codex-surface-screening-result-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "source_run": {
+    "run_id": "synthetic-screen-run-a",
+    "screen_id": "synthetic-screen-a",
+    "route": "illustrative-local-route-a",
+    "model_version": "synthetic-model-v1",
+    "execution_state": "planned",
+    "claim_ceiling": "computational-screening-hypothesis"
+  },
+  "summary": {
+    "execution_complete": false,
+    "claim_ceiling": "computational-screening-hypothesis",
+    "record_count": 2,
+    "control_count": 1
+  },
+  "claim_ceiling": "computational-screening-hypothesis",
+  "confirmation_context": {
+    "state": "requested-but-unrun",
+    "requested": true,
+    "scope": "source-run",
+    "detail": "The reference control is requested for this run. No job or measured result is recorded."
+  },
+  "records": [
+    {
+      "screening_result_id": "SCR-EMBER-A-PROSPECTIVE",
+      "run_id": "synthetic-screen-run-a",
+      "target_id": "T-EMBER",
+      "molecule_id": "M-LANTERN-01",
+      "molecule_name": "Lantern probe B",
+      "site_id": "SITE-EMBER-LOOP",
+      "route": "illustrative-local-route-a",
+      "model_version": "synthetic-model-v1",
+      "scoring_function": "illustrative-pose-score",
+      "score_units": "arbitrary units",
+      "screen_role": "prospective",
+      "control_role": "prospective",
+      "execution_state": "planned",
+      "pose_score": null,
+      "control_status": "requested-but-unrun",
+      "confirmation_context": {
+        "state": "requested-but-unrun",
+        "scope": "synthetic-screen-run-a",
+        "detail": "This prospective record has no score until the run executes."
+      },
+      "evidence_class": "computational-screening-hypothesis",
+      "claim_ceiling": "computational-screening-hypothesis"
+    },
+    {
+      "screening_result_id": "SCR-EMBER-A-REFERENCE",
+      "run_id": "synthetic-screen-run-a",
+      "target_id": "T-EMBER",
+      "molecule_id": "M-EMBER-01",
+      "molecule_name": "Ember fragment A",
+      "site_id": "SITE-EMBER-LOOP",
+      "route": "illustrative-local-route-a",
+      "model_version": "synthetic-model-v1",
+      "scoring_function": "illustrative-pose-score",
+      "score_units": "arbitrary units",
+      "screen_role": "reference-control",
+      "control_role": "reference-control",
+      "execution_state": "planned",
+      "pose_score": null,
+      "control_status": "requested-but-unrun",
+      "confirmation_context": {
+        "state": "requested-but-unrun",
+        "scope": "synthetic-screen-run-a",
+        "detail": "This reference control is scoped to run A and has no score until the run executes."
+      },
+      "evidence_class": "computational-screening-hypothesis",
+      "claim_ceiling": "computational-screening-hypothesis"
+    }
+  ]
+}

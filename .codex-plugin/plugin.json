@@ -1,0 +1,38 @@
+{
+  "name": "codex-surface-atlas",
+  "version": "0.1.0",
+  "description": "Use Rosalind Workbench plugins in Codex to find disease-associated cell-surface targets, inspect binding sites, and run selected screening or binder workflows.",
+  "author": {
+    "name": "Jacob Vogan",
+    "url": "https://github.com/jvogan"
+  },
+  "homepage": "https://github.com/jvogan/codex-surface-atlas#readme",
+  "repository": "https://github.com/jvogan/codex-surface-atlas",
+  "license": "MIT",
+  "keywords": [
+    "surface-targets",
+    "drug-discovery",
+    "bioinformatics",
+    "scientific-workflows"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Surface Atlas",
+    "shortDescription": "Map disease-altered surface targets",
+    "longDescription": "Build a surface-target census, compare disease and normal-tissue evidence, inspect interventions and accessible sites, and review selected screening or binder results in linked target pages.",
+    "developerName": "Jacob Vogan",
+    "category": "Scientific Research",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "brandColor": "#245C55",
+    "composerIcon": "./.github/assets/surface-atlas-icon-256.png",
+    "logo": "./.github/assets/surface-atlas-icon-512.png",
+    "defaultPrompt": [
+      "Use Rosalind Workbench database and literature plugins to find cell-surface targets for this disease and compare disease and normal-tissue evidence.",
+      "Register my molecule library, retrieve known ligand evidence with Rosalind Workbench plugins, and select a structure and site for screening.",
+      "Review this atlas workspace and produce an offline report with target pages, structures, results, and source citations."
+    ]
+  }
+}

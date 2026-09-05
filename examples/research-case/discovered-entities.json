@@ -1,0 +1,191 @@
+{
+  "schema_version": "codex-surface-discovered-entity-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "entity_id": "E-SEED-MONDO_0005007-FAP",
+      "preferred_label": "FAP",
+      "entity_class": "seed-symbol",
+      "aliases": [],
+      "identifiers": {
+        "approved_symbol": "FAP"
+      },
+      "source_type": "query-expansion-seed",
+      "association": {
+        "association_score": null,
+        "datasource_scores": [],
+        "favorable_evidence": false,
+        "source_id": "query-expansion-seed"
+      },
+      "surface_disposition": "surface-target",
+      "target_id": "T-ENSG00000078098",
+      "uniprot_surface_fields": {
+        "interpretation": "provisional retrieval signal for G4 reconciliation",
+        "matched_entries": [
+          {
+            "accession": "Q12884",
+            "entry_name": "SEPR_HUMAN",
+            "gene_names": "FAP",
+            "lipidation": "",
+            "provisional_surface_signal": "extracellular-topology",
+            "signal_peptide": "",
+            "subcellular_location": "SUBCELLULAR LOCATION: [Prolyl endopeptidase FAP]: Cell surface {ECO:0000269|PubMed:10593948, ECO:0000269|PubMed:16175601, ECO:0000269|PubMed:17105646, ECO:0000269|PubMed:24717288, ECO:0000269|PubMed:7911242}. Cell membrane {ECO:0000269|PubMed:12376466, ECO:0000269|PubMed:16651416, ECO:0000269|PubMed:9065413, ECO:0000303|PubMed:10455171}; Single-pass type II membrane protein {ECO:0000255}. Cell projection, lamellipodium membrane {ECO:0000269|PubMed:16651416, ECO:0000269|PubMed:9065413}; Single-pass type II membrane protein {ECO:0000255}. Cell projection, invadopodium membrane {ECO:0000269|PubMed:12376466, ECO:0000269|PubMed:16651416, ECO:0000269|PubMed:7923219, ECO:0000269|PubMed:9065413, ECO:0000303|PubMed:10455171}; Single-pass type II membrane protein {ECO:0000255}. Cell projection, ruffle membrane {ECO:0000303|PubMed:10455171}; Single-pass type II membrane protein {ECO:0000255}. Membrane {ECO:0000269|PubMed:2172980}; Single-pass type II membrane protein {ECO:0000255}. Note=Localized on cell surface with lamellipodia and invadopodia membranes and on shed vesicles. Colocalized with DPP4 at invadopodia and lamellipodia membranes of migratory activated endothelial cells in collagenous matrix. Colocalized with DPP4 on endothelial cells of capillary-like microvessels but not large vessels within invasive breast ductal carcinoma. Anchored and enriched preferentially by integrin alpha-3/beta-1 at invadopodia, plasma membrane protrusions that correspond to sites of cell invasion, in a collagen-dependent manner. Localized at plasma and ruffle membranes in a collagen-independent manner. Colocalized with PLAUR preferentially at the cell surface of invadopodia membranes in a cytoskeleton-, integrin- and vitronectin-dependent manner. Concentrated at invadopodia membranes, specialized protrusions of the ventral plasma membrane in a fibrobectin-dependent manner. Colocalizes with extracellular components (ECM), such as collagen fibers and fibronectin. {ECO:0000269|PubMed:10593948, ECO:0000269|PubMed:12376466, ECO:0000269|PubMed:16175601, ECO:0000269|PubMed:16651416, ECO:0000269|PubMed:17105646, ECO:0000269|PubMed:2172980, ECO:0000269|PubMed:24717288, ECO:0000269|PubMed:7911242, ECO:0000269|PubMed:7923219, ECO:0000269|PubMed:9065413, ECO:0000303|PubMed:10455171}.; SUBCELLULAR LOCATION: [Antiplasmin-cleaving enzyme FAP, soluble form]: Secreted {ECO:0000269|PubMed:14751930, ECO:0000269|PubMed:16223769, ECO:0000269|PubMed:24371721}. Note=Found in blood plasma and serum. {ECO:0000269|PubMed:14751930, ECO:0000269|PubMed:16223769, ECO:0000269|PubMed:24371721}.; SUBCELLULAR LOCATION: [Isoform 2]: Cytoplasm {ECO:0000303|PubMed:10644713}.",
+            "topological_domain": "TOPO_DOM 1..4; /note=\"Cytoplasmic\"; /evidence=\"ECO:0000255, ECO:0000303|PubMed:14751930\"; TOPO_DOM 26..760; /note=\"Extracellular\"; /evidence=\"ECO:0000255, ECO:0000303|PubMed:14751930\"",
+            "transmembrane": "TRANSMEM 5..25; /note=\"Helical; Signal-anchor for type II membrane protein\"; /evidence=\"ECO:0000255\""
+          }
+        ],
+        "provisional_surface_signal": "extracellular-topology",
+        "source_id": "uniprot",
+        "source_name": "UniProt",
+        "source_snapshot": {
+          "bytes": 10393994,
+          "filename": "human-reviewed-surface-fields.tsv",
+          "sha256": "17b0f61e4a17f57e099de54d7f736ebc882936bad87c33c269d35bd6714be77d"
+        }
+      },
+      "reconciliation": {
+        "canonical_uniprot_accessions": [
+          "Q12884"
+        ],
+        "policy_id": "surface-reconciliation-and-prioritization/v0.2",
+        "query_seed_present": true,
+        "query_seed_used_as_favorable_evidence": false,
+        "reason_code": "positive-surfaceome-evidence",
+        "reasons": [
+          "TCSA reports global GESP membership.",
+          "Reviewed UniProt topology includes an extracellular domain."
+        ],
+        "state": "retained",
+        "tcsa_overlay_present": true
+      }
+    },
+    {
+      "entity_id": "E-OT-MONDO_0005007-ENSG00000105388",
+      "preferred_label": "CEACAM5",
+      "entity_class": "protein-coding-gene",
+      "aliases": [],
+      "identifiers": {
+        "approved_symbol": "CEACAM5",
+        "ensembl_gene_id": "ENSG00000105388"
+      },
+      "source_type": "disease-association",
+      "association": {
+        "associated_target_rank": 11,
+        "datasource_scores": [
+          {
+            "id": "europepmc",
+            "score": 0.2535178546674215
+          }
+        ],
+        "score": 0.030824262319350516,
+        "source_date": "2026-09-04",
+        "source_id": "open-targets",
+        "source_name": "Open Targets Platform",
+        "source_snapshot": {
+          "bytes": 116484,
+          "filename": "MONDO_0005007-associated-targets.json",
+          "sha256": "6385e9eb0fc1df40850114d2c3a352662982b4c1071c97562000e8d25fe22e9a"
+        },
+        "source_url": "https://api.platform.opentargets.org/api/v4/graphql"
+      },
+      "surface_disposition": "surface-target",
+      "target_id": "T-ENSG00000105388",
+      "uniprot_surface_fields": {
+        "interpretation": "provisional retrieval signal for G4 reconciliation",
+        "matched_entries": [
+          {
+            "accession": "P06731",
+            "entry_name": "CEAM5_HUMAN",
+            "gene_names": "CEACAM5 CEA",
+            "lipidation": "LIPID 676; /note=\"GPI-anchor amidated alanine\"; /evidence=\"ECO:0000269|PubMed:3387431\"",
+            "provisional_surface_signal": "plasma-membrane-annotation",
+            "signal_peptide": "SIGNAL 1..34",
+            "subcellular_location": "SUBCELLULAR LOCATION: Cell membrane {ECO:0000269|PubMed:10864933, ECO:0000269|PubMed:18086185, ECO:0000269|PubMed:2317824, ECO:0000269|PubMed:2803308, ECO:0000269|PubMed:3387431}; Lipid-anchor, GPI-anchor {ECO:0000269|PubMed:10864933, ECO:0000269|PubMed:18086185, ECO:0000269|PubMed:2317824, ECO:0000269|PubMed:2803308, ECO:0000269|PubMed:3387431}; Extracellular side {ECO:0000269|PubMed:10864933, ECO:0000269|PubMed:18086185, ECO:0000269|PubMed:2317824, ECO:0000269|PubMed:2803308, ECO:0000269|PubMed:3387431}. Apical cell membrane {ECO:0000269|PubMed:10436421}. Cell surface {ECO:0000269|PubMed:2317824, ECO:0000269|PubMed:2803308}. Note=Localized to the apical glycocalyx surface. {ECO:0000269|PubMed:10436421}.",
+            "topological_domain": "",
+            "transmembrane": ""
+          }
+        ],
+        "provisional_surface_signal": "plasma-membrane-annotation",
+        "source_id": "uniprot",
+        "source_name": "UniProt",
+        "source_snapshot": {
+          "bytes": 10393994,
+          "filename": "human-reviewed-surface-fields.tsv",
+          "sha256": "17b0f61e4a17f57e099de54d7f736ebc882936bad87c33c269d35bd6714be77d"
+        }
+      },
+      "reconciliation": {
+        "canonical_uniprot_accessions": [
+          "P06731"
+        ],
+        "policy_id": "surface-reconciliation-and-prioritization/v0.2",
+        "query_seed_present": true,
+        "query_seed_used_as_favorable_evidence": false,
+        "reason_code": "positive-surfaceome-evidence",
+        "reasons": [
+          "TCSA reports global GESP membership.",
+          "Reviewed UniProt records an integral or GPI-anchored membrane form."
+        ],
+        "state": "retained",
+        "tcsa_overlay_present": true
+      }
+    },
+    {
+      "entity_id": "E-SEED-MONDO_0005007-ITGB6",
+      "preferred_label": "ITGB6",
+      "entity_class": "seed-symbol",
+      "aliases": [],
+      "identifiers": {
+        "approved_symbol": "ITGB6"
+      },
+      "source_type": "query-expansion-seed",
+      "association": {
+        "association_score": null,
+        "datasource_scores": [],
+        "favorable_evidence": false,
+        "source_id": "query-expansion-seed"
+      },
+      "surface_disposition": "surface-target",
+      "target_id": "T-ENSG00000115221",
+      "uniprot_surface_fields": {
+        "interpretation": "provisional retrieval signal for G4 reconciliation",
+        "matched_entries": [
+          {
+            "accession": "P18564",
+            "entry_name": "ITB6_HUMAN",
+            "gene_names": "ITGB6",
+            "lipidation": "",
+            "provisional_surface_signal": "extracellular-topology",
+            "signal_peptide": "SIGNAL 1..21; /evidence=\"ECO:0000255\"",
+            "subcellular_location": "SUBCELLULAR LOCATION: Cell membrane {ECO:0000269|PubMed:17545607}; Single-pass type I membrane protein {ECO:0000305}. Cell junction, focal adhesion {ECO:0000269|PubMed:17158881}.",
+            "topological_domain": "TOPO_DOM 22..709; /note=\"Extracellular\"; /evidence=\"ECO:0000255\"; TOPO_DOM 731..788; /note=\"Cytoplasmic\"; /evidence=\"ECO:0000255\"",
+            "transmembrane": "TRANSMEM 710..730; /note=\"Helical\"; /evidence=\"ECO:0000255\""
+          }
+        ],
+        "provisional_surface_signal": "extracellular-topology",
+        "source_id": "uniprot",
+        "source_name": "UniProt",
+        "source_snapshot": {
+          "bytes": 10393994,
+          "filename": "human-reviewed-surface-fields.tsv",
+          "sha256": "17b0f61e4a17f57e099de54d7f736ebc882936bad87c33c269d35bd6714be77d"
+        }
+      },
+      "reconciliation": {
+        "canonical_uniprot_accessions": [
+          "P18564"
+        ],
+        "policy_id": "surface-reconciliation-and-prioritization/v0.2",
+        "query_seed_present": true,
+        "query_seed_used_as_favorable_evidence": false,
+        "reason_code": "positive-surfaceome-evidence",
+        "reasons": [
+          "TCSA reports global GESP membership.",
+          "Reviewed UniProt topology includes an extracellular domain."
+        ],
+        "state": "retained",
+        "tcsa_overlay_present": true
+      }
+    }
+  ]
+}

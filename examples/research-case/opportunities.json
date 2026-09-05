@@ -1,0 +1,162 @@
+{
+  "schema_version": "codex-surface-opportunity-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "opportunity_id": "O-CEACAM5-8BW0-REPLACEMENT-GENERATOR-OUTCOME",
+      "target_id": "T-ENSG00000105388",
+      "molecular_job": "replacement structure-generator comparison",
+      "desired_effect": "Evaluate bounded Genie3 site-conditioned and ESMFold2 unconditioned replacement-generator routes under the frozen CEACAM5 target-recovery and site-contact gates.",
+      "site_id": "SITE-RCSB-8BW0-tusamitamab-fab",
+      "structure_id": "S-RCSB-8BW0",
+      "rationale": "The replacement campaign tested whether fast cloud generators could recover the locked tusamitamab extracellular footprint after FreeBindCraft produced no promotable artifact, while preserving explicit route limitations and stop gates.",
+      "principal_risks": [
+        "The Genie3 trace recovered the requested site footprint but failed the frozen target-coordinate lock, so sequence filling and scale generation were not allowed.",
+        "ESMFold2 was unconditioned and generated exploratory folds rather than target-site-conditioned binders; all three failed the frozen site-contact gate.",
+        "None of the four structures was promoted or shown to bind CEACAM5."
+      ],
+      "method_posture": "executed-bounded-replacement-generator-comparison-no-promotion"
+    },
+    {
+      "opportunity_id": "O-FAP-6Y0F-DEFINED-POCKET-SCREEN-HANDOFF",
+      "target_id": "T-ENSG00000078098",
+      "molecular_job": "defined-pocket small-molecule screening handoff",
+      "desired_effect": "Record the completed FAP/6Y0F charge-aware docking screen as a hypothesis-generation handoff; do not infer affinity or inhibition.",
+      "site_id": "SITE-RCSB-6Y0F-linagliptin",
+      "structure_id": "S-RCSB-6Y0F",
+      "rationale": "The deposited linagliptin pocket supplied a locked extracellular FAP chain-A control and passed the unchanged redocking gate after charge-aware receptor preparation.",
+      "principal_risks": [
+        "Docking scores and pose geometry are computational hypotheses only.",
+        "The five confirmation passers retain reactivity, aggregation, solubility, and assay-interference review flags where recorded.",
+        "No measured binding, target engagement, or disease efficacy is established."
+      ],
+      "method_posture": "completed-defined-pocket-computational-screening"
+    },
+    {
+      "opportunity_id": "O-ITGB6-8TCG-REFERENCE-RECOVERY",
+      "target_id": "T-ENSG00000115221",
+      "molecular_job": "block",
+      "selected_format": "miniprotein",
+      "desired_effect": "Recover the deposited B6_BP_dslf footprint as a target-conditioned positive control for the structure-to-design lane.",
+      "site_id": "SITE-RCSB-8TCG-b6-bp-dslf-miniprotein",
+      "site": {
+        "campaign_site_lock_id": "SITE-8TCG-BETA6-REFERENCE",
+        "evidence": "Ten beta-6 residues were selected deterministically from the heavy-atom contact network observed between target chains A/B and deposited minibinder chain C in RCSB 8TCG. The complete 33-residue target footprint and all 60 residue contact pairs remain in the interface artifact.",
+        "evidence_class": "experimental-reference-binder-interface",
+        "excluded_regions": [
+          "deposited minibinder chain C",
+          "nonpolymer glycans and metal ions in the RFdiffusion3 compatibility input"
+        ],
+        "full_observed_target_interface_residue_count": 33,
+        "mode": "reference-interface",
+        "numbering_scheme": "RCSB author numbering mapped to sequential campaign numbering per target chain",
+        "reference_interface_id": "IF-RCSB-8TCG-AB-C",
+        "residues": [
+          {
+            "author_residue_number": "183",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 71,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "126",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 14,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "219",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 107,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "129",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 17,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "221",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 109,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "218",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 106,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "127",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 15,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "316",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 204,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "220",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 108,
+            "insertion_code": null
+          },
+          {
+            "author_residue_number": "217",
+            "campaign_chain_id": "B",
+            "campaign_residue_number": 105,
+            "insertion_code": null
+          }
+        ],
+        "source_actionable_site_id": "SITE-RCSB-8TCG-b6-bp-dslf-miniprotein",
+        "uncertain_regions": [
+          "alpha-v chain A contributes 11 observed interface residues but is retained as receptor context rather than a conditioning-hotspot chain"
+        ]
+      },
+      "structure_id": "S-RCSB-8TCG-RFD3-AB",
+      "rationale": "The deposited target-minibinder complex supplies an exact public reference geometry for testing target preparation, conditioning, artifact transport, and interface recovery before disease-opportunity fan-out.",
+      "principal_risks": [
+        "A recovered reference footprint validates geometric conditioning and transport; it does not establish binding affinity, selectivity, or therapeutic activity.",
+        "The beta-6 conditioning subset represents an interface that also contacts alpha-v chain A."
+      ],
+      "constraints": [
+        "Retain both target chains A and B in every generated complex.",
+        "Use the beta-6 hotspot set from the packaged reference-interface measurements.",
+        "Score recovery against the complete deposited A/B target footprint as well as the beta-6 conditioning subset.",
+        "Reject outputs that do not contact the locked beta-6 site."
+      ],
+      "controls": {
+        "negative": [
+          "the same target preparation with hotspot conditioning removed",
+          "a size-matched off-site beta-6 surface patch"
+        ],
+        "positive": [
+          "RCSB 8TCG deposited B6_BP_dslf chain C interface"
+        ]
+      },
+      "evidence_refs": [
+        "RCSB:8TCG",
+        "DOI:10.1038/s41467-023-41272-z"
+      ],
+      "claim_ceiling": "completed computational geometry-recovery screen with no promoted generated candidate",
+      "method_posture": "deposited-complex-evaluation",
+      "format_options": [
+        {
+          "format": "miniprotein",
+          "length_range": [
+            55,
+            95
+          ],
+          "suitability": "preferred"
+        }
+      ],
+      "job_parameters": {},
+      "allowed_modifications": []
+    }
+  ]
+}

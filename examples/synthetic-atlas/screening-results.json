@@ -1,0 +1,23 @@
+{
+  "schema_version": "codex-surface-screening-result-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "screening_result_id": "SCR-LANTERN-01",
+      "molecule_id": "M-LANTERN-01",
+      "molecule_name": "Lantern probe B",
+      "target_id": "T-LANTERN",
+      "site": "invented extracellular loop",
+      "route": "illustrative-local-route",
+      "model_version": "synthetic-model-v1",
+      "screen_role": "prospective",
+      "execution_state": "planned",
+      "pose_score": null,
+      "seed_agreement": {"state": "not-assessed", "successful_comparable_seed_count": 0, "top_score_span_kcal_mol": null},
+      "control_status": "not run",
+      "failure_reason": null,
+      "evidence_class": "computational-screening-hypothesis",
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

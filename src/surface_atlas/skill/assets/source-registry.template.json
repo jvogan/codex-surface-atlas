@@ -1,0 +1,453 @@
+{
+  "schema_version": "codex-surface-source-registry/v0.1",
+  "registry_id": "rosalind-companion-sources-2026-09-04",
+  "purpose": "Provider-neutral source plan for an uncapped disease Surface Atlas census.",
+  "capability_plan": {
+    "rosalind_workbench": {
+      "role": "launcher and settings surface; companion skills supply scientific operations"
+    },
+    "direct_viewers": [
+      {
+        "capability": "structure-viewer:structure-viewer",
+        "role": "inspect retained structures, chains, residues, contacts, and saved viewer state"
+      },
+      {
+        "capability": "sequence-viewer:biological-sequence-viewer",
+        "role": "inspect isoforms, alignments, construct boundaries, and designed sequences"
+      },
+      {
+        "capability": "stereofold:stereo-structure",
+        "role": "optional stereoscopic structure presentation"
+      }
+    ],
+    "interpretation": "discovery-required marks a suggested capability to check in the current task. Record installed skills, callable tools, and selected routes when preparing the project."
+  },
+  "sources": [
+    {
+      "source_id": "pubmed",
+      "name": "PubMed via NCBI Entrez",
+      "source_class": "literature-and-preprints",
+      "role": "primary disease, target, surface, mechanism, and treatment literature",
+      "phase": "disease-census",
+      "query_families": ["disease-association", "surface-identity", "surface-proteomics", "cell-state", "normal-exposure", "intervention"],
+      "retrieval_scope": "citation metadata, abstracts, identifiers, and query-specific result pages",
+      "pagination": "history-server cursor or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-literature:ncbi-entrez-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "pmc",
+      "name": "PubMed Central",
+      "source_class": "literature-and-preprints",
+      "role": "open full text, figures, supplements, methods, and cited identifiers",
+      "phase": "disease-census",
+      "query_families": ["surface-identity", "surface-proteomics", "intervention"],
+      "retrieval_scope": "open-access full text and article-level artifacts",
+      "pagination": "cursor or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-literature:ncbi-pmc-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "biorxiv",
+      "name": "bioRxiv",
+      "source_class": "literature-and-preprints",
+      "role": "biology preprints that may precede indexed literature",
+      "phase": "disease-census",
+      "query_families": ["disease-association", "surface-identity", "surface-proteomics", "intervention"],
+      "retrieval_scope": "preprint metadata and text where supplied by the source",
+      "pagination": "date window with cursor or page state",
+      "integration": {"kind": "skill", "capability": "life-sciences-literature:biorxiv-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "medrxiv",
+      "name": "medRxiv",
+      "source_class": "literature-and-preprints",
+      "role": "clinical and translational preprints",
+      "phase": "disease-census",
+      "query_families": ["disease-association", "intervention"],
+      "retrieval_scope": "preprint metadata and text where supplied by the source",
+      "pagination": "date window with cursor or page state",
+      "integration": {"kind": "skill", "capability": "life-sciences-literature:biorxiv-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "open-targets",
+      "name": "Open Targets Platform",
+      "source_class": "disease-association-and-genetics",
+      "role": "disease-target associations and evidence links",
+      "phase": "disease-census",
+      "query_families": ["disease-association", "genetics-and-cohort"],
+      "retrieval_scope": "target-disease evidence and linked data types",
+      "pagination": "cursor or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:opentargets-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "cbioportal",
+      "name": "cBioPortal",
+      "source_class": "cancer-genomics-and-expression",
+      "role": "study, cohort, mutation, copy-number, expression, and clinical-context discovery",
+      "phase": "disease-census",
+      "query_families": ["genetics-and-cohort", "disease-association"],
+      "retrieval_scope": "public cancer-study metadata and scoped molecular records",
+      "pagination": "study and record pages",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:cbioportal-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "civic",
+      "name": "CIViC",
+      "source_class": "cancer-genomics-and-expression",
+      "role": "curated cancer variant, evidence, and therapy associations",
+      "phase": "disease-census",
+      "query_families": ["genetics-and-cohort", "intervention"],
+      "retrieval_scope": "variant evidence and disease-specific assertions",
+      "pagination": "cursor or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:civic-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "clinicaltrials",
+      "name": "ClinicalTrials.gov",
+      "source_class": "interventions-and-trials",
+      "role": "trial discovery, intervention names, status, eligibility, and disease context",
+      "phase": "disease-census",
+      "query_families": ["intervention"],
+      "retrieval_scope": "study records and intervention fields",
+      "pagination": "page token",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:clinicaltrials-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "cellxgene",
+      "name": "CELLxGENE",
+      "source_class": "single-cell-and-spatial-context",
+      "role": "discover relevant datasets and cell annotations",
+      "phase": "disease-census",
+      "query_families": ["cell-state"],
+      "retrieval_scope": "dataset and collection metadata only through the visible skill",
+      "pagination": "cursor or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:cellxgene-skill", "state": "discovery-required"},
+      "limitation": "Metadata discovery is not gene-by-cell matrix analysis. Matrix retrieval and analysis are separate recorded work."
+    },
+    {
+      "source_id": "biostudies-arrayexpress",
+      "name": "BioStudies and ArrayExpress",
+      "source_class": "single-cell-and-spatial-context",
+      "role": "discover public functional-genomics and expression studies",
+      "phase": "disease-census",
+      "query_families": ["cell-state", "genetics-and-cohort"],
+      "retrieval_scope": "study metadata and accession-level record discovery",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:biostudies-arrayexpress-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "encode",
+      "name": "ENCODE",
+      "source_class": "single-cell-and-spatial-context",
+      "role": "functional-genomics experiments and regulatory context",
+      "phase": "disease-census",
+      "query_families": ["cell-state", "genetics-and-cohort"],
+      "retrieval_scope": "experiment metadata and public record discovery",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:encode-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "pride",
+      "name": "PRIDE",
+      "source_class": "surface-and-proteome-studies",
+      "role": "proteomics dataset discovery and accession tracking",
+      "phase": "disease-census",
+      "query_families": ["surface-proteomics"],
+      "retrieval_scope": "dataset metadata, accessions, and linked files",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:pride-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "proteomexchange",
+      "name": "ProteomeXchange",
+      "source_class": "surface-and-proteome-studies",
+      "role": "proteomics dataset discovery across member repositories",
+      "phase": "disease-census",
+      "query_families": ["surface-proteomics"],
+      "retrieval_scope": "dataset metadata, accessions, and linked files",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:proteomexchange-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "human-protein-atlas",
+      "name": "Human Protein Atlas",
+      "source_class": "normal-tissue-and-cell-context",
+      "role": "normal tissue, cell type, pathology, and subcellular-context lookup after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["normal-exposure", "surface-identity"],
+      "retrieval_scope": "target-level normal and pathology context",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:human-protein-atlas-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "bgee",
+      "name": "Bgee",
+      "source_class": "normal-tissue-and-cell-context",
+      "role": "cross-species expression and anatomy context after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["normal-exposure"],
+      "retrieval_scope": "gene expression and anatomy annotations",
+      "pagination": "target records or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:bgee-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "uniprot",
+      "name": "UniProt",
+      "source_class": "sequence-topology-and-proteoforms",
+      "role": "canonical identity, isoforms, topology, domains, extracellular regions, and functional annotations",
+      "phase": "target-expansion",
+      "query_families": ["target-identity", "surface-identity"],
+      "retrieval_scope": "protein records and feature annotations",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:uniprot-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "ensembl",
+      "name": "Ensembl",
+      "source_class": "sequence-topology-and-proteoforms",
+      "role": "gene, transcript, protein, variant, and coordinate identity resolution",
+      "phase": "target-expansion",
+      "query_families": ["target-identity", "genetics-and-cohort"],
+      "retrieval_scope": "stable identifiers, transcripts, coordinates, and variants",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:ensembl-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "clinvar",
+      "name": "ClinVar",
+      "source_class": "disease-association-and-genetics",
+      "role": "clinical-variant assertions after target or locus identity is known",
+      "phase": "target-expansion",
+      "query_families": ["genetics-and-cohort"],
+      "retrieval_scope": "variant assertions and review status",
+      "pagination": "target records or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:clinvar-variation-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "gnomad",
+      "name": "gnomAD",
+      "source_class": "disease-association-and-genetics",
+      "role": "population-variation context after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["genetics-and-cohort"],
+      "retrieval_scope": "population allele-frequency and constraint context",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:gnomad-graphql-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "gwas-catalog",
+      "name": "GWAS Catalog",
+      "source_class": "disease-association-and-genetics",
+      "role": "trait and association discovery after disease or locus identity is known",
+      "phase": "disease-census",
+      "query_families": ["disease-association", "genetics-and-cohort"],
+      "retrieval_scope": "association metadata and linked variants",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:gwas-catalog-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "gtex-eqtl",
+      "name": "GTEx eQTL",
+      "source_class": "normal-tissue-and-cell-context",
+      "role": "normal-tissue expression and eQTL context after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["normal-exposure", "genetics-and-cohort"],
+      "retrieval_scope": "tissue-level eQTL records",
+      "pagination": "target records or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:gtex-eqtl-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "eqtl-catalogue",
+      "name": "eQTL Catalogue",
+      "source_class": "normal-tissue-and-cell-context",
+      "role": "study-specific eQTL context after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["normal-exposure", "genetics-and-cohort"],
+      "retrieval_scope": "study and cell-context eQTL records",
+      "pagination": "target records or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:eqtl-catalogue-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "reactome",
+      "name": "Reactome",
+      "source_class": "pathways-and-interactions",
+      "role": "pathway context after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["pathway-network"],
+      "retrieval_scope": "pathway membership and pathway records",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:reactome-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "string",
+      "name": "STRING",
+      "source_class": "pathways-and-interactions",
+      "role": "interaction-network context after target identity is known",
+      "phase": "target-expansion",
+      "query_families": ["pathway-network"],
+      "retrieval_scope": "network edges and evidence channels",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:string-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "quickgo",
+      "name": "QuickGO",
+      "source_class": "pathways-and-interactions",
+      "role": "gene-ontology annotations, including cellular component evidence",
+      "phase": "target-expansion",
+      "query_families": ["surface-identity", "pathway-network"],
+      "retrieval_scope": "annotation records and evidence codes",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:quickgo-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "chembl",
+      "name": "ChEMBL",
+      "source_class": "interventions-and-trials",
+      "role": "target-linked bioactivity, drug, assay, and mechanism records",
+      "phase": "target-expansion",
+      "query_families": ["intervention"],
+      "retrieval_scope": "molecule, assay, target, and activity records",
+      "pagination": "cursor or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:chembl-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "bindingdb",
+      "name": "BindingDB",
+      "source_class": "interventions-and-trials",
+      "role": "target-linked binding measurements and ligand records",
+      "phase": "target-expansion",
+      "query_families": ["intervention"],
+      "retrieval_scope": "protein-ligand binding records and assay context",
+      "pagination": "page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:bindingdb-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "pubchem",
+      "name": "PubChem",
+      "source_class": "interventions-and-trials",
+      "role": "compound identity, bioassay links, and structure retrieval",
+      "phase": "target-expansion",
+      "query_families": ["intervention"],
+      "retrieval_scope": "compound, substance, and assay records",
+      "pagination": "identifier pages or batches",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:pubchem-pug-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "chebi",
+      "name": "ChEBI",
+      "source_class": "interventions-and-trials",
+      "role": "small-molecule and chemical-entity identity normalization",
+      "phase": "target-expansion",
+      "query_families": ["intervention"],
+      "retrieval_scope": "chemical-entity records and ontology relations",
+      "pagination": "identifier records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:chebi-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "pharmgkb",
+      "name": "PharmGKB",
+      "source_class": "interventions-and-trials",
+      "role": "pharmacogenomic context after target or intervention identity is known",
+      "phase": "target-expansion",
+      "query_families": ["intervention"],
+      "retrieval_scope": "drug, gene, variant, and pathway annotations",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:pharmgkb-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "rcsb-pdb",
+      "name": "RCSB Protein Data Bank",
+      "source_class": "structures-and-complexes",
+      "role": "experimental structures, assemblies, ligands, complexes, constructs, and coordinates",
+      "phase": "target-expansion",
+      "query_families": ["structure-complex"],
+      "retrieval_scope": "structure metadata, coordinates, experimental method, and entity records",
+      "pagination": "target records or page windows",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:rcsb-pdb-skill", "state": "discovery-required"}
+    },
+    {
+      "source_id": "alphafold-database",
+      "name": "AlphaFold Protein Structure Database",
+      "source_class": "structures-and-complexes",
+      "role": "predicted monomer models and confidence annotations",
+      "phase": "target-expansion",
+      "query_families": ["structure-complex"],
+      "retrieval_scope": "predicted monomer coordinates and confidence data",
+      "pagination": "target records",
+      "integration": {"kind": "skill", "capability": "life-sciences-databases:alphafold-skill", "state": "discovery-required"},
+      "limitation": "Predicted monomers establish model availability; ligand, antibody, receptor, and binder complexes require complex-specific records."
+    }
+  ],
+  "additional_sources": [
+    {
+      "source_id": "gdc",
+      "name": "NCI Genomic Data Commons",
+      "needed_for": "cancer cohort and harmonized molecular-data expansion",
+      "status": "discovery-required",
+      "recorded_action": "Register a public-API or imported-data lane with its own query receipt and data-version record."
+    },
+    {
+      "source_id": "cosmic",
+      "name": "COSMIC",
+      "needed_for": "somatic-mutation and cancer-gene curation",
+      "status": "discovery-required",
+      "recorded_action": "Register licensed-access or manual-import provenance before use."
+    },
+    {
+      "source_id": "depmap",
+      "name": "DepMap",
+      "needed_for": "cell-line dependency and expression context",
+      "status": "discovery-required",
+      "recorded_action": "Register a public-download or imported-data lane and retain release identifiers."
+    },
+    {
+      "source_id": "oncokb",
+      "name": "OncoKB",
+      "needed_for": "oncology actionability interpretation",
+      "status": "discovery-required",
+      "recorded_action": "Register access terms and version before importing evidence."
+    },
+    {
+      "source_id": "icgc",
+      "name": "International Cancer Genome Consortium",
+      "needed_for": "international cancer-cohort discovery",
+      "status": "discovery-required",
+      "recorded_action": "Register a public-API or imported-data lane with release provenance."
+    },
+    {
+      "source_id": "rare-disease-ontology-suite",
+      "name": "Orphanet, OMIM, MONDO, HPO, and GARD",
+      "needed_for": "rare-disease naming, phenotype, and epidemiology expansion",
+      "status": "discovery-required",
+      "recorded_action": "Register each source and its identifier mapping as an explicit imported or public-API lane."
+    },
+    {
+      "source_id": "surfaceome-database",
+      "name": "Dedicated surfaceome database",
+      "needed_for": "surfaceome-specific catalog cross-check",
+      "status": "discovery-required",
+      "recorded_action": "Use literature, topology, proteomics, and normal-context lanes; record any added source separately."
+    },
+    {
+      "source_id": "regulatory-labels",
+      "name": "FDA and EMA label sources",
+      "needed_for": "authoritative approval-label and safety wording",
+      "status": "discovery-required",
+      "recorded_action": "Register official label URLs, retrieval dates, and document hashes in the intervention lane."
+    },
+    {
+      "source_id": "biologic-modality-registry",
+      "name": "Therapeutic antibody, ADC, CAR, TCR, radiopharmaceutical, and payload registries",
+      "needed_for": "modality-specific construct and payload coverage",
+      "status": "discovery-required",
+      "recorded_action": "Use source-specific literature, trial, sponsor, and regulatory records with stable identifiers."
+    },
+    {
+      "source_id": "spatial-matrix-analysis",
+      "name": "Gene-by-cell and spatial expression matrix analysis",
+      "needed_for": "cell-level target quantification and spatial co-localization",
+      "status": "discovery-required",
+      "recorded_action": "Create a separate data-download and matrix-analysis workflow; preserve matrix version, preprocessing, and execution receipt."
+    }
+  ]
+}

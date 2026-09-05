@@ -1,0 +1,33 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "fap-6y0f-linagliptin",
+  "title": "FAP with linagliptin",
+  "caption": "Deposited structure 6Y0F. The deposited asymmetric unit contains four FAP copies and linagliptin.",
+  "target_id": "T-ENSG00000078098",
+  "pdb_id": "6Y0F",
+  "coordinate_kind": "deposited",
+  "evidence_class": "experimental-source-coordinate",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": null
+  },
+  "image": {
+    "path": "media/fap-6y0f-linagliptin.png",
+    "storage": "workspace",
+    "bytes": 323617,
+    "sha256": "72aade9955cc9032c454319c326bdb0f76cd4ad8c60f472f92430c99d814292b",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/fap-6y0f.cif",
+      "storage": "workspace",
+      "bytes": 4515536,
+      "sha256": "c8c1bf28d029050f89ab35090bdb059cd3909aa71b2070cf05bc1cbcd516b574",
+      "role": "deposited-coordinate"
+    }
+  ]
+}

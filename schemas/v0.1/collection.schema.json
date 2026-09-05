@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jvogan/codex-surface-atlas/blob/main/schemas/v0.1/collection.schema.json",
+  "title": "Codex Surface Atlas collection v0.1",
+  "description": "Envelope schema for the versioned collection files. It preserves open, modality-specific record fields; use the CLI validator for cross-file links, tier limits, artifact hashes, and duplicate IDs.",
+  "type": "object",
+  "required": ["schema_version", "atlas_id", "records"],
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "codex-surface-discovered-entity-collection/v0.1",
+        "codex-surface-target-collection/v0.1",
+        "codex-surface-exclusion-collection/v0.1",
+        "codex-surface-intervention-collection/v0.1",
+        "codex-surface-molecular-library/v0.1",
+        "codex-surface-screening-result-collection/v0.1",
+        "codex-surface-structure-collection/v0.1",
+        "codex-surface-opportunity-collection/v0.1",
+        "codex-surface-capability-collection/v0.1"
+      ]
+    },
+    "atlas_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["path", "sha256", "bytes"],
+              "properties": {
+                "path": {"type": "string", "minLength": 1},
+                "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "bytes": {"type": "integer", "minimum": 0}
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "anyOf": [
+          {"required": ["entity_id"], "properties": {"entity_id": {"type": "string", "minLength": 1}}},
+          {"required": ["exclusion_id"], "properties": {"exclusion_id": {"type": "string", "minLength": 1}}},
+          {"required": ["intervention_id"], "properties": {"intervention_id": {"type": "string", "minLength": 1}}},
+          {"required": ["molecule_id"], "properties": {"molecule_id": {"type": "string", "minLength": 1}}},
+          {"required": ["screening_result_id"], "properties": {"screening_result_id": {"type": "string", "minLength": 1}}},
+          {"required": ["structure_id"], "properties": {"structure_id": {"type": "string", "minLength": 1}}},
+          {"required": ["opportunity_id"], "properties": {"opportunity_id": {"type": "string", "minLength": 1}}},
+          {"required": ["capability_id"], "properties": {"capability_id": {"type": "string", "minLength": 1}}},
+          {"required": ["target_id"], "properties": {"target_id": {"type": "string", "minLength": 1}}}
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"schema_version": {"const": "codex-surface-capability-collection/v0.1"}}, "required": ["schema_version"]},
+      "then": {
+        "properties": {
+          "records": {
+            "items": {
+              "required": ["state"],
+              "properties": {"state": {"enum": ["catalogued", "visible", "bound", "preflight-passed", "scientifically-qualified", "executed", "artifact-validated"]}}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"schema_version": {"const": "codex-surface-discovered-entity-collection/v0.1"}}, "required": ["schema_version"]},
+      "then": {
+        "properties": {
+          "records": {
+            "items": {
+              "required": ["surface_disposition"],
+              "properties": {"surface_disposition": {"enum": ["pending", "surface-target", "excluded-from-surface-universe", "unresolved"]}},
+              "allOf": [
+                {"if": {"properties": {"surface_disposition": {"const": "surface-target"}}, "required": ["surface_disposition"]}, "then": {"required": ["target_id"]}},
+                {"if": {"properties": {"surface_disposition": {"const": "excluded-from-surface-universe"}}, "required": ["surface_disposition"]}, "then": {"required": ["exclusion_id"]}}
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

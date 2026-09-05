@@ -1,0 +1,7 @@
+interface:
+  display_name: "Codex Surface Atlas"
+  short_description: "Map disease-altered surface targets"
+  brand_color: "#245C55"
+  default_prompt: "Use $codex-surface-targets with Rosalind Workbench plugins to find disease-associated surface targets and compare their evidence, binding sites, and selected screening or binder results."
+policy:
+  allow_implicit_invocation: true

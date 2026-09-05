@@ -1,0 +1,28 @@
+{
+  "schema_version": "codex-surface-intervention-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "intervention_id": "I-EMBER-01",
+      "target_id": "T-EMBER",
+      "intervention_name": "Ember occupancy probe",
+      "molecular_format": "illustrative fragment",
+      "action": "occupancy",
+      "development_status": "synthetic-example",
+      "binding_site": "invented extracellular pocket",
+      "evidence_class": "synthetic fixture",
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "intervention_id": "I-LANTERN-01",
+      "target_id": "T-LANTERN",
+      "intervention_name": "Lantern delivery prototype",
+      "molecular_format": "illustrative binder",
+      "action": "payload delivery",
+      "development_status": "synthetic-example",
+      "binding_site": "invented extracellular loop",
+      "evidence_class": "synthetic fixture",
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

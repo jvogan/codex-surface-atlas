@@ -1,0 +1,294 @@
+{
+  "schema_version": "surface-atlas-example-preview-collection/v1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "ceacam5-8bw0-complex",
+      "title": "CEACAM5 with tusamitamab",
+      "caption": "Deposited structure 8BW0. The CEACAM5 A3-B3 fragment is shown with the tusamitamab Fab.",
+      "target_id": "T-ENSG00000105388",
+      "pdb_id": "8BW0",
+      "coordinate_kind": "deposited",
+      "evidence_class": "experimental-source-coordinate",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": null
+      },
+      "image": {
+        "path": "media/ceacam5-8bw0-complex.png",
+        "storage": "workspace",
+        "bytes": 139717,
+        "sha256": "9e9ec6513d7df8ef1f58f8d78afb710c16e55421a3d0802322cbb8bc723fa843",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/ceacam5-8bw0.cif",
+          "storage": "workspace",
+          "bytes": 405502,
+          "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+          "role": "deposited-coordinate"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "ceacam5-8bw0-interface",
+      "title": "Where tusamitamab contacts CEACAM5",
+      "caption": "Deposited structure 8BW0. Ochre residues mark the recorded CEACAM5 contact site within 5 angstroms of the Fab.",
+      "target_id": "T-ENSG00000105388",
+      "pdb_id": "8BW0",
+      "coordinate_kind": "deposited",
+      "evidence_class": "experimental-source-coordinate",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": null
+      },
+      "image": {
+        "path": "media/ceacam5-8bw0-interface.png",
+        "storage": "workspace",
+        "bytes": 260415,
+        "sha256": "5a9bbac28995da1598ec78cc2929b7fe4f2c52a2cbb9d54b2524c24b15fd2087",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/ceacam5-8bw0.cif",
+          "storage": "workspace",
+          "bytes": 405502,
+          "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+          "role": "deposited-coordinate"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "itgb6-8tcg-complex",
+      "title": "Integrin alpha-v beta-6 with a minibinder",
+      "caption": "Deposited structure 8TCG. Integrin alpha-v beta-6 bound by an engineered minibinder.",
+      "target_id": "T-ENSG00000115221",
+      "target_name": "ITGB6",
+      "complex_partner": {
+        "gene_symbol": "ITGAV",
+        "role": "alpha-v heterodimer partner"
+      },
+      "pdb_id": "8TCG",
+      "coordinate_kind": "deposited",
+      "evidence_class": "experimental-source-coordinate",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": null
+      },
+      "image": {
+        "path": "media/itgb6-8tcg-complex.png",
+        "storage": "workspace",
+        "bytes": 240109,
+        "sha256": "329608c1351d3a57b73cdeb4e4697ed5d0688f8632e1a8f3772edf39024b0f96",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/itgb6-8tcg.cif",
+          "storage": "workspace",
+          "bytes": 1231531,
+          "sha256": "d20de7d83575386cdaacb2cde9131984f2c306ea4806330dc35bcb98cb7f642e",
+          "role": "deposited-coordinate"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "itgb6-prepared-target",
+      "title": "Integrin alpha-v beta-6: prepared target",
+      "caption": "Target-only coordinates derived from deposited structure 8TCG. The design input retains alpha-v chain A and beta-6 chain B.",
+      "target_id": "T-ENSG00000115221",
+      "target_name": "ITGB6",
+      "complex_partner": {
+        "gene_symbol": "ITGAV",
+        "role": "alpha-v heterodimer partner in the deposited source complex"
+      },
+      "pdb_id": "8TCG",
+      "coordinate_kind": "derived-target-only",
+      "evidence_class": "experimental-source-coordinate-derived-view",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": null
+      },
+      "image": {
+        "path": "media/itgb6-prepared-target.png",
+        "storage": "workspace",
+        "bytes": 221883,
+        "sha256": "ca46a0186b6d00534bab6bc34510935f6d20c04da03e992e0e2cabf82a8f6360",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/itgb6-prepared-target.pdb",
+          "storage": "workspace",
+          "bytes": 426960,
+          "sha256": "d75553018fdedd33abb9e97015ad88773eef30b5f79944590d95db97e78cc1ec",
+          "role": "derived-target-coordinate"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "fap-egcg-docked",
+      "title": "EGCG docked into FAP",
+      "caption": "Computational docking into FAP. EGCG (NP011), seed 11, pose 1; protein side chains within 5 angstroms are shown as sticks.",
+      "target_id": "T-ENSG00000078098",
+      "target_name": "FAP",
+      "pdb_id": "6Y0F",
+      "coordinate_kind": "docked",
+      "evidence_class": "computational-screening-hypothesis",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": 11
+      },
+      "image": {
+        "path": "media/fap-egcg-docked.png",
+        "storage": "workspace",
+        "bytes": 102798,
+        "sha256": "817862539e1be8e92700f15339bc634ea11c2bbeb55c2963247c57650cc3fdcb",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/fap-prepared-receptor.pdb",
+          "storage": "workspace",
+          "bytes": 478232,
+          "sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120",
+          "role": "prepared-receptor-coordinate"
+        },
+        {
+          "path": "media/coordinates/fap-egcg-pose-ensemble.sdf",
+          "storage": "workspace",
+          "bytes": 34191,
+          "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c",
+          "role": "docked-pose-ensemble"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "fap-6y0f-linagliptin",
+      "title": "FAP with linagliptin",
+      "caption": "Deposited structure 6Y0F. The deposited asymmetric unit contains four FAP copies and linagliptin.",
+      "target_id": "T-ENSG00000078098",
+      "pdb_id": "6Y0F",
+      "coordinate_kind": "deposited",
+      "evidence_class": "experimental-source-coordinate",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": null
+      },
+      "image": {
+        "path": "media/fap-6y0f-linagliptin.png",
+        "storage": "workspace",
+        "bytes": 323617,
+        "sha256": "72aade9955cc9032c454319c326bdb0f76cd4ad8c60f472f92430c99d814292b",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/fap-6y0f.cif",
+          "storage": "workspace",
+          "bytes": 4515536,
+          "sha256": "c8c1bf28d029050f89ab35090bdb059cd3909aa71b2070cf05bc1cbcd516b574",
+          "role": "deposited-coordinate"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "ceacam5-boltzgen-03",
+      "title": "CEACAM5 · BoltzGen 03",
+      "caption": "Boltz2-predicted CEACAM5 complex from the three-arm checkpoint. The campaign control gate failed; no candidate was promoted.",
+      "target_id": "T-ENSG00000105388",
+      "target_name": "CEACAM5",
+      "source_candidate_id": "ceacam5-cp3-boltzgen-03",
+      "coordinate_kind": "predicted",
+      "evidence_class": "computational-structure-hypothesis",
+      "status": "scored",
+      "promotion_state": "none",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": 20260931
+      },
+      "image": {
+        "path": "media/ceacam5-boltzgen-03.png",
+        "storage": "workspace",
+        "bytes": 102023,
+        "sha256": "6a04133da7d48e76481a40843a00a8743229ddf1b20e0cb3c23d3ab2d5b2cd23",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/ceacam5-boltzgen-03.pdb",
+          "storage": "workspace",
+          "bytes": 144808,
+          "sha256": "0e344a2524ff99d74110e42d4fe72978231ffad71fde81e2066fa96ccd59aff3",
+          "role": "predicted-complex-coordinate"
+        }
+      ]
+    },
+    {
+      "schema_version": "surface-atlas-example-preview/v1",
+      "preview_id": "ceacam5-shuffled-vh-control",
+      "title": "CEACAM5 · shuffled VH control",
+      "caption": "Boltz2-predicted CEACAM5 complex from the three-arm checkpoint. The campaign control gate failed; no candidate was promoted.",
+      "target_id": "T-ENSG00000105388",
+      "target_name": "CEACAM5",
+      "source_candidate_id": "control-negative-8bw0-vh-composition-shuffle",
+      "coordinate_kind": "predicted",
+      "evidence_class": "computational-structure-hypothesis",
+      "status": "scored",
+      "promotion_state": "none",
+      "method": {
+        "renderer": "PyMOL",
+        "renderer_version": "3.1.7.2",
+        "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+        "seed": 20260931
+      },
+      "image": {
+        "path": "media/ceacam5-shuffled-vh-control.png",
+        "storage": "workspace",
+        "bytes": 111863,
+        "sha256": "f2da051a659c7d40d08a3b9e2cd52c869c81b916a429aed58016cdde96b849e4",
+        "role": "structure-preview",
+        "media_type": "image/png"
+      },
+      "coordinates": [
+        {
+          "path": "media/coordinates/ceacam5-shuffled-vh-control.pdb",
+          "storage": "workspace",
+          "bytes": 176666,
+          "sha256": "b7d6789c49c4a3d5b3321bc6e21c73c5c3d4e1a8dd04d7dadce178a02e196bd1",
+          "role": "predicted-control-complex-coordinate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+{
+  "schema_version": "codex-surface-screening-result-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "screening_result_id": "SR-FAP-6Y0F-356-smina-v1-NP011",
+      "molecule_id": "NP011",
+      "molecule_name": "(−)-Epigallocatechin-3-gallate",
+      "molecular_class": "catechin",
+      "target_id": "T-ENSG00000078098",
+      "target_name": "FAP",
+      "site": "6Y0F chain A deposited-ligand pocket",
+      "site_id": "FAP-6Y0F-356-pocket",
+      "route": "defined-pocket Smina/Vinardo on fal Serverless",
+      "run_id": "fap-6y0f-defined-pocket-screen-v1",
+      "screen_id": "FAP-6Y0F-356-smina-v1",
+      "screen_role": "prospective",
+      "control_status": "library-member",
+      "control_type": null,
+      "execution_state": "completed",
+      "pose_id": "NP011-seed41-mode1",
+      "pose_score": -11.79107,
+      "best_vinardo_score_kcal_mol": -11.79107,
+      "score_units": "kcal/mol",
+      "scoring_function": "Vinardo",
+      "seed_agreement": {
+        "concordance_threshold_kcal_mol": 1.0,
+        "interpretation": "Agreement summarizes top-score repeatability under one protocol; it does not measure pose convergence.",
+        "mean_top_score_kcal_mol": -11.759536666666667,
+        "median_top_score_kcal_mol": -11.74725,
+        "protocol_signature": "{\"cpu_threads\":2,\"exhaustiveness\":64,\"num_modes\":9,\"scoring\":\"vinardo\",\"stage_id\":\"promoted-set-replicate-docking\"}",
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "state": "concordant",
+        "successful_comparable_seed_count": 3,
+        "top_score_sample_standard_deviation_kcal_mol": 0.026931194428270636,
+        "top_score_span_kcal_mol": 0.04947999999999908
+      },
+      "requested_seed_count": 4,
+      "successful_seed_count": 4,
+      "failed_seed_count": 0,
+      "failure_reason": null,
+      "docking_scope": "defined extracellular pocket",
+      "box": {
+        "center_source": "deposited reference-ligand heavy-atom centroid",
+        "center_xyz_angstrom": [
+          41.991857,
+          -72.891943,
+          85.148
+        ],
+        "minimum_reference_ligand_padding_angstrom": 5.0,
+        "size_xyz_angstrom": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "construct": {
+        "auth_chain_id": "A",
+        "compartment": "extracellular ectodomain",
+        "pdb_id": "6Y0F",
+        "receptor_input_sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120"
+      },
+      "receptor_preparation": {
+        "method": "pdb2pqr-propka-amber-ph7.4+openbabel-rigid-pdbqt/v1",
+        "ph": 7.4,
+        "preparation_limit": "PDB2PQR 3.7.1 and PROPKA 3.5.1 at pH 7.4 with AMBER partial charges; Open Babel 3.1.1.22 rigid AD4 PDBQT"
+      },
+      "run_specific_preparation": {
+        "conformer": {
+          "method": "RDKit ETKDGv3",
+          "optimization": "MMFF94",
+          "random_seed": 1069245383
+        },
+        "formal_charge": 0,
+        "identity_relation": "prepared form matches parent InChIKey",
+        "inchikey": "WMBWREPUVVBILR-WIYYLYMNSA-N",
+        "microstate": {
+          "protonation": "PubChem source formal charge; no pH-specific protonation engine applied",
+          "state": "source-record-form",
+          "tautomer": "PubChem source representation; no alternate tautomer enumerated in this pilot package"
+        },
+        "prepared_inchikey": "WMBWREPUVVBILR-WIYYLYMNSA-N",
+        "state": "source-record-single-conformer",
+        "undefined_stereocenter_atom_indices": []
+      },
+      "confirmation_assessment": {
+        "evidence_class": "computational-screening-hypothesis",
+        "interpretation": "Passing supports repeatable pose scoring and site occupancy under this one Smina/Vinardo protocol. It does not establish binding, affinity, selectivity, target inhibition, exposure, or therapeutic effect.",
+        "overall_gate_pass": true,
+        "pose_geometry": {
+          "all_top_poses_contact_declared_site": true,
+          "all_top_poses_inside_declared_box": true,
+          "all_top_poses_no_severe_clashes": true,
+          "contact_persistence_gate_pass": true,
+          "contacted_site_residue_union": [
+            "A:ARG123",
+            "A:ASN704",
+            "A:GLU203",
+            "A:GLU204",
+            "A:GLY626",
+            "A:HIS734",
+            "A:PHE350",
+            "A:SER624",
+            "A:TRP623",
+            "A:TRP653",
+            "A:TYR541",
+            "A:TYR625",
+            "A:TYR656",
+            "A:TYR660",
+            "A:VAL540",
+            "A:VAL650",
+            "A:VAL705"
+          ],
+          "contacted_site_residues_in_every_seed": [
+            "A:ARG123",
+            "A:ASN704",
+            "A:GLU203",
+            "A:GLU204",
+            "A:GLY626",
+            "A:HIS734",
+            "A:PHE350",
+            "A:SER624",
+            "A:TRP623",
+            "A:TRP653",
+            "A:TYR541",
+            "A:TYR625",
+            "A:TYR656",
+            "A:TYR660",
+            "A:VAL540",
+            "A:VAL650",
+            "A:VAL705"
+          ],
+          "geometry_gate_pass": true,
+          "mean_pairwise_contact_jaccard": 1.0,
+          "minimum_pairwise_contact_jaccard": 1.0,
+          "per_seed": [
+            {
+              "contacted_site_residue_count": 17,
+              "contacted_site_residues": [
+                "A:ARG123",
+                "A:ASN704",
+                "A:GLU203",
+                "A:GLU204",
+                "A:GLY626",
+                "A:HIS734",
+                "A:PHE350",
+                "A:SER624",
+                "A:TRP623",
+                "A:TRP653",
+                "A:TYR541",
+                "A:TYR625",
+                "A:TYR656",
+                "A:TYR660",
+                "A:VAL540",
+                "A:VAL650",
+                "A:VAL705"
+              ],
+              "execution_state": "completed",
+              "geometry_gate_pass": true,
+              "seed": 11,
+              "severe_clash_count": 0,
+              "severe_clash_distance_angstrom": 1.5,
+              "site_contact_distance_angstrom": 4.5,
+              "top_pose_inside_declared_box": true,
+              "top_vinardo_score_kcal_mol": -11.74094
+            },
+            {
+              "contacted_site_residue_count": 17,
+              "contacted_site_residues": [
+                "A:ARG123",
+                "A:ASN704",
+                "A:GLU203",
+                "A:GLU204",
+                "A:GLY626",
+                "A:HIS734",
+                "A:PHE350",
+                "A:SER624",
+                "A:TRP623",
+                "A:TRP653",
+                "A:TYR541",
+                "A:TYR625",
+                "A:TYR656",
+                "A:TYR660",
+                "A:VAL540",
+                "A:VAL650",
+                "A:VAL705"
+              ],
+              "execution_state": "completed",
+              "geometry_gate_pass": true,
+              "seed": 29,
+              "severe_clash_count": 0,
+              "severe_clash_distance_angstrom": 1.5,
+              "site_contact_distance_angstrom": 4.5,
+              "top_pose_inside_declared_box": true,
+              "top_vinardo_score_kcal_mol": -11.74725
+            },
+            {
+              "contacted_site_residue_count": 17,
+              "contacted_site_residues": [
+                "A:ARG123",
+                "A:ASN704",
+                "A:GLU203",
+                "A:GLU204",
+                "A:GLY626",
+                "A:HIS734",
+                "A:PHE350",
+                "A:SER624",
+                "A:TRP623",
+                "A:TRP653",
+                "A:TYR541",
+                "A:TYR625",
+                "A:TYR656",
+                "A:TYR660",
+                "A:VAL540",
+                "A:VAL650",
+                "A:VAL705"
+              ],
+              "execution_state": "completed",
+              "geometry_gate_pass": true,
+              "seed": 47,
+              "severe_clash_count": 0,
+              "severe_clash_distance_angstrom": 1.5,
+              "site_contact_distance_angstrom": 4.5,
+              "top_pose_inside_declared_box": true,
+              "top_vinardo_score_kcal_mol": -11.79042
+            }
+          ],
+          "persistent_site_residue_count": 17
+        },
+        "requested_seed_count": 3,
+        "score_repeatability": {
+          "maximum_span_kcal_mol": 1.0,
+          "pass": true,
+          "top_score_span_kcal_mol": 0.04948
+        },
+        "state": "same-protocol-confirmation-passed",
+        "successful_seed_count": 3
+      },
+      "source_library_preparation_state": "unprepared-source-record",
+      "seed_observations": [
+        {
+          "seed": 41,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 16,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.79107
+        },
+        {
+          "seed": 11,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 64,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.74094,
+          "pose_artifact": {
+            "path": "media/coordinates/fap-egcg-pose-ensemble.sdf",
+            "storage": "workspace",
+            "bytes": 34191,
+            "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c",
+            "role": "docked-pose-ensemble"
+          }
+        },
+        {
+          "seed": 29,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 64,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.74725
+        },
+        {
+          "seed": 47,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 64,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.79042
+        }
+      ],
+      "evidence_class": "computational-screening-hypothesis",
+      "claim_ceiling": "computational-screening-hypothesis",
+      "model": "Smina static binary with Vinardo scoring",
+      "model_version": "Smina static build ffe5e1e78c947f76; PDB2PQR 3.7.1; PROPKA 3.5.1; Open Babel 3.1.1.22",
+      "artifacts": [
+        {
+          "path": "media/fap-egcg-docked.png",
+          "storage": "workspace",
+          "bytes": 102798,
+          "sha256": "817862539e1be8e92700f15339bc634ea11c2bbeb55c2963247c57650cc3fdcb",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/fap-egcg-docked.preview.json",
+          "storage": "workspace",
+          "bytes": 1394,
+          "sha256": "3c09806f796a76a6a03c049ecd02f9183490917b167aac76b763343ff74c3096",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/fap-prepared-receptor.pdb",
+          "storage": "workspace",
+          "bytes": 478232,
+          "sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120",
+          "role": "prepared-receptor-coordinate"
+        },
+        {
+          "path": "media/coordinates/fap-egcg-pose-ensemble.sdf",
+          "storage": "workspace",
+          "bytes": 34191,
+          "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c",
+          "role": "docked-pose-ensemble"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "fap-egcg-docked",
+          "title": "EGCG docked into FAP",
+          "evidence_class": "computational-screening-hypothesis",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/fap-prepared-receptor.pdb",
+              "storage": "workspace",
+              "bytes": 478232,
+              "sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120",
+              "role": "prepared-receptor-coordinate",
+              "format": "pdb",
+              "object_name": "receptor",
+              "state": 1
+            },
+            {
+              "path": "media/coordinates/fap-egcg-pose-ensemble.sdf",
+              "storage": "workspace",
+              "bytes": 34191,
+              "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c",
+              "role": "docked-pose-ensemble",
+              "format": "sdf",
+              "object_name": "ligand",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "receptor",
+              "selection": "polymer.protein",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "Prepared FAP receptor"
+            },
+            {
+              "object_name": "ligand",
+              "selection": "not hydro",
+              "color": "#B98235",
+              "representation": "sticks",
+              "color_mode": "carbon-and-elements",
+              "transparency": 0.0,
+              "description": "Docked EGCG pose (first model)"
+            }
+          ]
+        }
+      ],
+      "pose_artifact": {
+        "path": "media/coordinates/fap-egcg-pose-ensemble.sdf",
+        "storage": "workspace",
+        "bytes": 34191,
+        "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c",
+        "role": "docked-pose-ensemble"
+      },
+      "pose_artifact_context": {
+        "stage": "same-protocol confirmation",
+        "seed": 11,
+        "contents": "nine-mode docked pose ensemble"
+      }
+    },
+    {
+      "screening_result_id": "SR-FAP-6Y0F-356-smina-v1-RF013",
+      "molecule_id": "RF013",
+      "molecule_name": "Cilengitide",
+      "molecular_class": "cyclic-peptide",
+      "target_id": "T-ENSG00000078098",
+      "target_name": "FAP",
+      "site": "6Y0F chain A deposited-ligand pocket",
+      "site_id": "FAP-6Y0F-356-pocket",
+      "route": "defined-pocket Smina/Vinardo on fal Serverless",
+      "run_id": "fap-6y0f-defined-pocket-screen-v1",
+      "screen_id": "FAP-6Y0F-356-smina-v1",
+      "screen_role": "noncognate-control",
+      "control_status": "noncognate-control",
+      "control_type": "noncognate-control",
+      "execution_state": "completed",
+      "pose_id": "RF013-seed11-mode1",
+      "pose_score": -9.92397,
+      "best_vinardo_score_kcal_mol": -9.92397,
+      "score_units": "kcal/mol",
+      "scoring_function": "Vinardo",
+      "seed_agreement": {
+        "concordance_threshold_kcal_mol": 1.0,
+        "interpretation": "Agreement summarizes top-score repeatability under one protocol; it does not measure pose convergence.",
+        "mean_top_score_kcal_mol": -9.680966666666668,
+        "median_top_score_kcal_mol": -9.72812,
+        "protocol_signature": "{\"cpu_threads\":2,\"exhaustiveness\":16,\"num_modes\":9,\"scoring\":\"vinardo\",\"stage_id\":\"noncognate-controls\"}",
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "state": "concordant",
+        "successful_comparable_seed_count": 3,
+        "top_score_sample_standard_deviation_kcal_mol": 0.2696895882924172,
+        "top_score_span_kcal_mol": 0.5331600000000005
+      },
+      "requested_seed_count": 3,
+      "successful_seed_count": 3,
+      "failed_seed_count": 0,
+      "failure_reason": null,
+      "docking_scope": "defined extracellular pocket",
+      "box": {
+        "center_source": "deposited reference-ligand heavy-atom centroid",
+        "center_xyz_angstrom": [
+          41.991857,
+          -72.891943,
+          85.148
+        ],
+        "minimum_reference_ligand_padding_angstrom": 5.0,
+        "size_xyz_angstrom": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "construct": {
+        "auth_chain_id": "A",
+        "compartment": "extracellular ectodomain",
+        "pdb_id": "6Y0F",
+        "receptor_input_sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120"
+      },
+      "receptor_preparation": {
+        "method": "pdb2pqr-propka-amber-ph7.4+openbabel-rigid-pdbqt/v1",
+        "ph": 7.4,
+        "preparation_limit": "PDB2PQR 3.7.1 and PROPKA 3.5.1 at pH 7.4 with AMBER partial charges; Open Babel 3.1.1.22 rigid AD4 PDBQT"
+      },
+      "run_specific_preparation": {
+        "conformer": {
+          "method": "RDKit ETKDGv3",
+          "optimization": "MMFF94",
+          "random_seed": 1847742512
+        },
+        "formal_charge": 0,
+        "identity_relation": "prepared form matches parent InChIKey",
+        "inchikey": "AMLYAMJWYAIXIA-VWNVYAMZSA-N",
+        "microstate": {
+          "protonation": "PubChem source formal charge; no pH-specific protonation engine applied",
+          "state": "source-record-form",
+          "tautomer": "PubChem source representation; no alternate tautomer enumerated in this pilot package"
+        },
+        "prepared_inchikey": "AMLYAMJWYAIXIA-VWNVYAMZSA-N",
+        "state": "source-record-single-conformer",
+        "undefined_stereocenter_atom_indices": []
+      },
+      "confirmation_assessment": null,
+      "source_library_preparation_state": "unprepared-source-record",
+      "seed_observations": [
+        {
+          "seed": 11,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 16,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -9.92397
+        },
+        {
+          "seed": 29,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 16,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -9.39081
+        },
+        {
+          "seed": 47,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 16,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -9.72812
+        }
+      ],
+      "evidence_class": "computational-screening-hypothesis",
+      "claim_ceiling": "computational-screening-hypothesis",
+      "model": "Smina static binary with Vinardo scoring",
+      "model_version": "Smina static build ffe5e1e78c947f76; PDB2PQR 3.7.1; PROPKA 3.5.1; Open Babel 3.1.1.22"
+    },
+    {
+      "screening_result_id": "SR-FAP-6Y0F-356-smina-v1-RF020",
+      "molecule_id": "RF020",
+      "molecule_name": "Linagliptin",
+      "molecular_class": "xanthine-derivative",
+      "target_id": "T-ENSG00000078098",
+      "target_name": "FAP",
+      "site": "6Y0F chain A deposited-ligand pocket",
+      "site_id": "FAP-6Y0F-356-pocket",
+      "route": "defined-pocket Smina/Vinardo on fal Serverless",
+      "run_id": "fap-6y0f-defined-pocket-screen-v1",
+      "screen_id": "FAP-6Y0F-356-smina-v1",
+      "screen_role": "positive-control",
+      "control_status": "positive-control",
+      "control_type": "positive-control",
+      "execution_state": "completed",
+      "pose_id": "RF020-seed47-mode1",
+      "pose_score": -11.33917,
+      "best_vinardo_score_kcal_mol": -11.33917,
+      "score_units": "kcal/mol",
+      "scoring_function": "Vinardo",
+      "seed_agreement": {
+        "concordance_threshold_kcal_mol": 1.0,
+        "interpretation": "Agreement summarizes top-score repeatability under one protocol; it does not measure pose convergence.",
+        "mean_top_score_kcal_mol": -11.300959999999998,
+        "median_top_score_kcal_mol": -11.28728,
+        "protocol_signature": "{\"cpu_threads\":2,\"exhaustiveness\":32,\"num_modes\":9,\"scoring\":\"vinardo\",\"stage_id\":\"positive-control-confirmation\"}",
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "state": "concordant",
+        "successful_comparable_seed_count": 3,
+        "top_score_sample_standard_deviation_kcal_mol": 0.03353257669789146,
+        "top_score_span_kcal_mol": 0.0627399999999998
+      },
+      "requested_seed_count": 4,
+      "successful_seed_count": 4,
+      "failed_seed_count": 0,
+      "failure_reason": null,
+      "docking_scope": "defined extracellular pocket",
+      "box": {
+        "center_source": "deposited reference-ligand heavy-atom centroid",
+        "center_xyz_angstrom": [
+          41.991857,
+          -72.891943,
+          85.148
+        ],
+        "minimum_reference_ligand_padding_angstrom": 5.0,
+        "size_xyz_angstrom": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "construct": {
+        "auth_chain_id": "A",
+        "compartment": "extracellular ectodomain",
+        "pdb_id": "6Y0F",
+        "receptor_input_sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120"
+      },
+      "receptor_preparation": {
+        "method": "pdb2pqr-propka-amber-ph7.4+openbabel-rigid-pdbqt/v1",
+        "ph": 7.4,
+        "preparation_limit": "PDB2PQR 3.7.1 and PROPKA 3.5.1 at pH 7.4 with AMBER partial charges; Open Babel 3.1.1.22 rigid AD4 PDBQT"
+      },
+      "run_specific_preparation": {
+        "identity_relation": "deposited-component-matches-library-identity",
+        "inchikey": "LTXREWYXXSTFRX-QGZVFWFLSA-N",
+        "microstate": {
+          "protonation": "PDB chemical component definition; crystallographic hydrogens absent",
+          "state": "deposited-chemical-component",
+          "tautomer": "PDB chemical component definition"
+        },
+        "prepared_inchikey": "LTXREWYXXSTFRX-QGZVFWFLSA-N",
+        "state": "deposited-crystal-heavy-atom-conformer"
+      },
+      "confirmation_assessment": null,
+      "source_library_preparation_state": "unprepared-source-record",
+      "seed_observations": [
+        {
+          "seed": 1,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 8,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.25476
+        },
+        {
+          "seed": 11,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 32,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.28728
+        },
+        {
+          "seed": 29,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 32,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.27643
+        },
+        {
+          "seed": 47,
+          "execution_state": "completed",
+          "failure_reason": null,
+          "parameters": {
+            "cpu_threads": 2,
+            "exhaustiveness": 32,
+            "num_modes": 9,
+            "scoring": "vinardo"
+          },
+          "top_vinardo_score_kcal_mol": -11.33917
+        }
+      ],
+      "evidence_class": "computational-screening-hypothesis",
+      "claim_ceiling": "computational-screening-hypothesis",
+      "model": "Smina static binary with Vinardo scoring",
+      "model_version": "Smina static build ffe5e1e78c947f76; PDB2PQR 3.7.1; PROPKA 3.5.1; Open Babel 3.1.1.22"
+    }
+  ],
+  "source_run": {
+    "run_id": "fap-6y0f-defined-pocket-screen-v1",
+    "screen_id": "FAP-6Y0F-356-smina-v1",
+    "target_id": "T-ENSG00000078098",
+    "execution_complete": true,
+    "method": "Smina with Vinardo scoring",
+    "record_count_in_example": 3
+  }
+}

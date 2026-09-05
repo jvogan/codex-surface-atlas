@@ -1,0 +1,38 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "itgb6-8tcg-complex",
+  "title": "Integrin alpha-v beta-6 with a minibinder",
+  "caption": "Deposited structure 8TCG. Integrin alpha-v beta-6 bound by an engineered minibinder.",
+  "target_id": "T-ENSG00000115221",
+  "target_name": "ITGB6",
+  "complex_partner": {
+    "gene_symbol": "ITGAV",
+    "role": "alpha-v heterodimer partner"
+  },
+  "pdb_id": "8TCG",
+  "coordinate_kind": "deposited",
+  "evidence_class": "experimental-source-coordinate",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": null
+  },
+  "image": {
+    "path": "media/itgb6-8tcg-complex.png",
+    "storage": "workspace",
+    "bytes": 240109,
+    "sha256": "329608c1351d3a57b73cdeb4e4697ed5d0688f8632e1a8f3772edf39024b0f96",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/itgb6-8tcg.cif",
+      "storage": "workspace",
+      "bytes": 1231531,
+      "sha256": "d20de7d83575386cdaacb2cde9131984f2c306ea4806330dc35bcb98cb7f642e",
+      "role": "deposited-coordinate"
+    }
+  ]
+}

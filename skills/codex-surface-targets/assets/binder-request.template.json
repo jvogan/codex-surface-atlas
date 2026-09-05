@@ -1,0 +1,98 @@
+{
+  "schema_version": "surface-atlas-binder-request/v1",
+  "request_id": null,
+  "created_at": null,
+  "producer": {
+    "skill": "codex-surface-targets",
+    "builder": null
+  },
+  "source_atlas": {
+    "atlas_id": null,
+    "disease_context": null,
+    "files": []
+  },
+  "opportunity": {
+    "opportunity_id": null,
+    "target_id": null,
+    "structure_id": null,
+    "site_id": null,
+    "molecular_job": null,
+    "desired_effect": null,
+    "selected_format": null,
+    "rationale": null,
+    "principal_risks": []
+  },
+  "target_site_lock_seed": {
+    "target_id": null,
+    "confidentiality": "public",
+    "source_lock": {
+      "source_id": null,
+      "source_version": null,
+      "source_sha256": null,
+      "source_size_bytes": null,
+      "input_sha256": null,
+      "input_size_bytes": null
+    },
+    "primary_input": {
+      "path": null,
+      "sha256": null,
+      "size_bytes": null
+    },
+    "construct": null,
+    "chains": [],
+    "residue_map": {
+      "path": null,
+      "sha256": null,
+      "size_bytes": null
+    },
+    "site": {
+      "site_id": null,
+      "mode": null,
+      "numbering_scheme": null,
+      "residues": [],
+      "evidence": null,
+      "evidence_class": null,
+      "excluded_regions": [],
+      "uncertain_regions": []
+    },
+    "claim_ceiling": "plan-only"
+  },
+  "design_contract": {
+    "binder_modality": null,
+    "job_parameters": {},
+    "length_range": null,
+    "requested_delivered_count": null,
+    "constraints": [],
+    "allowed_modifications": [],
+    "controls": {
+      "positive": [],
+      "negative": []
+    },
+    "required_outputs": []
+  },
+  "handoff": {
+    "consumer_skill": "codex-binder-lane",
+    "consumer_plan_schema": "codex-binder-lane/v1",
+    "consumer_version": null,
+    "repository": "https://github.com/jvogan/codex-binder-lane",
+    "method_posture": "best-available"
+  },
+  "execution_posture": {
+    "state": "prepared-not-dispatched",
+    "heavy_compute": "cloud-preferred",
+    "laptop_role": "orchestration-validation-viewing",
+    "artifact_storage": "external-ssd-preferred",
+    "artifact_root_binding": "runtime-only",
+    "authorization": {},
+    "budget_ledgers": []
+  },
+  "render_contract": {
+    "background": "#FFFFFF",
+    "background_alpha": 1,
+    "camera": "fixed-within-comparison",
+    "projection": "fixed-within-comparison",
+    "lighting": "fixed-within-comparison"
+  },
+  "evidence_refs": [],
+  "claim_ceiling": "plan-only"
+}

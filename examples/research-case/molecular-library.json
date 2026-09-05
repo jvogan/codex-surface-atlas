@@ -1,0 +1,176 @@
+{
+  "schema_version": "codex-surface-molecular-library/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "molecule_id": "NP011",
+      "name": "(−)-Epigallocatechin-3-gallate",
+      "aliases": [
+        "EGCG"
+      ],
+      "panel": "natural-product",
+      "molecular_class": "catechin",
+      "molecular_formula": "C22H18O11",
+      "molecular_weight": "458.4",
+      "exact_mass": "458.08491139",
+      "monoisotopic_mass": "458.08491139",
+      "formal_charge": 0,
+      "source_smiles": "C1[C@H]([C@H](OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O",
+      "connectivity_smiles": "C1C(C(OC2=CC(=CC(=C21)O)O)C3=CC(=C(C(=C3)O)O)O)OC(=O)C4=CC(=C(C(=C4)O)O)O",
+      "inchi": "InChI=1S/C22H18O11/c23-10-5-12(24)11-7-18(33-22(31)9-3-15(27)20(30)16(28)4-9)21(32-17(11)6-10)8-1-13(25)19(29)14(26)2-8/h1-6,18,21,23-30H,7H2/t18-,21-/m1/s1",
+      "inchikey": "WMBWREPUVVBILR-WIYYLYMNSA-N",
+      "descriptors": {
+        "heavy_atom_count": 33,
+        "hydrogen_bond_acceptor_count": 11,
+        "hydrogen_bond_donor_count": 8,
+        "rotatable_bond_count": 4,
+        "tpsa": 197
+      },
+      "chemistry_flags": [
+        "stereochemistry-review",
+        "oxidation-review",
+        "aggregation-review",
+        "assay-interference-review"
+      ],
+      "identity_state": "resolved",
+      "identity_resolution": {
+        "attempt_state": "reused",
+        "expected_pubchem_cid": 65064,
+        "lookup_mode": "pinned-cid",
+        "lookup_value": 65064,
+        "source": "PubChem"
+      },
+      "source_class": "natural-product-collection",
+      "source_refs": [
+        {
+          "claim": "chemical-identity",
+          "source": "PubChem",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/65064"
+        }
+      ],
+      "known_target_ids": [],
+      "known_interaction_refs": [],
+      "preparation_state": "unprepared-source-record",
+      "screening_eligibility": "identity-resolved-needs-preparation",
+      "evidence_class": "chemical-identity"
+    },
+    {
+      "molecule_id": "RF013",
+      "name": "Cilengitide",
+      "panel": "reference-ligand",
+      "molecular_class": "cyclic-peptide",
+      "molecular_formula": "C27H40N8O7",
+      "molecular_weight": "588.7",
+      "exact_mass": "588.30199564",
+      "monoisotopic_mass": "588.30199564",
+      "formal_charge": 0,
+      "source_smiles": "CC(C)[C@H]1C(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N[C@@H](C(=O)N1C)CC2=CC=CC=C2)CC(=O)O)CCCN=C(N)N",
+      "connectivity_smiles": "CC(C)C1C(=O)NC(C(=O)NCC(=O)NC(C(=O)NC(C(=O)N1C)CC2=CC=CC=C2)CC(=O)O)CCCN=C(N)N",
+      "inchi": "InChI=1S/C27H40N8O7/c1-15(2)22-25(41)33-17(10-7-11-30-27(28)29)23(39)31-14-20(36)32-18(13-21(37)38)24(40)34-19(26(42)35(22)3)12-16-8-5-4-6-9-16/h4-6,8-9,15,17-19,22H,7,10-14H2,1-3H3,(H,31,39)(H,32,36)(H,33,41)(H,34,40)(H,37,38)(H4,28,29,30)/t17-,18-,19+,22-/m0/s1",
+      "inchikey": "AMLYAMJWYAIXIA-VWNVYAMZSA-N",
+      "descriptors": {
+        "heavy_atom_count": 42,
+        "hydrogen_bond_acceptor_count": 8,
+        "hydrogen_bond_donor_count": 7,
+        "rotatable_bond_count": 9,
+        "tpsa": 238
+      },
+      "identity_state": "resolved",
+      "identity_resolution": {
+        "attempt_state": "reused",
+        "expected_pubchem_cid": 176873,
+        "lookup_mode": "pinned-cid",
+        "lookup_value": 176873,
+        "source": "PubChem"
+      },
+      "source_class": "curated-known-interactor-candidate",
+      "source_refs": [
+        {
+          "claim": "chemical-identity",
+          "source": "PubChem",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/176873"
+        }
+      ],
+      "known_target_ids": [],
+      "known_interaction_refs": [],
+      "target_lookup_intentions": [
+        "ITGAV:ITGB3",
+        "ITGAV:ITGB5"
+      ],
+      "preparation_state": "unprepared-source-record",
+      "screening_eligibility": "identity-resolved-needs-preparation",
+      "evidence_class": "chemical-identity",
+      "assignment_state": "requires-binding-source-verification"
+    },
+    {
+      "molecule_id": "RF020",
+      "name": "Linagliptin",
+      "panel": "reference-ligand",
+      "molecular_class": "xanthine-derivative",
+      "molecular_formula": "C25H28N8O2",
+      "molecular_weight": "472.5",
+      "exact_mass": "472.23352217",
+      "monoisotopic_mass": "472.23352217",
+      "formal_charge": 0,
+      "source_smiles": "CC#CCN1C2=C(N=C1N3CCC[C@H](C3)N)N(C(=O)N(C2=O)CC4=NC5=CC=CC=C5C(=N4)C)C",
+      "connectivity_smiles": "CC#CCN1C2=C(N=C1N3CCCC(C3)N)N(C(=O)N(C2=O)CC4=NC5=CC=CC=C5C(=N4)C)C",
+      "inchi": "InChI=1S/C25H28N8O2/c1-4-5-13-32-21-22(29-24(32)31-12-8-9-17(26)14-31)30(3)25(35)33(23(21)34)15-20-27-16(2)18-10-6-7-11-19(18)28-20/h6-7,10-11,17H,8-9,12-15,26H2,1-3H3/t17-/m1/s1",
+      "inchikey": "LTXREWYXXSTFRX-QGZVFWFLSA-N",
+      "descriptors": {
+        "heavy_atom_count": 35,
+        "hydrogen_bond_acceptor_count": 7,
+        "hydrogen_bond_donor_count": 1,
+        "rotatable_bond_count": 4,
+        "tpsa": 113
+      },
+      "identity_state": "resolved",
+      "identity_resolution": {
+        "attempt_state": "retrieved",
+        "expected_pubchem_cid": 10096344,
+        "lookup_mode": "pinned-cid",
+        "lookup_value": 10096344,
+        "source": "PubChem"
+      },
+      "source_class": "curated-known-interactor-candidate",
+      "source_identifiers": {
+        "PDB": "6Y0F",
+        "PDB_CCD": "356"
+      },
+      "source_refs": [
+        {
+          "claim": "chemical-identity",
+          "source": "PubChem",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/10096344"
+        }
+      ],
+      "known_target_ids": [
+        "T-ENSG00000078098"
+      ],
+      "known_interaction_refs": [
+        {
+          "ccd_component_id": "356",
+          "claim": "ligand is present with the mapped target in the deposited experimental structure",
+          "claim_limit": "the deposited complex does not by itself establish efficacy, selectivity, or disease activity",
+          "directness": "coordinate-observed-complex",
+          "pdb_accession": "6Y0F",
+          "relationship_class": "deposited-structure-bound-ligand",
+          "relationship_id": "RCSB:6Y0F:356:T-ENSG00000078098",
+          "source": "RCSB Protein Data Bank",
+          "source_revision": "2026-03-25T00:00:00.000+00:00",
+          "source_url": "https://www.rcsb.org/structure/6Y0F",
+          "structure_id": "S-RCSB-6Y0F",
+          "target_id": "T-ENSG00000078098",
+          "target_symbol": "FAP"
+        }
+      ],
+      "target_lookup_intentions": [
+        "FAP"
+      ],
+      "preparation_state": "unprepared-source-record",
+      "screening_eligibility": "identity-resolved-needs-preparation",
+      "evidence_class": "chemical-identity",
+      "target_assignment_evidence_class": "deposited-structure-bound-ligand",
+      "assignment_state": "structure-source-verified"
+    }
+  ]
+}

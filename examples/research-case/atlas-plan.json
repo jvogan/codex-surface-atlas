@@ -1,0 +1,67 @@
+{
+  "schema_version": "codex-surface-atlas-plan/v0.1",
+  "atlas_id": "research-case-example",
+  "created_at": "2026-09-04T00:00:00Z",
+  "data_kind": "reviewed real research example",
+  "mode": "selected completed records",
+  "disease": {
+    "name": "Mucinous colorectal adenocarcinoma"
+  },
+  "scope": {
+    "research_target_cap": null,
+    "completeness_language": "searched-in-scope target census",
+    "coverage_claim": "partial",
+    "selection": "Three target records chosen to demonstrate deposited structures, derived preparations, screening, generated binders, and controls."
+  },
+  "resource_profile": {
+    "profile": "reviewed-example",
+    "structure_tiers": [
+      {
+        "tier_id": "structure-a",
+        "max_targets": 2
+      },
+      {
+        "tier_id": "structure-b",
+        "max_targets": 1
+      }
+    ]
+  },
+  "external_work": {
+    "authorized": false,
+    "provider_calls": 0,
+    "note": "This packaged example performs no external work."
+  },
+  "stages": [
+    {
+      "stage_id": "selected-evidence",
+      "name": "Select evidence records",
+      "state": "complete",
+      "depends_on": []
+    },
+    {
+      "stage_id": "selected-structures",
+      "name": "Select structure evidence",
+      "state": "complete",
+      "depends_on": [
+        "selected-evidence"
+      ]
+    },
+    {
+      "stage_id": "selected-computations",
+      "name": "Select completed computations and controls",
+      "state": "complete",
+      "depends_on": [
+        "selected-structures"
+      ]
+    },
+    {
+      "stage_id": "public-report",
+      "name": "Build a local report",
+      "state": "pending",
+      "depends_on": [
+        "selected-computations"
+      ]
+    }
+  ],
+  "claim_ceiling": "selected public-source evidence and computational hypotheses; not a complete campaign or validation study"
+}

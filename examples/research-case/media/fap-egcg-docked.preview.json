@@ -1,0 +1,41 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "fap-egcg-docked",
+  "title": "EGCG docked into FAP",
+  "caption": "Computational docking into FAP. EGCG (NP011), seed 11, pose 1; protein side chains within 5 angstroms are shown as sticks.",
+  "target_id": "T-ENSG00000078098",
+  "target_name": "FAP",
+  "pdb_id": "6Y0F",
+  "coordinate_kind": "docked",
+  "evidence_class": "computational-screening-hypothesis",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": 11
+  },
+  "image": {
+    "path": "media/fap-egcg-docked.png",
+    "storage": "workspace",
+    "bytes": 102798,
+    "sha256": "817862539e1be8e92700f15339bc634ea11c2bbeb55c2963247c57650cc3fdcb",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/fap-prepared-receptor.pdb",
+      "storage": "workspace",
+      "bytes": 478232,
+      "sha256": "22a195feb7180fe77bb88f6e5b2f71fc4b1115b8a2351d0fe37e87661ae5d120",
+      "role": "prepared-receptor-coordinate"
+    },
+    {
+      "path": "media/coordinates/fap-egcg-pose-ensemble.sdf",
+      "storage": "workspace",
+      "bytes": 34191,
+      "sha256": "c58d346db2451d78a23ba1f614bb8f1abd1db8376b8c36aa83a7521b99ca914c",
+      "role": "docked-pose-ensemble"
+    }
+  ]
+}

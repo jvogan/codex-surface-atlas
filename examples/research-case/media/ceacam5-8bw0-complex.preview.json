@@ -1,0 +1,33 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "ceacam5-8bw0-complex",
+  "title": "CEACAM5 with tusamitamab",
+  "caption": "Deposited structure 8BW0. The CEACAM5 A3-B3 fragment is shown with the tusamitamab Fab.",
+  "target_id": "T-ENSG00000105388",
+  "pdb_id": "8BW0",
+  "coordinate_kind": "deposited",
+  "evidence_class": "experimental-source-coordinate",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": null
+  },
+  "image": {
+    "path": "media/ceacam5-8bw0-complex.png",
+    "storage": "workspace",
+    "bytes": 139717,
+    "sha256": "9e9ec6513d7df8ef1f58f8d78afb710c16e55421a3d0802322cbb8bc723fa843",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/ceacam5-8bw0.cif",
+      "storage": "workspace",
+      "bytes": 405502,
+      "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+      "role": "deposited-coordinate"
+    }
+  ]
+}

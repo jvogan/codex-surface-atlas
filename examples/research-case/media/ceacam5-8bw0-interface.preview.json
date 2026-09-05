@@ -1,0 +1,33 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "ceacam5-8bw0-interface",
+  "title": "Where tusamitamab contacts CEACAM5",
+  "caption": "Deposited structure 8BW0. Ochre residues mark the recorded CEACAM5 contact site within 5 angstroms of the Fab.",
+  "target_id": "T-ENSG00000105388",
+  "pdb_id": "8BW0",
+  "coordinate_kind": "deposited",
+  "evidence_class": "experimental-source-coordinate",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": null
+  },
+  "image": {
+    "path": "media/ceacam5-8bw0-interface.png",
+    "storage": "workspace",
+    "bytes": 260415,
+    "sha256": "5a9bbac28995da1598ec78cc2929b7fe4f2c52a2cbb9d54b2524c24b15fd2087",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/ceacam5-8bw0.cif",
+      "storage": "workspace",
+      "bytes": 405502,
+      "sha256": "1412c32e5e05566e8ec204ee0da1e72b517374a5b70bec0e2955f17dd1ba2455",
+      "role": "deposited-coordinate"
+    }
+  ]
+}

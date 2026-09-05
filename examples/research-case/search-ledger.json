@@ -1,0 +1,47 @@
+{
+  "schema_version": "codex-surface-search-ledger/v0.1",
+  "atlas_id": "research-case-example",
+  "as_of": "2026-09-04",
+  "coverage_state": "partial",
+  "planned_source_classes": [
+    "target evidence",
+    "structure records",
+    "completed computational records"
+  ],
+  "sources": [
+    {
+      "query_id": "selected-target-evidence",
+      "source_class": "public evidence records",
+      "status": "complete",
+      "records": 3,
+      "detail": "Selected records only."
+    },
+    {
+      "query_id": "selected-structure-evidence",
+      "source_class": "RCSB Protein Data Bank",
+      "status": "complete",
+      "records": 4,
+      "detail": "Three deposited structure records and one derived target preparation retained with evidence labels."
+    },
+    {
+      "query_id": "selected-computational-results",
+      "source_class": "completed computational records",
+      "status": "complete",
+      "records": 5,
+      "detail": "One prospective docked molecule, two docking controls, one designed binder, and one negative binder control."
+    }
+  ],
+  "counts": {
+    "raw_records": 3,
+    "duplicate_records": 0,
+    "normalized_discovered_entities": 3,
+    "surface_targets": 3,
+    "excluded_from_surface_universe": 0,
+    "unresolved_records": 0
+  },
+  "limitations": [
+    "This is a selected example and is not a complete target census or complete campaign archive.",
+    "Computational scores and structures are hypotheses; they do not establish binding, selectivity, safety, or efficacy.",
+    "Only selected completed result records and their direct supporting artifacts are included."
+  ]
+}

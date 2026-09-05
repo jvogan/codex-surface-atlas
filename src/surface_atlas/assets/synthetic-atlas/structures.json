@@ -1,0 +1,36 @@
+{
+  "schema_version": "codex-surface-structure-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "structure_id": "S-EMBER-01",
+      "target_id": "T-EMBER",
+      "accession": null,
+      "kind": "illustrative model",
+      "evidence_class": "synthetic fixture",
+      "construct": "invented extracellular construct",
+      "chains": [
+        {
+          "role": "target",
+          "label": "Ember receptor"
+        }
+      ],
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "structure_id": "S-LANTERN-01",
+      "target_id": "T-LANTERN",
+      "accession": null,
+      "kind": "illustrative model",
+      "evidence_class": "synthetic fixture",
+      "construct": "invented extracellular construct",
+      "chains": [
+        {
+          "role": "target",
+          "label": "Lantern adhesion protein"
+        }
+      ],
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

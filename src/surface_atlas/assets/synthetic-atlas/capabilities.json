@@ -1,0 +1,22 @@
+{
+  "schema_version": "codex-surface-capability-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "capability_id": "C-LOCAL-REPORT",
+      "name": "Offline report builder",
+      "state": "artifact-validated",
+      "version": "package-v0.1",
+      "route": "local",
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "capability_id": "C-LOCAL-VALIDATOR",
+      "name": "Workspace validator",
+      "state": "artifact-validated",
+      "version": "package-v0.1",
+      "route": "local",
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

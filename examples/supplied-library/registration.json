@@ -1,0 +1,25 @@
+{
+  "schema_version": "surface-atlas-supplied-library-registration/v1",
+  "atlas_id": "library-study",
+  "library_id": "synthetic-supplied-library",
+  "purpose": "Register small example molecules and a peptide sequence for local workflow testing.",
+  "inputs": [
+    {
+      "input_library_id": "example-compounds",
+      "format": "csv",
+      "molecular_class": "small-molecule",
+      "path": "compounds.csv",
+      "smiles_column": "smiles",
+      "id_column": "id",
+      "name_column": "name",
+      "panel": "synthetic-example"
+    },
+    {
+      "input_library_id": "example-peptides",
+      "format": "fasta",
+      "molecular_class": "peptide",
+      "path": "peptides.fasta",
+      "panel": "synthetic-example"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Keep reviewed text hashes stable on every platform.
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.gif binary
+*.woff2 binary
+*.zip binary
+*.gz binary

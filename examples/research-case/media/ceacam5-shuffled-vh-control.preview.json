@@ -1,0 +1,36 @@
+{
+  "schema_version": "surface-atlas-example-preview/v1",
+  "preview_id": "ceacam5-shuffled-vh-control",
+  "title": "CEACAM5 · shuffled VH control",
+  "caption": "Boltz2-predicted CEACAM5 complex from the three-arm checkpoint. The campaign control gate failed; no candidate was promoted.",
+  "target_id": "T-ENSG00000105388",
+  "target_name": "CEACAM5",
+  "source_candidate_id": "control-negative-8bw0-vh-composition-shuffle",
+  "coordinate_kind": "predicted",
+  "evidence_class": "computational-structure-hypothesis",
+  "status": "scored",
+  "promotion_state": "none",
+  "method": {
+    "renderer": "PyMOL",
+    "renderer_version": "3.1.7.2",
+    "coordinate_operations": "No alignment, minimization, or coordinate changes.",
+    "seed": 20260931
+  },
+  "image": {
+    "path": "media/ceacam5-shuffled-vh-control.png",
+    "storage": "workspace",
+    "bytes": 111863,
+    "sha256": "f2da051a659c7d40d08a3b9e2cd52c869c81b916a429aed58016cdde96b849e4",
+    "role": "structure-preview",
+    "media_type": "image/png"
+  },
+  "coordinates": [
+    {
+      "path": "media/coordinates/ceacam5-shuffled-vh-control.pdb",
+      "storage": "workspace",
+      "bytes": 176666,
+      "sha256": "b7d6789c49c4a3d5b3321bc6e21c73c5c3d4e1a8dd04d7dadce178a02e196bd1",
+      "role": "predicted-control-complex-coordinate"
+    }
+  ]
+}

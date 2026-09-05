@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jvogan/codex-surface-atlas/blob/main/schemas/v0.1/search-ledger.schema.json",
+  "title": "Codex Surface Atlas search ledger v0.1",
+  "type": "object",
+  "required": ["schema_version", "atlas_id", "coverage_state", "sources", "counts"],
+  "properties": {
+    "schema_version": {"const": "codex-surface-search-ledger/v0.1"},
+    "atlas_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "as_of": {"type": "string", "minLength": 1},
+    "coverage_state": {
+      "enum": ["planned", "in-progress", "complete_within_recorded_scope", "partial", "blocked"]
+    },
+    "planned_source_classes": {"type": "array"},
+    "limitations": {"type": "array"},
+    "counts": {
+      "type": "object",
+      "required": [
+        "raw_records",
+        "duplicate_records",
+        "normalized_discovered_entities",
+        "surface_targets",
+        "excluded_from_surface_universe",
+        "unresolved_records"
+      ],
+      "properties": {
+        "raw_records": {"type": "integer", "minimum": 0},
+        "duplicate_records": {"type": "integer", "minimum": 0},
+        "normalized_discovered_entities": {"type": "integer", "minimum": 0},
+        "surface_targets": {"type": "integer", "minimum": 0},
+        "excluded_from_surface_universe": {"type": "integer", "minimum": 0},
+        "unresolved_records": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["query_id", "status"],
+        "properties": {
+          "query_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["planned", "running", "complete", "partial", "blocked", "not_applicable"]},
+          "limitation": {}
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"status": {"enum": ["partial", "blocked"]}}, "required": ["status"]},
+            "then": {"required": ["limitation"]}
+          }
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"coverage_state": {"const": "complete_within_recorded_scope"}}, "required": ["coverage_state"]},
+      "then": {"properties": {"sources": {"minItems": 1}}}
+    }
+  ],
+  "additionalProperties": true
+}

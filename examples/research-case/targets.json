@@ -1,0 +1,937 @@
+{
+  "schema_version": "codex-surface-target-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "target_id": "T-ENSG00000078098",
+      "preferred_name": "FAP",
+      "gene_symbol": "FAP",
+      "aliases": [],
+      "identifiers": {
+        "approved_symbol": "FAP",
+        "ensembl_gene_id": "ENSG00000078098",
+        "uniprot_accessions": [
+          "Q12884"
+        ]
+      },
+      "entity_class": "seed-symbol",
+      "cell_owner": {
+        "assignment_basis": "category of the highest observed percent-expressing cell type; exact cross-category ties are mixed; no abundance threshold or exclusive ownership is inferred",
+        "cancer_code": "COAD",
+        "claim_ceiling": "relative transcript detection in the recorded public COAD cell groups; not verified cell ownership, protein surface density, individual-tumor expression, or therapeutic selectivity",
+        "comparison_coverage": "complete-recorded-cell-types",
+        "detected_categories": [
+          "endothelial",
+          "immune",
+          "malignant-epithelial",
+          "stromal"
+        ],
+        "highest_observed_cell_types": [
+          "fibroblast"
+        ],
+        "highest_observed_percent_expressing": 26.113207547169807,
+        "invalid_cell_types": [],
+        "missing_cell_types": [],
+        "observed_percent_expressing": {
+          "adipocyte": 6.226650062266501,
+          "b_cell": 0.11756802149815251,
+          "dc": 0.0,
+          "endothelial": 18.352223190932868,
+          "fibroblast": 26.113207547169807,
+          "granulocyte": 0.17123287671232876,
+          "macrophage_group_a": 0.16137708445400753,
+          "macrophage_group_b": 0.4058441558441558,
+          "nk_cell": 0.0,
+          "t_cd4": 0.2274665908444697,
+          "t_cd8": 0.10398613518197573,
+          "t_reg": 0.15296367112810708,
+          "tumor": 1.7048977061376318
+        },
+        "owner_category": "stromal",
+        "policy_id": "tcsa-highest-observed-transcript-prevalence/v0.1",
+        "ranking_use": "context-only; evidence and structure ranks are unchanged; molecular jobs require owner-specific review",
+        "source_entity_id": "E-SEED-MONDO_0005007-FAP",
+        "source_id": "cancer-surfaceome-atlas",
+        "source_row": {
+          "row": 58,
+          "sheet": "Table S6"
+        },
+        "state": "provisional-transcript-context",
+        "unmapped_cell_types": []
+      },
+      "surface_evidence": {
+        "decision": "retained",
+        "reason_code": "positive-surfaceome-evidence",
+        "reasons": [
+          "TCSA reports global GESP membership.",
+          "Reviewed UniProt topology includes an extracellular domain."
+        ],
+        "reviewed_uniprot": {
+          "cytoplasmic_face": false,
+          "direct_cell_surface_text": true,
+          "explicit_extracellular_matrix": false,
+          "extracellular_topology": true,
+          "gpi_anchored": false,
+          "integral_membrane": true,
+          "peripheral_membrane": false,
+          "plasma_membrane": true,
+          "reviewed_surface_conflict": false,
+          "secreted_or_shed": true,
+          "signal_peptide": false,
+          "tcsa_membership": true,
+          "uniprot_accessions": [
+            "Q12884"
+          ]
+        },
+        "tcsa_global_membership": true
+      },
+      "structure_tier": "structure-a",
+      "evidence_score": {
+        "component_count": 4,
+        "components": [
+          {
+            "basis": "TCSA membership plus reviewed extracellular or anchored membrane topology",
+            "component": "surface-accessibility",
+            "maximum": 40,
+            "points": 40.0,
+            "state": "derived"
+          },
+          {
+            "component": "open-targets-disease-association",
+            "maximum": 25,
+            "normalization_maximum": null,
+            "points": 0.0,
+            "raw_score": null,
+            "state": "not-measured"
+          },
+          {
+            "cagesp_tier": null,
+            "component": "tcsa-cancer-specific-gesp",
+            "maximum": 20,
+            "points": 0.0,
+            "state": "not-measured"
+          },
+          {
+            "component": "tcsa-single-cell-context",
+            "maximum": 15,
+            "maximum_microenvironment_percent": 26.113207547169807,
+            "points": 1.31,
+            "state": "derived",
+            "tumor_percent": 1.7048977061376318
+          }
+        ],
+        "maximum": 100,
+        "measured_component_count": 2,
+        "missing_data_rule": "A missing component adds zero points and remains not-measured; it is not negative evidence.",
+        "policy_id": "surface-reconciliation-and-prioritization/v0.2",
+        "score": 41.31
+      },
+      "risk": {
+        "assessment_state": "partial-public-cohort",
+        "maximum": 100,
+        "observed_signal_score": 70.0,
+        "observed_signals": [
+          {
+            "highest_other_cell_type": "fibroblast",
+            "highest_other_percent": 26.113207547169807,
+            "points": 50.0,
+            "signal": "tumor-microenvironment-sharing",
+            "tumor_percent": 1.7048977061376318
+          },
+          {
+            "points": 20.0,
+            "signal": "secreted-or-shed-form"
+          }
+        ],
+        "score_meaning": "Higher values indicate more measured warning signals; this is not a safety score."
+      },
+      "modality_fit": [
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 60
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified antibody or nanobody complex",
+              "points": 15
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "antibody-format-binder",
+          "score": 90
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 58
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 17
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "miniprotein-binder",
+          "score": 85
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 52
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "peptide-or-modified-peptide",
+          "score": 77
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 45
+            },
+            {
+              "basis": "surface-membrane evidence",
+              "points": 10
+            },
+            {
+              "basis": "anchored surface form",
+              "points": 10
+            },
+            {
+              "basis": "verified antibody complex",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "antibody-drug-conjugate",
+          "score": 75
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 42
+            },
+            {
+              "basis": "surface-membrane evidence",
+              "points": 13
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 12
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "engineered-cell-therapy",
+          "score": 72
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 40
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "radioligand-or-radioimmunotherapy",
+          "score": 65
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 18
+            },
+            {
+              "basis": "TCSA druggable membrane-protein class",
+              "points": 30
+            },
+            {
+              "basis": "verified small-molecule complex",
+              "points": 30
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "small-molecule",
+          "score": 83
+        }
+      ],
+      "source_refs": [
+        {
+          "evidence_role": "surfaceome-and-cancer-context",
+          "source_id": "cancer-surfaceome-atlas",
+          "url": "https://www.nature.com/articles/s43018-021-00282-w"
+        },
+        {
+          "evidence_role": "reviewed-topology-and-localization",
+          "source_id": "uniprot:Q12884",
+          "url": "https://www.uniprot.org/uniprotkb/Q12884/entry"
+        },
+        {
+          "evidence_role": "verified-structure-anchor",
+          "source_id": "rcsb:6Y0F",
+          "url": "https://www.rcsb.org/structure/6Y0F"
+        }
+      ],
+      "claim_ceiling": "derived public-cohort prioritization"
+    },
+    {
+      "target_id": "T-ENSG00000105388",
+      "preferred_name": "CEACAM5",
+      "gene_symbol": "CEACAM5",
+      "aliases": [],
+      "identifiers": {
+        "approved_symbol": "CEACAM5",
+        "ensembl_gene_id": "ENSG00000105388",
+        "uniprot_accessions": [
+          "P06731"
+        ]
+      },
+      "entity_class": "protein-coding-gene",
+      "cell_owner": {
+        "assignment_basis": "category of the highest observed percent-expressing cell type; exact cross-category ties are mixed; no abundance threshold or exclusive ownership is inferred",
+        "cancer_code": "COAD",
+        "claim_ceiling": "relative transcript detection in the recorded public COAD cell groups; not verified cell ownership, protein surface density, individual-tumor expression, or therapeutic selectivity",
+        "comparison_coverage": "partial-or-unavailable",
+        "detected_categories": [],
+        "highest_observed_cell_types": [],
+        "highest_observed_percent_expressing": null,
+        "invalid_cell_types": [],
+        "missing_cell_types": [
+          "adipocyte",
+          "b_cell",
+          "dc",
+          "endothelial",
+          "fibroblast",
+          "granulocyte",
+          "macrophage_group_a",
+          "macrophage_group_b",
+          "nk_cell",
+          "t_cd4",
+          "t_cd8",
+          "t_reg",
+          "tumor"
+        ],
+        "observed_percent_expressing": {},
+        "owner_category": "unresolved",
+        "policy_id": "tcsa-highest-observed-transcript-prevalence/v0.1",
+        "ranking_use": "context-only; evidence and structure ranks are unchanged; molecular jobs require owner-specific review",
+        "source_entity_id": "E-OT-MONDO_0005007-ENSG00000105388",
+        "source_id": "cancer-surfaceome-atlas",
+        "source_row": null,
+        "state": "unresolved",
+        "unmapped_cell_types": []
+      },
+      "surface_evidence": {
+        "decision": "retained",
+        "reason_code": "positive-surfaceome-evidence",
+        "reasons": [
+          "TCSA reports global GESP membership.",
+          "Reviewed UniProt records an integral or GPI-anchored membrane form."
+        ],
+        "reviewed_uniprot": {
+          "cytoplasmic_face": false,
+          "direct_cell_surface_text": true,
+          "explicit_extracellular_matrix": false,
+          "extracellular_topology": false,
+          "gpi_anchored": true,
+          "integral_membrane": false,
+          "peripheral_membrane": false,
+          "plasma_membrane": true,
+          "reviewed_surface_conflict": false,
+          "secreted_or_shed": false,
+          "signal_peptide": true,
+          "tcsa_membership": true,
+          "uniprot_accessions": [
+            "P06731"
+          ]
+        },
+        "tcsa_global_membership": true
+      },
+      "structure_tier": "structure-a",
+      "evidence_score": {
+        "component_count": 4,
+        "components": [
+          {
+            "basis": "TCSA membership plus reviewed extracellular or anchored membrane topology",
+            "component": "surface-accessibility",
+            "maximum": 40,
+            "points": 40.0,
+            "state": "derived"
+          },
+          {
+            "component": "open-targets-disease-association",
+            "maximum": 25,
+            "normalization_maximum": 0.2889653808156401,
+            "points": 8.17,
+            "raw_score": 0.030824262319350516,
+            "state": "derived"
+          },
+          {
+            "cagesp_tier": "Tier I",
+            "component": "tcsa-cancer-specific-gesp",
+            "maximum": 20,
+            "points": 20.0,
+            "state": "observed"
+          },
+          {
+            "component": "tcsa-single-cell-context",
+            "maximum": 15,
+            "maximum_microenvironment_percent": null,
+            "points": 0.0,
+            "state": "not-measured",
+            "tumor_percent": null
+          }
+        ],
+        "maximum": 100,
+        "measured_component_count": 3,
+        "missing_data_rule": "A missing component adds zero points and remains not-measured; it is not negative evidence.",
+        "policy_id": "surface-reconciliation-and-prioritization/v0.2",
+        "score": 68.17
+      },
+      "risk": {
+        "assessment_state": "partial-public-cohort",
+        "maximum": 100,
+        "observed_signal_score": 0.0,
+        "observed_signals": [],
+        "score_meaning": "Higher values indicate more measured warning signals; this is not a safety score."
+      },
+      "modality_fit": [
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 60
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified antibody or nanobody complex",
+              "points": 15
+            },
+            {
+              "basis": "explicit assigned antibody-format intervention",
+              "points": 10
+            },
+            {
+              "basis": "public-cohort evidence score at least 55",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "antibody-format-binder",
+          "score": 100.0
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 58
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 17
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            },
+            {
+              "basis": "public-cohort evidence score at least 55",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "miniprotein-binder",
+          "score": 90
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 52
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            },
+            {
+              "basis": "public-cohort evidence score at least 55",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "peptide-or-modified-peptide",
+          "score": 82
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 45
+            },
+            {
+              "basis": "surface-membrane evidence",
+              "points": 10
+            },
+            {
+              "basis": "anchored surface form",
+              "points": 10
+            },
+            {
+              "basis": "verified antibody complex",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "antibody-drug-conjugate",
+          "score": 75
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 42
+            },
+            {
+              "basis": "surface-membrane evidence",
+              "points": 13
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 12
+            },
+            {
+              "basis": "explicit assigned cell-therapy intervention",
+              "points": 20
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "engineered-cell-therapy",
+          "score": 92
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 40
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "explicit assigned radioligand or radioimmunotherapy intervention",
+              "points": 20
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "radioligand-or-radioimmunotherapy",
+          "score": 85
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 18
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "small-molecule",
+          "score": 23
+        }
+      ],
+      "source_refs": [
+        {
+          "evidence_role": "disease-association",
+          "source_id": "open-targets",
+          "url": "https://api.platform.opentargets.org/api/v4/graphql"
+        },
+        {
+          "evidence_role": "surfaceome-and-cancer-context",
+          "source_id": "cancer-surfaceome-atlas",
+          "url": "https://www.nature.com/articles/s43018-021-00282-w"
+        },
+        {
+          "evidence_role": "reviewed-topology-and-localization",
+          "source_id": "uniprot:P06731",
+          "url": "https://www.uniprot.org/uniprotkb/P06731/entry"
+        },
+        {
+          "evidence_role": "verified-structure-anchor",
+          "source_id": "rcsb:8BW0",
+          "url": "https://www.rcsb.org/structure/8BW0"
+        }
+      ],
+      "claim_ceiling": "derived public-cohort prioritization"
+    },
+    {
+      "target_id": "T-ENSG00000115221",
+      "preferred_name": "ITGB6",
+      "gene_symbol": "ITGB6",
+      "aliases": [],
+      "identifiers": {
+        "approved_symbol": "ITGB6",
+        "ensembl_gene_id": "ENSG00000115221",
+        "uniprot_accessions": [
+          "P18564"
+        ]
+      },
+      "entity_class": "seed-symbol",
+      "cell_owner": {
+        "assignment_basis": "category of the highest observed percent-expressing cell type; exact cross-category ties are mixed; no abundance threshold or exclusive ownership is inferred",
+        "cancer_code": "COAD",
+        "claim_ceiling": "relative transcript detection in the recorded public COAD cell groups; not verified cell ownership, protein surface density, individual-tumor expression, or therapeutic selectivity",
+        "comparison_coverage": "complete-recorded-cell-types",
+        "detected_categories": [
+          "endothelial",
+          "immune",
+          "malignant-epithelial",
+          "stromal"
+        ],
+        "highest_observed_cell_types": [
+          "tumor"
+        ],
+        "highest_observed_percent_expressing": 8.477991320520768,
+        "invalid_cell_types": [],
+        "missing_cell_types": [],
+        "observed_percent_expressing": {
+          "adipocyte": 0.33208800332088,
+          "b_cell": 0.08397715821296607,
+          "dc": 0.0,
+          "endothelial": 0.5231037489102005,
+          "fibroblast": 0.9509433962264151,
+          "granulocyte": 0.0,
+          "macrophage_group_a": 0.26896180742334586,
+          "macrophage_group_b": 0.4058441558441558,
+          "nk_cell": 0.4750593824228029,
+          "t_cd4": 0.17059994313335228,
+          "t_cd8": 0.17331022530329288,
+          "t_reg": 0.15296367112810708,
+          "tumor": 8.477991320520768
+        },
+        "owner_category": "malignant-epithelial",
+        "policy_id": "tcsa-highest-observed-transcript-prevalence/v0.1",
+        "ranking_use": "context-only; evidence and structure ranks are unchanged; molecular jobs require owner-specific review",
+        "source_entity_id": "E-SEED-MONDO_0005007-ITGB6",
+        "source_id": "cancer-surfaceome-atlas",
+        "source_row": {
+          "row": 483,
+          "sheet": "Table S6"
+        },
+        "state": "provisional-transcript-context",
+        "unmapped_cell_types": []
+      },
+      "surface_evidence": {
+        "decision": "retained",
+        "reason_code": "positive-surfaceome-evidence",
+        "reasons": [
+          "TCSA reports global GESP membership.",
+          "Reviewed UniProt topology includes an extracellular domain."
+        ],
+        "reviewed_uniprot": {
+          "cytoplasmic_face": false,
+          "direct_cell_surface_text": false,
+          "explicit_extracellular_matrix": false,
+          "extracellular_topology": true,
+          "gpi_anchored": false,
+          "integral_membrane": true,
+          "peripheral_membrane": false,
+          "plasma_membrane": true,
+          "reviewed_surface_conflict": false,
+          "secreted_or_shed": false,
+          "signal_peptide": true,
+          "tcsa_membership": true,
+          "uniprot_accessions": [
+            "P18564"
+          ]
+        },
+        "tcsa_global_membership": true
+      },
+      "structure_tier": "structure-b",
+      "evidence_score": {
+        "component_count": 4,
+        "components": [
+          {
+            "basis": "TCSA membership plus reviewed extracellular or anchored membrane topology",
+            "component": "surface-accessibility",
+            "maximum": 40,
+            "points": 40.0,
+            "state": "derived"
+          },
+          {
+            "component": "open-targets-disease-association",
+            "maximum": 25,
+            "normalization_maximum": null,
+            "points": 0.0,
+            "raw_score": null,
+            "state": "not-measured"
+          },
+          {
+            "cagesp_tier": null,
+            "component": "tcsa-cancer-specific-gesp",
+            "maximum": 20,
+            "points": 0.0,
+            "state": "not-measured"
+          },
+          {
+            "component": "tcsa-single-cell-context",
+            "maximum": 15,
+            "maximum_microenvironment_percent": 0.9509433962264151,
+            "points": 7.35,
+            "state": "derived",
+            "tumor_percent": 8.477991320520768
+          }
+        ],
+        "maximum": 100,
+        "measured_component_count": 2,
+        "missing_data_rule": "A missing component adds zero points and remains not-measured; it is not negative evidence.",
+        "policy_id": "surface-reconciliation-and-prioritization/v0.2",
+        "score": 47.35
+      },
+      "risk": {
+        "assessment_state": "partial-public-cohort",
+        "maximum": 100,
+        "observed_signal_score": 5.61,
+        "observed_signals": [
+          {
+            "highest_other_cell_type": "fibroblast",
+            "highest_other_percent": 0.9509433962264151,
+            "points": 5.61,
+            "signal": "tumor-microenvironment-sharing",
+            "tumor_percent": 8.477991320520768
+          }
+        ],
+        "score_meaning": "Higher values indicate more measured warning signals; this is not a safety score."
+      },
+      "modality_fit": [
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 60
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "antibody-format-binder",
+          "score": 75
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 58
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 17
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            },
+            {
+              "basis": "verified miniprotein complex",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "miniprotein-binder",
+          "score": 95
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 52
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "peptide-or-modified-peptide",
+          "score": 77
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 45
+            },
+            {
+              "basis": "surface-membrane evidence",
+              "points": 10
+            },
+            {
+              "basis": "anchored surface form",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "antibody-drug-conjugate",
+          "score": 65
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 42
+            },
+            {
+              "basis": "surface-membrane evidence",
+              "points": 13
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 12
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "engineered-cell-therapy",
+          "score": 72
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 40
+            },
+            {
+              "basis": "reviewed extracellular domain or GPI anchor",
+              "points": 15
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 10
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "radioligand-or-radioimmunotherapy",
+          "score": 65
+        },
+        {
+          "components": [
+            {
+              "basis": "retained surface-accessibility decision",
+              "points": 18
+            },
+            {
+              "basis": "verified experimental target anchor",
+              "points": 5
+            }
+          ],
+          "evidence_class": "planning-fit",
+          "maximum": 100,
+          "modality": "small-molecule",
+          "score": 23
+        }
+      ],
+      "source_refs": [
+        {
+          "evidence_role": "surfaceome-and-cancer-context",
+          "source_id": "cancer-surfaceome-atlas",
+          "url": "https://www.nature.com/articles/s43018-021-00282-w"
+        },
+        {
+          "evidence_role": "reviewed-topology-and-localization",
+          "source_id": "uniprot:P18564",
+          "url": "https://www.uniprot.org/uniprotkb/P18564/entry"
+        },
+        {
+          "evidence_role": "verified-structure-anchor",
+          "source_id": "rcsb:8TCG",
+          "url": "https://www.rcsb.org/structure/8TCG"
+        }
+      ],
+      "claim_ceiling": "derived public-cohort prioritization"
+    }
+  ]
+}

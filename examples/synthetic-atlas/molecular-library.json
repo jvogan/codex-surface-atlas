@@ -1,0 +1,30 @@
+{
+  "schema_version": "codex-surface-molecular-library/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "molecule_id": "M-EMBER-01",
+      "molecule_name": "Ember fragment A",
+      "molecular_class": "small molecule",
+      "molecular_format": "illustrative fragment",
+      "identity_state": "invented",
+      "source_class": "synthetic fixture",
+      "source_smiles": null,
+      "known_interaction_refs": [],
+      "target_lookup_intentions": ["T-EMBER"],
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "molecule_id": "M-LANTERN-01",
+      "molecule_name": "Lantern probe B",
+      "molecular_class": "peptide",
+      "molecular_format": "illustrative peptide",
+      "identity_state": "invented",
+      "source_class": "synthetic fixture",
+      "sequence": "ACDEFGHIK",
+      "known_interaction_refs": [],
+      "target_lookup_intentions": ["T-LANTERN"],
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-surface-atlas"
+version = "0.1.0"
+description = "Find disease-associated cell-surface targets with Rosalind Workbench plugins and build linked research reports"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE.md"]
+authors = [{name = "Jacob Vogan"}]
+keywords = ["bioinformatics", "drug-discovery", "research", "surface-targets"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8", "jsonschema>=4"]
+
+[project.scripts]
+surface-atlas = "surface_atlas.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jvogan/codex-surface-atlas"
+Repository = "https://github.com/jvogan/codex-surface-atlas"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+surface_atlas = [
+  "assets/report/*.css",
+  "assets/report/*.js",
+  "assets/report/vendor/*.js",
+  "assets/report/vendor/*.txt",
+  "assets/report/vendor/*.md",
+  "assets/synthetic-atlas/*.json",
+  "assets/synthetic-atlas/*.md",
+  "assets/templates/*.json",
+  "skill/*.md",
+  "skill/agents/*.yaml",
+  "skill/assets/*.json",
+  "skill/references/*.md",
+]
+
+[tool.setuptools.data-files]
+"share/codex-surface-atlas/schemas/v0.1" = ["schemas/v0.1/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

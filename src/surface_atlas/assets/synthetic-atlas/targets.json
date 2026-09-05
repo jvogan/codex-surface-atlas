@@ -1,0 +1,60 @@
+{
+  "schema_version": "codex-surface-target-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "target_id": "T-EMBER",
+      "preferred_name": "Ember receptor",
+      "gene_symbol": "EMBER1",
+      "entity_class": "cell-surface-protein",
+      "cell_owner": "invented epithelial-like cell",
+      "topology": "single-pass membrane protein",
+      "extracellular_region": "invented distal domain",
+      "isoforms": ["EMBER1-synthetic-v1"],
+      "surface_evidence": {"state": "synthetic-positive", "basis": "fixture annotation"},
+      "disease_evidence": "Invented disease-state association for demonstration.",
+      "normal_risk": "Not assessed in the synthetic fixture.",
+      "structure_tier": "structure-a",
+      "evidence_score": {"score": 78, "maximum": 100, "components": [{"component": "surface", "points": 35, "maximum": 40, "basis": "fixture annotation"}]},
+      "risk": {"observed_signal_score": 24, "maximum": 100, "unresolved_dimensions": ["normal-tissue exposure", "shedding"]},
+      "modality_fit": [{"modality": "illustrative binder", "score": 3, "maximum": 5}],
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "target_id": "T-LANTERN",
+      "preferred_name": "Lantern adhesion protein",
+      "gene_symbol": "LANTERN2",
+      "entity_class": "cell-surface-protein",
+      "cell_owner": "invented stromal-like cell",
+      "topology": "multi-pass membrane protein",
+      "extracellular_region": "invented loop set",
+      "isoforms": ["LANTERN2-synthetic-v1"],
+      "surface_evidence": {"state": "synthetic-positive", "basis": "fixture annotation"},
+      "disease_evidence": "Invented disease-state association for demonstration.",
+      "normal_risk": "Not assessed in the synthetic fixture.",
+      "structure_tier": "structure-b",
+      "evidence_score": {"score": 63, "maximum": 100, "components": [{"component": "surface", "points": 30, "maximum": 40, "basis": "fixture annotation"}]},
+      "risk": {"observed_signal_score": 41, "maximum": 100, "unresolved_dimensions": ["isoform distribution", "normal-tissue exposure"]},
+      "modality_fit": [{"modality": "illustrative occupancy", "score": 2, "maximum": 5}],
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "target_id": "T-ORBIT",
+      "preferred_name": "Orbit glycan determinant",
+      "gene_symbol": "ORBIT3",
+      "entity_class": "extracellular-determinant",
+      "cell_owner": "invented epithelial-like cell",
+      "topology": "cell-surface glycan context",
+      "extracellular_region": "invented glycan motif",
+      "isoforms": [],
+      "surface_evidence": {"state": "synthetic-positive", "basis": "fixture annotation"},
+      "disease_evidence": "Invented disease-state association for demonstration.",
+      "normal_risk": "Not assessed in the synthetic fixture.",
+      "structure_tier": "structure-c",
+      "evidence_score": {"score": 48, "maximum": 100, "components": [{"component": "surface", "points": 22, "maximum": 40, "basis": "fixture annotation"}]},
+      "risk": {"observed_signal_score": 17, "maximum": 100, "unresolved_dimensions": ["glycan heterogeneity", "normal-tissue exposure"]},
+      "modality_fit": [{"modality": "illustrative recognition element", "score": 2, "maximum": 5}],
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

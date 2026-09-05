@@ -1,0 +1,542 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "appState": {
+    "viewBackgroundColor": "#0b0d10",
+    "exportBackground": true
+  },
+  "files": {},
+  "elements": [
+    {
+      "id": "e000",
+      "type": "text",
+      "x": 60,
+      "y": 35,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "text": "CODEX SURFACE ATLAS",
+      "fontSize": 17,
+      "fontFamily": 2
+    },
+    {
+      "id": "e001",
+      "type": "text",
+      "x": 60,
+      "y": 78,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "From disease context to sites worth testing",
+      "fontSize": 40,
+      "fontFamily": 2
+    },
+    {
+      "id": "e002",
+      "type": "text",
+      "x": 60,
+      "y": 142,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Build an atlas, compare approaches, and advance selected opportunities.",
+      "fontSize": 24,
+      "fontFamily": 2
+    },
+    {
+      "id": "e003",
+      "type": "rectangle",
+      "x": 60,
+      "y": 225,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "width": 380,
+      "height": 195,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e004",
+      "type": "text",
+      "x": 84,
+      "y": 245,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "text": "01 / SCOPE",
+      "fontSize": 16,
+      "fontFamily": 2
+    },
+    {
+      "id": "e005",
+      "type": "text",
+      "x": 84,
+      "y": 277,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Define the question",
+      "fontSize": 27,
+      "fontFamily": 2
+    },
+    {
+      "id": "e006",
+      "type": "text",
+      "x": 84,
+      "y": 328,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Disease and cell state\nPopulation, purpose, priorities",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e007",
+      "type": "rectangle",
+      "x": 530,
+      "y": 225,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "width": 380,
+      "height": 195,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e008",
+      "type": "text",
+      "x": 554,
+      "y": 245,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "text": "02 / DISCOVER",
+      "fontSize": 16,
+      "fontFamily": 2
+    },
+    {
+      "id": "e009",
+      "type": "text",
+      "x": 554,
+      "y": 277,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Find accessible targets",
+      "fontSize": 27,
+      "fontFamily": 2
+    },
+    {
+      "id": "e010",
+      "type": "text",
+      "x": 554,
+      "y": 328,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Disease evidence and topology\nNormal-tissue signals, gaps",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e011",
+      "type": "rectangle",
+      "x": 1000,
+      "y": 225,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "width": 380,
+      "height": 195,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e012",
+      "type": "text",
+      "x": 1024,
+      "y": 245,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "text": "03 / CONNECT",
+      "fontSize": 16,
+      "fontFamily": 2
+    },
+    {
+      "id": "e013",
+      "type": "text",
+      "x": 1024,
+      "y": 277,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Map known interventions",
+      "fontSize": 27,
+      "fontFamily": 2
+    },
+    {
+      "id": "e014",
+      "type": "text",
+      "x": 1024,
+      "y": 328,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Ligands, drugs, and binders\nStructures and bound complexes",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e015",
+      "type": "arrow",
+      "x": 440,
+      "y": 322,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          90,
+          0
+        ]
+      ],
+      "width": 90,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e016",
+      "type": "arrow",
+      "x": 910,
+      "y": 322,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          90,
+          0
+        ]
+      ],
+      "width": 90,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e017",
+      "type": "arrow",
+      "x": 1190,
+      "y": 420,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#a9caff",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "width": 0,
+      "height": 95,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e018",
+      "type": "rectangle",
+      "x": 1000,
+      "y": 515,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "width": 380,
+      "height": 195,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e019",
+      "type": "text",
+      "x": 1024,
+      "y": 535,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "text": "04 / SELECT",
+      "fontSize": 16,
+      "fontFamily": 2
+    },
+    {
+      "id": "e020",
+      "type": "text",
+      "x": 1024,
+      "y": 567,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Choose a site and action",
+      "fontSize": 27,
+      "fontFamily": 2
+    },
+    {
+      "id": "e021",
+      "type": "text",
+      "x": 1024,
+      "y": 618,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Accessibility and geometry\nModality fit and next experiment",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e022",
+      "type": "rectangle",
+      "x": 530,
+      "y": 515,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "width": 380,
+      "height": 195,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e023",
+      "type": "text",
+      "x": 554,
+      "y": 535,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "text": "05 / TEST",
+      "fontSize": 16,
+      "fontFamily": 2
+    },
+    {
+      "id": "e024",
+      "type": "text",
+      "x": 554,
+      "y": 567,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Run selected workflows",
+      "fontSize": 27,
+      "fontFamily": 2
+    },
+    {
+      "id": "e025",
+      "type": "text",
+      "x": 554,
+      "y": 618,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Design, screening, and controls\nIndependent prediction and scoring",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e026",
+      "type": "rectangle",
+      "x": 60,
+      "y": 515,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "width": 380,
+      "height": 195,
+      "backgroundColor": "transparent",
+      "roundness": {
+        "type": 3
+      },
+      "strokeStyle": "solid"
+    },
+    {
+      "id": "e027",
+      "type": "text",
+      "x": 84,
+      "y": 535,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "text": "06 / EXPLORE",
+      "fontSize": 16,
+      "fontFamily": 2
+    },
+    {
+      "id": "e028",
+      "type": "text",
+      "x": 84,
+      "y": 567,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f5f7fa",
+      "text": "Review and share results",
+      "fontSize": 27,
+      "fontFamily": 2
+    },
+    {
+      "id": "e029",
+      "type": "text",
+      "x": 84,
+      "y": 618,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Target pages, structures, sources\nRanked results and reusable files",
+      "fontSize": 21,
+      "fontFamily": 2
+    },
+    {
+      "id": "e030",
+      "type": "arrow",
+      "x": 1000,
+      "y": 612,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -90,
+          0
+        ]
+      ],
+      "width": 90,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e031",
+      "type": "arrow",
+      "x": 530,
+      "y": 612,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#bce58c",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -90,
+          0
+        ]
+      ],
+      "width": 90,
+      "height": 0,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "solid",
+      "roundness": null
+    },
+    {
+      "id": "e032",
+      "type": "arrow",
+      "x": 250,
+      "y": 710,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          66
+        ],
+        [
+          940,
+          66
+        ],
+        [
+          940,
+          0
+        ]
+      ],
+      "width": 940,
+      "height": 66,
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "strokeStyle": "dashed",
+      "roundness": null
+    },
+    {
+      "id": "e033",
+      "type": "text",
+      "x": 475,
+      "y": 794,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#f6dd8c",
+      "text": "Revise priorities as evidence and results arrive.",
+      "fontSize": 22,
+      "fontFamily": 2
+    },
+    {
+      "id": "e034",
+      "type": "text",
+      "x": 60,
+      "y": 861,
+      "roughness": 0,
+      "strokeWidth": 1.6,
+      "strokeColor": "#b9c2ce",
+      "text": "Adjust the scope, tools, resource tiers, and budget to the research question.",
+      "fontSize": 22,
+      "fontFamily": 2
+    }
+  ]
+}

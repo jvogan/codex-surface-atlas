@@ -1,0 +1,511 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "appState": {
+    "viewBackgroundColor": "#080a0e",
+    "exportBackground": true,
+    "gridSize": null
+  },
+  "files": {},
+  "elements": [
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-000",
+      "x": 60,
+      "y": 30,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "SURFACE ATLAS / ROUTE SELECTION",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-001",
+      "x": 60,
+      "y": 70,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "Choose a screening or binder workflow",
+      "fontSize": 40,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-002",
+      "x": 60,
+      "y": 126,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "Lock the target, site, and intended action before choosing a workflow.",
+      "fontSize": 22,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s15_surface_atlas_routes-003",
+      "x": 60,
+      "y": 260,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 330,
+      "height": 190,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-004",
+      "x": 84,
+      "y": 282,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "TARGET RECORD",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-005",
+      "x": 84,
+      "y": 328,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "stable target ID\nsurface evidence\nnormal-tissue evidence",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s15_surface_atlas_routes-006",
+      "x": 450,
+      "y": 260,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 330,
+      "height": 190,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-007",
+      "x": 474,
+      "y": 282,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "ACCESSIBLE SITE",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-008",
+      "x": 474,
+      "y": 328,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "structure or construct\nsite residues\nevidence class",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s15_surface_atlas_routes-009",
+      "x": 840,
+      "y": 260,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 330,
+      "height": 190,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-010",
+      "x": 864,
+      "y": 282,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "INTENDED ACTION",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-011",
+      "x": 864,
+      "y": 328,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "occupancy\npayload delivery\nrecognition\nrecord one job",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "arrow",
+      "id": "s15_surface_atlas_routes-012",
+      "x": 390,
+      "y": 355,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          60,
+          0
+        ]
+      ],
+      "width": 60,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s15_surface_atlas_routes-013",
+      "x": 780,
+      "y": 355,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          60,
+          0
+        ]
+      ],
+      "width": 60,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "rectangle",
+      "id": "s15_surface_atlas_routes-014",
+      "x": 1240,
+      "y": 210,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 440,
+      "height": 190,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-015",
+      "x": 1264,
+      "y": 232,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "MOLECULAR LIBRARY SCREENING",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-016",
+      "x": 1264,
+      "y": 278,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "existing molecule records\ntarget and site fixed\nscores and controls\nfiles and source references",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s15_surface_atlas_routes-017",
+      "x": 1240,
+      "y": 500,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 440,
+      "height": 190,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-018",
+      "x": 1264,
+      "y": 522,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "PROTEIN BINDER DESIGN AND EVALUATION",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-019",
+      "x": 1264,
+      "y": 568,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "candidate sequences\ntarget and site fixed\nscores and controls\nfiles and source references",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s15_surface_atlas_routes-020",
+      "x": 1240,
+      "y": 790,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 440,
+      "height": 190,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-021",
+      "x": 1264,
+      "y": 812,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "COMPARABLE RESULT RECORD",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-022",
+      "x": 1264,
+      "y": 858,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "target identifier and site identifier\nmodality and intended action\nscores and control status\nfiles and source references",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "arrow",
+      "id": "s15_surface_atlas_routes-023",
+      "x": 1170,
+      "y": 355,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          35,
+          0
+        ],
+        [
+          35,
+          -50
+        ],
+        [
+          70,
+          -50
+        ]
+      ],
+      "width": 70,
+      "height": 50,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s15_surface_atlas_routes-024",
+      "x": 1170,
+      "y": 355,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          25,
+          0
+        ],
+        [
+          25,
+          240
+        ],
+        [
+          70,
+          240
+        ]
+      ],
+      "width": 70,
+      "height": 240,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s15_surface_atlas_routes-025",
+      "x": 1680,
+      "y": 305,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          450
+        ],
+        [
+          -60,
+          450
+        ],
+        [
+          -60,
+          485
+        ]
+      ],
+      "width": 90,
+      "height": 485,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s15_surface_atlas_routes-026",
+      "x": 1535,
+      "y": 690,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          100
+        ]
+      ],
+      "width": 0,
+      "height": 100,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "text",
+      "id": "s15_surface_atlas_routes-027",
+      "x": 1190,
+      "y": 435,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "choose a workflow",
+      "fontSize": 17,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    }
+  ]
+}

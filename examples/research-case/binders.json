@@ -1,0 +1,149 @@
+{
+  "schema_version": "codex-surface-binder-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "binder_id": "ceacam5-cp3-boltzgen-03",
+      "candidate_id": "ceacam5-cp3-boltzgen-03",
+      "target_id": "T-ENSG00000105388",
+      "target_symbol": "CEACAM5",
+      "target_name": "CEACAM5",
+      "name": "BoltzGen 03",
+      "preferred_name": "BoltzGen 03",
+      "sequence": "MEVTVTITKTSYLTDENIKSIIRSALLKAGVSEEEAEKLAEEALAKIKAAKPKVGETVTVTLKV",
+      "sequence_length": 64,
+      "sequence_sha256": "ccc912f3587e2527d082c7e39b439feda882f3a71a006545ee7561754977fcd2",
+      "molecular_format": "designed protein binder",
+      "molecular_job": "CEACAM5 extracellular binder generation",
+      "design_method": "BoltzGen",
+      "complex_prediction_method": "Boltz2",
+      "execution_state": "scored",
+      "promotion_state": "none",
+      "evidence_class": "computational-design-hypothesis",
+      "aggregate_metrics": {
+        "ipsae_min_median": 0.0,
+        "target_contact_recall_median": 0.588235,
+        "scored_observation_count": 1,
+        "failed_observation_count": 0,
+        "aggregation_scope": "selected single scored observation"
+      },
+      "cofold_observations": [
+        {
+          "candidate_id": "ceacam5-cp3-boltzgen-03",
+          "target_id": "T-ENSG00000105388",
+          "target_symbol": "CEACAM5",
+          "status": "scored",
+          "phase": "screen",
+          "seed": 20260931,
+          "predictor": "boltz2",
+          "model_revision": "boltz-2.2.1+cb04aeccdd480fd4db707f0bbafde538397fa2ac",
+          "sequence_sha256": "ccc912f3587e2527d082c7e39b439feda882f3a71a006545ee7561754977fcd2",
+          "predicted_complex_sha256": "0e344a2524ff99d74110e42d4fe72978231ffad71fde81e2066fa96ccd59aff3",
+          "ipsae_min": 0.0,
+          "target_contact_recall": 0.588235,
+          "target_contact_precision": 0.666667,
+          "target_alignment_rmsd": 1.9086,
+          "contact_count": 32,
+          "clash_count": 1,
+          "hotspot_recovery": 0.909091,
+          "site_contact_iou": 0.454545,
+          "offsite_contact_fraction": 0.333333,
+          "iptm": 0.141925,
+          "ptm": 0.667017,
+          "interface_plddt": 74.973929,
+          "interface_pae": 25.087854,
+          "dockq": 0.2013,
+          "metric_source_sha256": "38f3c5447834f5309ad7ec683d15e11047ea3f0774b7d45271edc8c40c122330"
+        }
+      ],
+      "promotion": {
+        "decision": "not-promoted",
+        "rationale": "Control assessment failed; no candidate was promoted."
+      },
+      "claim_ceiling": "control assessment failed; no candidate was promoted",
+      "artifacts": [
+        {
+          "path": "media/ceacam5-boltzgen-03.png",
+          "storage": "workspace",
+          "bytes": 102023,
+          "sha256": "6a04133da7d48e76481a40843a00a8743229ddf1b20e0cb3c23d3ab2d5b2cd23",
+          "role": "structure-preview",
+          "media_type": "image/png"
+        },
+        {
+          "path": "media/ceacam5-boltzgen-03.preview.json",
+          "storage": "workspace",
+          "bytes": 1252,
+          "sha256": "789c2fbf7243018e020644bbfb30340eb8d7c755483e564acf7361455556296b",
+          "role": "preview-metadata",
+          "media_type": "application/json"
+        },
+        {
+          "path": "media/coordinates/ceacam5-boltzgen-03.pdb",
+          "storage": "workspace",
+          "bytes": 144808,
+          "sha256": "0e344a2524ff99d74110e42d4fe72978231ffad71fde81e2066fa96ccd59aff3",
+          "role": "predicted-complex-coordinate"
+        },
+        {
+          "path": "media/sequences/ceacam5-boltzgen-03.fasta",
+          "storage": "workspace",
+          "bytes": 90,
+          "sha256": "c6012178fe0017812e3561fce30552b697d4ac2f4de1c39742cb9fbe29982541",
+          "role": "exact-sequence",
+          "media_type": "text/x-fasta"
+        }
+      ],
+      "structure_snapshots": [
+        {
+          "schema_version": "codex-surface-structure-snapshot/v0.1",
+          "preview_id": "ceacam5-boltzgen-03",
+          "title": "CEACAM5 · BoltzGen 03",
+          "evidence_class": "computational-structure-hypothesis",
+          "coordinate_sources": [
+            {
+              "path": "media/coordinates/ceacam5-boltzgen-03.pdb",
+              "storage": "workspace",
+              "bytes": 144808,
+              "sha256": "0e344a2524ff99d74110e42d4fe72978231ffad71fde81e2066fa96ccd59aff3",
+              "role": "predicted-complex-coordinate",
+              "format": "pdb",
+              "object_name": "complex",
+              "state": 1
+            }
+          ],
+          "layers": [
+            {
+              "object_name": "complex",
+              "selection": "chain A",
+              "color": "#17675D",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "CEACAM5 A3-B3 target construct, 177 residues · chain A"
+            },
+            {
+              "object_name": "complex",
+              "selection": "chain B",
+              "color": "#526A92",
+              "representation": "cartoon",
+              "color_mode": "solid",
+              "transparency": 0.0,
+              "description": "Designed candidate ceacam5-cp3-boltzgen-03 · chain B"
+            }
+          ],
+          "sequence_artifact": {
+            "path": "media/sequences/ceacam5-boltzgen-03.fasta",
+            "storage": "workspace",
+            "bytes": 90,
+            "sha256": "c6012178fe0017812e3561fce30552b697d4ac2f4de1c39742cb9fbe29982541",
+            "role": "exact-sequence",
+            "media_type": "text/x-fasta",
+            "sequence_id": "ceacam5-cp3-boltzgen-03",
+            "chain": "B"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "codex-surface-capability-collection/v0.1",
+  "atlas_id": "research-case-example",
+  "records": [
+    {
+      "capability_id": "CAP-DEFINED-POCKET-SCREEN-INGEST-V1",
+      "name": "Defined-pocket screening result ingestion and reconciliation",
+      "state": "artifact-validated",
+      "route": "Smina/Vinardo screening with local preparation and validation",
+      "claim_ceiling": "computational-screening-hypothesis"
+    },
+    {
+      "capability_id": "CAP-CEACAM5-MULTIMETHOD-DESIGN-READOUT",
+      "name": "CEACAM5 binder design checkpoint readout",
+      "state": "artifact-validated",
+      "version": "BoltzGen candidate generation with Boltz2 complex prediction",
+      "route": "selected completed campaign artifacts",
+      "claim_ceiling": "computational-design-hypothesis; control gate failed and no candidate was promoted"
+    }
+  ]
+}

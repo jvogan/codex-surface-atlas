@@ -1,0 +1,33 @@
+{
+  "schema_version": "codex-surface-discovered-entity-collection/v0.1",
+  "atlas_id": "synthetic-surface-atlas",
+  "records": [
+    {
+      "entity_id": "E-EMBER",
+      "preferred_name": "Ember receptor",
+      "entity_type": "cell-surface-protein",
+      "surface_disposition": "surface-target",
+      "target_id": "T-EMBER",
+      "source_refs": ["Q-SYNTHETIC-FIXTURE"],
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "entity_id": "E-LANTERN",
+      "preferred_name": "Lantern adhesion protein",
+      "entity_type": "cell-surface-protein",
+      "surface_disposition": "surface-target",
+      "target_id": "T-LANTERN",
+      "source_refs": ["Q-SYNTHETIC-FIXTURE"],
+      "claim_ceiling": "synthetic illustration"
+    },
+    {
+      "entity_id": "E-ORBIT",
+      "preferred_name": "Orbit glycan determinant",
+      "entity_type": "extracellular-determinant",
+      "surface_disposition": "surface-target",
+      "target_id": "T-ORBIT",
+      "source_refs": ["Q-SYNTHETIC-FIXTURE"],
+      "claim_ceiling": "synthetic illustration"
+    }
+  ]
+}

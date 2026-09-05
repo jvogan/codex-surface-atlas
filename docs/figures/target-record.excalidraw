@@ -1,0 +1,891 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "appState": {
+    "viewBackgroundColor": "#080a0e",
+    "exportBackground": true,
+    "gridSize": null
+  },
+  "files": {},
+  "elements": [
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-000",
+      "x": 60,
+      "y": 30,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "SURFACE ATLAS / TARGET RECORD",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-001",
+      "x": 60,
+      "y": 70,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "One target page connects the atlas records",
+      "fontSize": 40,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-002",
+      "x": 60,
+      "y": 126,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "Each linked record keeps its source, identity, action, site, and result fields together.",
+      "fontSize": 22,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-003",
+      "x": 60,
+      "y": 220,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 410,
+      "height": 170,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-004",
+      "x": 84,
+      "y": 242,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "SOURCES AND DISEASE CONTEXT",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-005",
+      "x": 84,
+      "y": 288,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "query records\nliterature and data\nevidence cutoff",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-006",
+      "x": 60,
+      "y": 445,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 410,
+      "height": 170,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-007",
+      "x": 84,
+      "y": 467,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "SURFACE AND NORMAL TISSUE CONTEXT",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-008",
+      "x": 84,
+      "y": 513,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "topology\ncell or tissue context\nunresolved exposure evidence",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-009",
+      "x": 60,
+      "y": 670,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 410,
+      "height": 170,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-010",
+      "x": 84,
+      "y": 692,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "INTERVENTIONS",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-011",
+      "x": 84,
+      "y": 738,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "known action\nmolecule references\nmodality fit",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-012",
+      "x": 610,
+      "y": 220,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 2.2,
+      "roughness": 0,
+      "width": 550,
+      "height": 530,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-013",
+      "x": 646,
+      "y": 246,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "TARGET PAGE",
+      "fontSize": 23,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-014",
+      "x": 646,
+      "y": 282,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "One stable record for one target",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-015",
+      "x": 646,
+      "y": 340,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "IDENTITY",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-016",
+      "x": 830,
+      "y": 339,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "target identifier and preferred name",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "line",
+      "id": "s16_surface_atlas_target_record-017",
+      "x": 646,
+      "y": 375,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 0.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          474,
+          0
+        ]
+      ],
+      "width": 474,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-018",
+      "x": 646,
+      "y": 402,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "EVIDENCE",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-019",
+      "x": 830,
+      "y": 401,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "source references and disease evidence",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "line",
+      "id": "s16_surface_atlas_target_record-020",
+      "x": 646,
+      "y": 437,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 0.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          474,
+          0
+        ]
+      ],
+      "width": 474,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-021",
+      "x": 646,
+      "y": 464,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "ACCESSIBILITY",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-022",
+      "x": 830,
+      "y": 463,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "surface state and normal-tissue evidence",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "line",
+      "id": "s16_surface_atlas_target_record-023",
+      "x": 646,
+      "y": 499,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 0.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          474,
+          0
+        ]
+      ],
+      "width": 474,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-024",
+      "x": 646,
+      "y": 526,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "ACTION",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-025",
+      "x": 830,
+      "y": 525,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "intervention and molecule record",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "line",
+      "id": "s16_surface_atlas_target_record-026",
+      "x": 646,
+      "y": 561,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 0.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          474,
+          0
+        ]
+      ],
+      "width": 474,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-027",
+      "x": 646,
+      "y": 588,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "STRUCTURE",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-028",
+      "x": 830,
+      "y": 587,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "construct and site record",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "line",
+      "id": "s16_surface_atlas_target_record-029",
+      "x": 646,
+      "y": 623,
+      "strokeColor": "#b9c2ce",
+      "strokeWidth": 0.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          474,
+          0
+        ]
+      ],
+      "width": 474,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": null,
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-030",
+      "x": 646,
+      "y": 650,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "OUTCOME",
+      "fontSize": 15,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-031",
+      "x": 830,
+      "y": 649,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "opportunity and result record",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-032",
+      "x": 1300,
+      "y": 220,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 420,
+      "height": 170,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-033",
+      "x": 1324,
+      "y": 242,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "STRUCTURES AND SITES",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-034",
+      "x": 1324,
+      "y": 288,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "construct and chain\nsite residues\ncoordinate or model record",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-035",
+      "x": 1300,
+      "y": 445,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 420,
+      "height": 170,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-036",
+      "x": 1324,
+      "y": 467,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "OPPORTUNITIES",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-037",
+      "x": 1324,
+      "y": 513,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "target, action, and site\nmodality\nnext step",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-038",
+      "x": 1300,
+      "y": 670,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 420,
+      "height": 170,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-039",
+      "x": 1324,
+      "y": 692,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "RESULTS",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-040",
+      "x": 1324,
+      "y": 738,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "screening records\nbinder candidates\ncontrol records and files",
+      "fontSize": 19,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-041",
+      "x": 471,
+      "y": 305,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          139,
+          0
+        ]
+      ],
+      "width": 139,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-042",
+      "x": 471,
+      "y": 530,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          139,
+          0
+        ]
+      ],
+      "width": 139,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-043",
+      "x": 471,
+      "y": 755,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          69,
+          0
+        ],
+        [
+          69,
+          -65
+        ],
+        [
+          139,
+          -65
+        ]
+      ],
+      "width": 139,
+      "height": 65,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-044",
+      "x": 1160,
+      "y": 305,
+      "strokeColor": "#a9caff",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          140,
+          0
+        ]
+      ],
+      "width": 140,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-045",
+      "x": 1160,
+      "y": 530,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          140,
+          0
+        ]
+      ],
+      "width": 140,
+      "height": 0,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-046",
+      "x": 1160,
+      "y": 690,
+      "strokeColor": "#bce58c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          65,
+          0
+        ],
+        [
+          65,
+          65
+        ],
+        [
+          140,
+          65
+        ]
+      ],
+      "width": 140,
+      "height": 65,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    },
+    {
+      "type": "rectangle",
+      "id": "s16_surface_atlas_target_record-047",
+      "x": 610,
+      "y": 875,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "width": 550,
+      "height": 130,
+      "backgroundColor": "#10151b",
+      "fillStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-048",
+      "x": 646,
+      "y": 900,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "REPORT AND REUSABLE RECORDS",
+      "fontSize": 20,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "text",
+      "id": "s16_surface_atlas_target_record-049",
+      "x": 646,
+      "y": 944,
+      "strokeColor": "#f5f7fa",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "text": "offline report pages\nversioned data files\nstable identifiers for reuse",
+      "fontSize": 18,
+      "fontFamily": 2,
+      "textAlign": "left",
+      "verticalAlign": "top"
+    },
+    {
+      "type": "arrow",
+      "id": "s16_surface_atlas_target_record-050",
+      "x": 885,
+      "y": 750,
+      "strokeColor": "#f6dd8c",
+      "strokeWidth": 1.8,
+      "roughness": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          125
+        ]
+      ],
+      "width": 0,
+      "height": 125,
+      "strokeStyle": "solid",
+      "endArrowhead": "arrow",
+      "startArrowhead": null,
+      "roundness": null
+    }
+  ]
+}
