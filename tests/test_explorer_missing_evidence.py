@@ -71,7 +71,7 @@ const selected = document.getElementById('atlas-selection');
 process.stdout.write(JSON.stringify({main: selected.innerHTML, details: selected.children.map(x => x.innerHTML)}));
 '''
     result = subprocess.run([node, '-e', harness, str(ROOT / 'src/surface_atlas/assets/report/presentation.js')],
-                            input=json.dumps(records), text=True, capture_output=True, check=True)
+                            input=json.dumps(records), text=True, encoding="utf-8", capture_output=True, check=True)
     rendered = json.loads(result.stdout)
     assert 'tcsa single cell context — not measured' in rendered['main']
     assert 'No unresolved measurements listed' not in rendered['main']

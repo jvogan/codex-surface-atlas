@@ -1073,7 +1073,7 @@
     {
       "kind": "python",
       "path": "tests/test_explorer_missing_evidence.py",
-      "sha256": "8025c7ab1b5d660b702bd00be3168a47fc0aa2e8591551b280b114bfd8ede4a9"
+      "sha256": "2de57cdbea654cd91489baab13805ad386af319b43e92d2c919cdb6e34f49a1f"
     },
     {
       "allow_findings": [
@@ -1195,7 +1195,7 @@
   "limits": {
     "max_file_bytes": 4515536,
     "max_files": 234,
-    "max_total_bytes": 11316713
+    "max_total_bytes": 11316731
   },
   "version": 1
 }
