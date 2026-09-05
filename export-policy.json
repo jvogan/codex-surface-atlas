@@ -15,7 +15,7 @@
       "kind": "binary",
       "path": ".github/assets/surface-atlas-banner.jpg",
       "reviewed_binary": true,
-      "sha256": "d1de907f4d38aeb36c889412bca3c48910e905d5c896ddb1c29c6f70926d7965"
+      "sha256": "29444547d29e2bb7220703c3300daa61f4d19e5b36dbf9bf6f4e01f6ed733ddc"
     },
     {
       "kind": "binary",
@@ -33,7 +33,7 @@
       "kind": "binary",
       "path": ".github/assets/surface-atlas-social-preview.jpg",
       "reviewed_binary": true,
-      "sha256": "af0c97c2bd1ff3f6b3aa2d8a680b69b09f956d424ae968e44b51fabfb1f32ebb"
+      "sha256": "8190edca3b06e498bc80aa58de09ef446130600c9ffb8e1726741d9c1393cbac"
     },
     {
       "kind": "text",
@@ -1216,7 +1216,7 @@
   "limits": {
     "max_file_bytes": 4515536,
     "max_files": 238,
-    "max_total_bytes": 11549191
+    "max_total_bytes": 11779234
   },
   "version": 1
 }
