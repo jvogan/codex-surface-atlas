@@ -500,3 +500,81 @@ def test_git_attributes_use_scanned_config_kind(tmp_path: Path) -> None:
     (tmp_path / ".gitattributes").write_bytes(content)
     result = check_repository(tmp_path, _policy(".gitattributes", content, kind="config"))
     assert result.ok, result.findings
+
+
+_ATTACHMENT_ID = '-'.join(('12345678', '1234', '4234', '8234', '123456789abc'))
+_ATTACHMENT_URL = 'https://github.com/user-attachments/assets/' + _ATTACHMENT_ID
+
+
+@pytest.mark.parametrize('text', [
+    _ATTACHMENT_URL,
+    '<' + _ATTACHMENT_URL + '>',
+    '[Watch the clip](' + _ATTACHMENT_URL + ')',
+    'Public attachment:\n' + _ATTACHMENT_URL + '\n',
+])
+def test_canonical_github_attachment_uuid_is_not_a_case_identifier(tmp_path, text):
+    source = tmp_path / 'source'; source.mkdir()
+    content = text.encode()
+    (source / 'README.md').write_bytes(content)
+    policy = _policy('README.md', content, kind='text')
+    report = check_repository(source, policy)
+    assert report.ok, report.findings
+    assert report.files[0].review_exceptions == ()
+    output = tmp_path / 'public'
+    export_subset(source, output, policy)
+    assert (output / 'README.md').read_bytes() == content
+    (source / 'README.md').write_bytes(content + b'changed')
+    assert not check_repository(source, policy).ok
+
+
+@pytest.mark.parametrize('url', [
+    _ATTACHMENT_URL.replace('github.com', 'github.com.example.invalid'),
+    _ATTACHMENT_URL.replace('github.com', 'example.invalid/github.com'),
+    _ATTACHMENT_URL.replace('github.com', 'user@github.com'),
+    _ATTACHMENT_URL.replace('github.com', 'github.com@evil.invalid'),
+    _ATTACHMENT_URL.replace('github.com', 'github.com:443'),
+    _ATTACHMENT_URL.replace('https:', 'http:'),
+    _ATTACHMENT_URL + '/private',
+    _ATTACHMENT_URL + '.mp4',
+    _ATTACHMENT_URL + '?download=1',
+    _ATTACHMENT_URL + '#fragment',
+    _ATTACHMENT_URL + '/',
+    _ATTACHMENT_URL + '\\private',
+    'https://example.invalid/?redirect=(' + _ATTACHMENT_URL + ')',
+    'https://example.invalid/path/' + _ATTACHMENT_URL,
+    'prefix/' + _ATTACHMENT_URL,
+    '(' + _ATTACHMENT_URL + ')suffix',
+    'ftp://' + _ATTACHMENT_URL,
+])
+def test_attachment_lookalikes_and_suffixes_remain_blocked(tmp_path, url):
+    source = tmp_path / 'source'; source.mkdir()
+    content = url.encode()
+    (source / 'README.md').write_bytes(content)
+    report = check_repository(source, _policy('README.md', content, kind='text'))
+    assert 'case_identifier' in {finding.code for finding in report.findings}
+
+
+def test_same_uuid_outside_attachment_is_still_a_case_identifier(tmp_path):
+    source = tmp_path / 'source'; source.mkdir()
+    content = (_ATTACHMENT_URL + '\nUnrelated identifier: ' + _ATTACHMENT_ID).encode()
+    (source / 'README.md').write_bytes(content)
+    report = check_repository(source, _policy('README.md', content, kind='text'))
+    assert 'case_identifier' in {finding.code for finding in report.findings}
+
+
+def test_attachment_does_not_mask_other_sensitive_content_or_explicit_fields(tmp_path):
+    source = tmp_path / 'source'; source.mkdir()
+    content = json.dumps({'attachment': _ATTACHMENT_URL, 'case_id': _ATTACHMENT_URL,
+                          'api_key': 'syntheticcredentialvalue',
+                          'header': ' '.join(('Authorization:', 'Bearer', 'syntheticcredentialvalue')),
+                          'source_path': '/Users/example/private/notes.txt'}).encode()
+    (source / 'item.json').write_bytes(content)
+    policy = _policy('item.json', content)
+    policy['deny_terms'] = [_ATTACHMENT_ID]
+    report = check_repository(source, policy)
+    assert {'case_identifier', 'credential_field', 'credential_value', 'private_path', 'deny_term'} <= {finding.code for finding in report.findings}
+
+
+def test_attachment_in_html_attribute_and_decoded_content_uses_same_rule(tmp_path):
+    report = _check_html(tmp_path, '<a href="' + _ATTACHMENT_URL + '">Public video</a>')
+    assert report.ok, report.findings

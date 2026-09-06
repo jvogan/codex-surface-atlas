@@ -147,6 +147,15 @@ visibility. Review `SECURITY.md` and decide whether to enable GitHub private
 vulnerability reporting; verify the private reporting form after enabling it.
 No release check or documentation change enables that remote feature.
 
+Review README videos separately from the source inventory: GitHub attachments
+are remote assets. Check visible frames and audio as well as container metadata;
+strip editor project IDs, timestamps, and private fields from upload copies.
+Keep the original recordings outside the release tree. After changing visibility,
+open the README while signed out and verify both video players and the linked
+public campaign. Canonical attachment links follow repository access rules;
+never commit temporary signed playback URLs. See
+[GitHub's attachment limits and access rules](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files).
+
 For the public default branch, require the seven `test` matrix checks in the
 Test workflow, require branches to be current before merging, disallow force
 pushes and deletion, and require conversations to be resolved. Apply the same

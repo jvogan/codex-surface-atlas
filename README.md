@@ -52,6 +52,30 @@ installed plugins or companions. The CLI does not launch those services.
 This is alpha research software: recorded source support and computational
 results do not establish clinical suitability.
 
+## Explore an example campaign
+
+[Open the mucinous colon cancer Surface Atlas](https://surface-atlas-mucinous-colon.biomayflower.chatgpt.site)
+to explore a research campaign built in Codex with Rosalind scientific plugins.
+Compare surface targets, inspect binding sites and 3D structures, and follow
+molecule-screening and protein-design results back to their source records.
+The report includes failed checks and the limits of its computational findings.
+
+**Illustrated Codex + Rosalind workflow overview · 1:14**
+
+https://github.com/user-attachments/assets/1326509d-6f41-4a82-92d7-36ded91c9f84
+
+<details>
+<summary>Watch the public campaign tour · 2:07</summary>
+
+Explore the target pages, molecular viewer, screening results, and protein designs.
+
+https://github.com/user-attachments/assets/ac56845e-7940-455c-88ee-818e037966e6
+
+</details>
+
+To reproduce the package's offline workflow yourself, start with the
+[synthetic tutorial](docs/tutorial.md).
+
 ## Work with Rosalind plugins
 
 The [recipe guides](docs/recipes/README.md) show what to give Codex, which plugins

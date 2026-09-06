@@ -255,6 +255,34 @@ _UUID_RE = re.compile(
     r"\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b",
     re.IGNORECASE,
 )
+# Consume whole URL tokens before recognizing attachments. This prevents an
+# attachment-looking substring inside another host's path/query from qualifying.
+_URL_TOKEN_RE = re.compile(r"(?<![^\s<>\"'(])[A-Za-z][A-Za-z0-9+.-]*://[^\s<>\"']+")
+_GITHUB_ATTACHMENT_RE = re.compile(
+    r"https://github\.com/user-attachments/assets/(?P<asset>" +
+    "(?i:" + _UUID_RE.pattern + "))"
+)
+
+
+def _has_private_uuid(text: str) -> bool:
+    """Exempt only each UUID occurrence in an exact native attachment URL.
+
+    All other scanners still receive the original text. URL parameters,
+    fragments, ports, credentials, trailing paths, and lookalike hosts do not
+    qualify. A closing parenthesis is accepted only for a parenthesized URL.
+    """
+    asset_spans: set[tuple[int, int]] = set()
+    for token in _URL_TOKEN_RE.finditer(text):
+        candidate = token.group()
+        if token.start() and text[token.start() - 1] == "(" and candidate.endswith(")"):
+            candidate = candidate[:-1]
+        attachment = _GITHUB_ATTACHMENT_RE.fullmatch(candidate)
+        if attachment:
+            start, end = attachment.span("asset")
+            asset_spans.add((token.start() + start, token.start() + end))
+    return any(match.span() not in asset_spans for match in _UUID_RE.finditer(text))
+
+
 _ROLE_LINE_RE = re.compile(r"(?m)^\s*(?:user|assistant|system|developer)\s*:\s*\S", re.IGNORECASE)
 _URL_ATTRIBUTES = {"action", "formaction", "href", "poster", "src", "srcset"}
 
@@ -586,7 +614,7 @@ def _scan_text(path: str, text: str, kind: str, deny_terms: Sequence[str]) -> li
         findings.append(Finding("private_path", path, "contains a private absolute path"))
     if _CREDENTIAL_RE.search(searchable):
         findings.append(Finding("credential_value", path, "contains credential-shaped content"))
-    if _UUID_RE.search(searchable):
+    if _has_private_uuid(searchable):
         findings.append(Finding("case_identifier", path, "contains a case-shaped UUID"))
     if len(_ROLE_LINE_RE.findall(searchable)) >= 2:
         findings.append(Finding("internal_conversation", path, "contains conversation-shaped role records"))
