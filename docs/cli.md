@@ -63,6 +63,47 @@ surface-atlas example OUTPUT_DIRECTORY --json
 
 The synthetic example contains invented records only. Use it to check the workspace, validation, and report workflow.
 
+## Complete offline tutorial
+
+```bash
+surface-atlas tutorial NEW_DIRECTORY --json
+```
+
+Creates a deterministic, explicitly synthetic workspace containing source
+snapshots, a reconciled census, action evidence, mapped sequence sites, binder
+runs, and an assay return. See [the replay tutorial](tutorial.md) for the expected
+results. No retrieval, model, or laboratory service runs.
+
+## Evidence intake and reconciliation
+
+```bash
+surface-atlas ingest-evidence SNAPSHOT [SNAPSHOT ...] \
+  --atlas BASE_ATLAS --output NEW_ATLAS_DIRECTORY --json
+surface-atlas reconcile-evidence ATLAS_DIRECTORY --json
+surface-atlas reconcile-evidence ATLAS_DIRECTORY --output NEW_LEDGER_JSON --json
+```
+
+Intake creates a new portable atlas from explicitly reviewed source snapshots.
+It preserves raw source bytes and reconciles stable identities and dispositions.
+Reconciliation reports stale ledger counts, verifies source projections, and
+optionally writes a new ledger file. It never edits an existing atlas in place.
+See [evidence intake](evidence-intake.md) for the input contract and limitations.
+
+## Binder runs and assay returns
+
+```bash
+surface-atlas import-binder-runs RUN_JSON [RUN_JSON ...] \
+  --atlas ATLAS_DIRECTORY --output NEW_BUNDLE_DIRECTORY --json
+surface-atlas import-assays ASSAY_JSON \
+  --atlas ATLAS_DIRECTORY --output NEW_BUNDLE_DIRECTORY --json
+```
+
+Omit `--output` to validate only. Each output bundles its collection and verified
+source artifacts. Add the complete bundle to a copy of the atlas, then validate
+and report that copy. Assay candidate/run identities and both constructs must
+match registered binder runs. The importer preserves measurements and controls;
+it does not promote a candidate. See [research intake](research-intake.md).
+
 ## Skill lifecycle
 
 ```bash

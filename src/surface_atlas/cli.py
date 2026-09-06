@@ -31,6 +31,29 @@ def _parser() -> argparse.ArgumentParser:
     example.add_argument("output_directory", type=Path)
     example.add_argument("--json", action="store_true", dest="json_output")
 
+    tutorial = commands.add_parser("tutorial", help="create the complete reproducible offline research tutorial")
+    tutorial.add_argument("output_directory", type=Path)
+    tutorial.add_argument("--json", action="store_true", dest="json_output")
+
+    evidence = commands.add_parser("ingest-evidence", help="compile reviewed local source snapshots into a new atlas")
+    evidence.add_argument("inputs", nargs="+", type=Path)
+    evidence.add_argument("--atlas", required=True, type=Path)
+    evidence.add_argument("--output", required=True, type=Path, metavar="NEW_DIRECTORY")
+    evidence.add_argument("--json", action="store_true", dest="json_output")
+
+    reconcile = commands.add_parser("reconcile-evidence", help="check source projections and reconcile ledger counts")
+    reconcile.add_argument("atlas_directory", type=Path)
+    reconcile.add_argument("--output", type=Path, metavar="NEW_LEDGER_JSON")
+    reconcile.add_argument("--json", action="store_true", dest="json_output")
+
+    for command, help_text in (("import-binder-runs", "validate and bundle supplied binder runs with their artifacts"),
+                               ("import-assays", "validate and bundle supplied assay returns against exact constructs")):
+        intake = commands.add_parser(command, help=help_text)
+        intake.add_argument("inputs", nargs="+" if command == "import-binder-runs" else None, type=Path)
+        intake.add_argument("--atlas", required=True, type=Path)
+        intake.add_argument("--output", type=Path, metavar="NEW_BUNDLE_DIRECTORY", help="omit for validation only")
+        intake.add_argument("--json", action="store_true", dest="json_output")
+
     validate = commands.add_parser("validate", help="validate an atlas workspace offline")
     validate.add_argument("atlas_directory", type=Path)
     validate.add_argument("--json", action="store_true", dest="json_output")
@@ -292,6 +315,8 @@ def _run_export(args: argparse.Namespace) -> int:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    if args.command in {"tutorial", "ingest-evidence", "reconcile-evidence", "import-binder-runs", "import-assays"}:
+        return _run_research(args)
     if args.command == "init":
         return _run_init(args)
     if args.command == "example":
@@ -313,6 +338,31 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "export":
         return _run_export(args)
     raise AssertionError(f"unhandled command: {args.command}")
+
+
+def _run_research(args: argparse.Namespace) -> int:
+    from .evidence_intake import ingest_evidence, reconcile_evidence
+    from .research_intake import import_assays, import_binder_runs
+    try:
+        if args.command == "tutorial":
+            from .tutorial import create_tutorial
+            result = create_tutorial(args.output_directory)
+        elif args.command == "ingest-evidence":
+            result = ingest_evidence(args.inputs, args.atlas, args.output)
+        elif args.command == "reconcile-evidence":
+            result = reconcile_evidence(args.atlas_directory, args.output)
+        elif args.command == "import-binder-runs":
+            result = import_binder_runs(args.inputs, args.atlas, args.output)
+        else:
+            result = import_assays(args.inputs, args.atlas, args.output)
+    except (ValueError, OSError) as exc:
+        if args.json_output:
+            print(json.dumps({"errors": [str(exc)], "network_or_provider_calls": False}, indent=2))
+        else:
+            print(f"surface-atlas {args.command}: {exc}", file=sys.stderr)
+        return 1
+    _emit(result, json_output=args.json_output, message=json.dumps(result, indent=2))
+    return 0 if result.get("consistent", True) or args.output is not None else 1
 
 
 if __name__ == "__main__":

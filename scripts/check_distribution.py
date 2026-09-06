@@ -4,12 +4,15 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import csv
+import io
 import hashlib
 import json
 import os
 import shutil
 from html.parser import HTMLParser
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import subprocess
 import stat
 import tempfile
@@ -158,6 +161,76 @@ def check_portable_example(directory: Path) -> Path:
     return root
 
 
+def check_wheel_inventory(wheel: Path, policy_path: Path) -> int:
+    """Verify every installed payload against a separately reviewed source policy."""
+    policy = json.loads(policy_path.read_text(encoding="utf-8"))
+    _require(isinstance(policy, dict) and policy.get("version") == 1
+             and isinstance(policy.get("files"), list) and policy["files"],
+             "wheel check needs a nonempty version 1 review policy")
+    reviewed = {}
+    for entry in policy["files"]:
+        _require(isinstance(entry, dict) and isinstance(entry.get("path"), str)
+                 and isinstance(entry.get("sha256"), str), "invalid review policy entry")
+        name = entry["path"]
+        _require(name not in reviewed, "duplicate review policy path")
+        reviewed[name] = entry["sha256"]
+    with ZipFile(wheel) as bundle:
+        names = set()
+        for member in bundle.infolist():
+            name = member.filename
+            parsed = PurePosixPath(name)
+            mode = member.external_attr >> 16
+            _require(name and not parsed.is_absolute() and ".." not in parsed.parts
+                     and "\\" not in name and parsed.as_posix() == name
+                     and not any(":" in part for part in parsed.parts)
+                     and not member.is_dir() and not stat.S_ISLNK(mode)
+                     and (not stat.S_IFMT(mode) or stat.S_ISREG(mode)),
+                     "unsafe or non-regular wheel entry")
+            _require(name not in names, "duplicate wheel entry")
+            names.add(name)
+        metadata = [name for name in names if name.endswith(".dist-info/METADATA")]
+        _require(len(metadata) == 1, "wheel needs exactly one metadata directory")
+        prefix = metadata[0].removesuffix("/METADATA")
+        _require("/" not in prefix and prefix.startswith("codex_surface_atlas-"),
+                 "unexpected wheel metadata directory")
+        data_prefix = prefix.removesuffix(".dist-info") + ".data/data/"
+        expected = {name.removeprefix("src/"): digest for name, digest in reviewed.items()
+                    if name.startswith("src/surface_atlas/")}
+        # Schemas use the declared setuptools data-files installation mapping.
+        expected.update({data_prefix + "share/codex-surface-atlas/" + name: digest
+                             for name, digest in reviewed.items()
+                             if name.startswith("schemas/v0.1/") and name.endswith(".json")})
+        for name in ("LICENSE", "NOTICE.md"):
+            _require(name in reviewed, "review policy is missing license material")
+            expected[prefix + "/licenses/" + name] = reviewed[name]
+        generated = {prefix + "/" + name for name in
+                     ("METADATA", "WHEEL", "entry_points.txt", "top_level.txt", "RECORD")}
+        _require(set(expected) <= names, "reviewed wheel files are missing: "
+                 + ", ".join(sorted(set(expected) - names)))
+        _require(names <= set(expected) | generated, "unreviewed wheel files: "
+                 + ", ".join(sorted(names - set(expected) - generated)))
+        for name, digest in expected.items():
+            _require(hashlib.sha256(bundle.read(name)).hexdigest() == digest,
+                     "reviewed wheel file differs: " + name)
+        record_name = prefix + "/RECORD"
+        _require(record_name in names, "wheel RECORD is missing")
+        recorded = set()
+        for row in csv.reader(io.StringIO(bundle.read(record_name).decode("utf-8"))):
+            _require(len(row) == 3, "invalid wheel RECORD row")
+            name, digest, size = row
+            _require(name in names and name not in recorded, "invalid wheel RECORD inventory")
+            recorded.add(name)
+            if name == record_name:
+                _require(not digest and not size, "RECORD must leave its own hash and size empty")
+                continue
+            payload = bundle.read(name)
+            actual = base64.urlsafe_b64encode(hashlib.sha256(payload).digest()).rstrip(b"=").decode("ascii")
+            _require(digest == "sha256=" + actual and size == str(len(payload)),
+                     "wheel RECORD hash or size differs: " + name)
+        _require(recorded == names, "wheel RECORD inventory is incomplete")
+    return len(expected)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("wheel", nargs="?", type=Path, help="wheel to install and exercise")
@@ -165,6 +238,9 @@ def main() -> None:
                         help="check an existing report directory without installing a wheel")
     parser.add_argument("--example", type=Path, metavar="DIRECTORY",
                         help="also copy and exercise a research example with the installed wheel")
+    parser.add_argument("--policy", type=Path,
+                        default=Path(__file__).resolve().parents[1] / "export-policy.json",
+                        help="trusted reviewed source policy for wheel inventory")
     args = parser.parse_args()
     if args.wheel is None and args.report is None:
         parser.error("provide a wheel path or --report DIRECTORY")
@@ -181,6 +257,7 @@ def main() -> None:
         return
 
     wheel = args.wheel.resolve()
+    check_wheel_inventory(wheel, args.policy)
     example = check_portable_example(args.example) if args.example is not None else None
     research_pages = 0
     with ZipFile(wheel) as bundle:
@@ -217,6 +294,29 @@ def main() -> None:
         run(str(cli), "init", "installation-check", "empty-atlas", "--disease", "Example research question", "--json")
         _require(json.loads(run(str(cli), "validate", "empty-atlas", "--json"))["valid"],
                  "empty atlas validation failed")
+        run(str(cli), "tutorial", "tutorial", "--json")
+        _require(json.loads(run(str(cli), "validate", "tutorial", "--json"))["valid"],
+                 "installed tutorial validation failed")
+        reconciled = json.loads(run(str(cli), "reconcile-evidence", "tutorial", "--json"))
+        _require(reconciled["consistent"] and reconciled["expected_counts"]["raw_records"] == 6
+                 and reconciled["expected_counts"]["unresolved_records"] == 1,
+                 "installed tutorial reconciliation failed")
+        tutorial_report = json.loads(run(str(cli), "report", "tutorial", "--output-root", "reports", "--run-id", "tutorial", "--json"))
+        tutorial_dir = Path(tutorial_report["run_directory"])
+        tutorial_pages = check_report(tutorial_dir, synthetic=True)
+        for filename in ("action-comparison.html", "sequence-sites.html", "campaigns.html", "assays.html"):
+            _require((tutorial_dir / filename).is_file(), f"missing tutorial page: {filename}")
+        runs = json.loads((tutorial_dir / "data/binder-runs.json").read_text(encoding="utf-8"))
+        _require(len(runs["records"]) == 2 and {r["controls_status"] for r in runs["records"]} == {"failed", "not-run"},
+                 "tutorial independent control outcomes changed")
+        assays = json.loads((tutorial_dir / "data/assay-results.json").read_text(encoding="utf-8"))
+        _require(assays["records"][0]["reading"]["relation"] == ">"
+                 and assays["records"][0]["reading"]["unit"] == "nM", "tutorial censored reading changed")
+        tutorial_inputs = root / "tutorial/tutorial-inputs/research"
+        run(str(cli), "import-binder-runs", str(tutorial_inputs / "binder-runs.json"),
+            str(tutorial_inputs / "binder-runs-two.json"), "--atlas", "tutorial", "--output", "runs-bundle", "--json")
+        run(str(cli), "import-assays", str(tutorial_inputs / "assay-results.json"),
+            "--atlas", "tutorial", "--output", "assay-bundle", "--json")
         run(str(cli), "example", "example", "--json")
         _require(json.loads(run(str(cli), "validate", "example", "--json"))["valid"],
                  "synthetic example validation failed")
@@ -344,6 +444,7 @@ def main() -> None:
                      "research report performed external work")
             research_pages = check_report(root / research["run_directory"])
     print(f"Wheel installation passed: CLI, schemas, skill lifecycle, library registration, screening merge, {pages} report pages, and complete report export.")
+    print(f"Installed tutorial passed: evidence reconciliation, binder/assay import, and {tutorial_pages} linked report pages.")
     if example is not None:
         print(f"Relocated research example passed: validation and {research_pages} report pages.")
 

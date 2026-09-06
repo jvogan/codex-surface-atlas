@@ -1,0 +1,27 @@
+name: Bug report
+description: Report unexpected behavior with a synthetic reproduction.
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        For security concerns, read SECURITY.md before sharing details.
+        Do not upload credentials, private datasets, or sensitive logs.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal synthetic reproduction
+      description: Include commands and small synthetic inputs where possible.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Version, Python version, and operating system
+    validations:
+      required: true

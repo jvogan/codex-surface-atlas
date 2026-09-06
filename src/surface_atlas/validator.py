@@ -664,6 +664,21 @@ def main(argv: list[str] | None = None) -> int:
         if ledger.get("coverage_state") == "planned":
             warnings.append("search coverage is planned; no evidence retrieval is claimed")
 
+    from .sequence_sites import validate_sequence_sites
+    from .action_comparison import validate_action_evidence
+    from .research_intake import validate_optional_research
+    structure_payload = loaded.get("structures.json")
+    errors.extend(validate_sequence_sites(root, target_records, structure_payload.get("records", []) if isinstance(structure_payload, dict) else []))
+    errors.extend(validate_action_evidence(target_records))
+    errors.extend(validate_optional_research(root, atlas_id, target_records))
+    from .evidence_intake import EvidenceError, reconcile_evidence, has_managed_evidence
+    try:
+        if isinstance(ledger, dict) and (ledger.get("data_kind") in {"synthetic", "public-source"} or has_managed_evidence(root, ledger)):
+            reconciliation = reconcile_evidence(root)
+            if not reconciliation["consistent"]:
+                errors.append("search-ledger.json: counts differ from reconciled source evidence")
+    except (EvidenceError, OSError) as exc:
+        errors.append(f"evidence reconciliation: {exc}")
     return finish(args.json_output, root, errors, warnings)
 
 

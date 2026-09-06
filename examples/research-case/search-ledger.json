@@ -10,6 +10,15 @@
   ],
   "sources": [
     {
+      "query_id": "selected-intervention-structure-lookup",
+      "source_class": "RCSB Protein Data Bank",
+      "query": "Exact entry lookup: 6Y0F and 8BW0",
+      "retrieval_date": "2026-09-06",
+      "status": "complete",
+      "records": 2,
+      "detail": "Two binding-complex intervention records; no efficacy or clinical-status lookup. These are annotations on existing targets and do not add discovery entities."
+    },
+    {
       "query_id": "selected-target-evidence",
       "source_class": "public evidence records",
       "status": "complete",

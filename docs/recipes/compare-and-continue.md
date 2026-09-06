@@ -21,6 +21,13 @@ requires experimental measurements.
 
 ## Build views for the comparison
 
+Start with the installed **Compare actions** and **Sequence & sites** pages.
+Populate [action evidence](../action-comparison.md) and
+[verified sequence maps](../sequence-sites.md), then rebuild the report. The
+views already provide action switching, source-based criteria, next
+measurements, sequence-range downloads, and portable requests. Legacy records
+without these extensions remain explicitly unmeasured or unavailable.
+
 ```text
 Extend this report with the views needed for [RESEARCH PURPOSE]. Open each
 page with its main finding and a useful action. Connect the selected protein
@@ -31,7 +38,7 @@ Use an independent reviewer to check filters, residue links, downloads, and
 copied requests against the source records.
 ```
 
-These prompts ask the agent to extend the base report for your project. Read
+Use custom extensions when the built-in views do not answer your project question. Read
 the [reader workflow guide](../../skills/codex-surface-targets/references/reader-workflow.md)
 for comparison, selection, and review requirements. Use
 [Sequences, structures, and sites](sequences-structures-sites.md) to prepare

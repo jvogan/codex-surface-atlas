@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jvogan/codex-surface-atlas/blob/main/schemas/v0.1/action-evidence.schema.json",
+  "title": "Optional target action evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "target_id",
+    "sources",
+    "observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex-surface-action-evidence/v0.1"
+    },
+    "target_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+    },
+    "sources": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "citation"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+          },
+          "citation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "surface_access": {
+          "$ref": "#/$defs/observation"
+        },
+        "internalization": {
+          "$ref": "#/$defs/observation"
+        },
+        "payload_response": {
+          "$ref": "#/$defs/observation"
+        },
+        "partner_site_access": {
+          "$ref": "#/$defs/observation"
+        },
+        "functional_blockade": {
+          "$ref": "#/$defs/observation"
+        },
+        "tissue_contrast": {
+          "$ref": "#/$defs/observation"
+        },
+        "tracer_retention": {
+          "$ref": "#/$defs/observation"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "basis",
+        "source_ids"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "supported",
+            "contradicted",
+            "unknown"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "pattern": "\\S"
+        },
+        "source_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 64,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "supported",
+                  "contradicted"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "source_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

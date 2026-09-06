@@ -23,6 +23,13 @@ use. The CLI creates the atlas workspace, registers supplied libraries,
 validates records, and assembles the report. Add local tools or cloud compute
 where a selected recipe needs preparation, modeling, or analysis.
 
+Read [installed local workflows](references/installed-workflows.md) before
+writing custom intake or report extensions. The CLI already supplies a complete
+offline replay tutorial, deterministic evidence intake and reconciliation,
+action comparison, verified sequence/site selection, binder-run import, and
+assay-return validation. Use these contracts to preserve identities and source
+artifacts through the workflow.
+
 Public companions include [Codex Binder Lane](https://github.com/jvogan/codex-binder-lane)
 for binder campaigns, [BioSymphony Structure Factory](https://github.com/BioSymphony/structure-factory)
 for structural campaign planning and execution workflows, and

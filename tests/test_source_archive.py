@@ -50,3 +50,26 @@ def test_source_archive_retains_reviewed_hidden_files(tmp_path):
 def test_source_archive_rejects_incomplete_or_ambiguous_contents(tmp_path, option, message):
     with pytest.raises(ValueError, match=message):
         module.check_source_archive(bundle(tmp_path, **{option: True}))
+
+
+@pytest.mark.parametrize('name,payload', [
+    ('docs/local-note.md', b'unreviewed'),
+    ('src/codex_surface_atlas.egg-info/local-note.txt', b'unreviewed'),
+    ('setup.cfg', b'[tool]\nprivate = unreviewed\n'),
+    ('unused-directory/', None),
+])
+def test_source_archive_rejects_unreviewed_extras(tmp_path, name, payload):
+    clean = bundle(tmp_path)
+    modified = tmp_path / 'modified.tar.gz'
+    with tarfile.open(clean) as source, tarfile.open(modified, 'w:gz') as archive:
+        for member in source.getmembers():
+            archive.addfile(member, source.extractfile(member))
+        member = tarfile.TarInfo('package/' + name)
+        if payload is None:
+            member.type = tarfile.DIRTYPE
+            archive.addfile(member)
+        else:
+            member.size = len(payload)
+            archive.addfile(member, io.BytesIO(payload))
+    with pytest.raises(ValueError):
+        module.check_source_archive(modified)

@@ -76,11 +76,15 @@ metrics from any common evaluator. Also retain the target and opportunity IDs,
 construct and sequence hashes, control outcomes, prediction artifacts, and
 promotion decision.
 
-`binder-results.json` uses the documented Binder result collection ID and is
-optional. The report reads it when present. The CLI validator does not validate
-it and the report does not create a specialized cross-generator comparison. Use
-the companion workflow's checks to verify candidate records and retain its
-artifacts before adding a reviewed example bundle.
+For new work, use `import-binder-runs` and the strict `binder-runs.json` contract.
+The validator checks run and target identities, exact constructs and hashes,
+lineage, observation seeds, controls, stages, and promotion decisions. The
+Campaign runs page keeps independent runs visible without pooling scores across
+generators or protocols. See [research intake](research-intake.md).
+
+Legacy `binder-results.json`, `binders.json`, and `binder-controls.json` remain
+supported with conservative identity, sequence, and artifact checks. They are
+not automatically converted to strict runs and cannot back a new assay return.
 
 ## RNA cohort comparisons
 

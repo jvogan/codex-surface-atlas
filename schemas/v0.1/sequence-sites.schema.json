@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jvogan/codex-surface-atlas/blob/main/schemas/v0.1/sequence-sites.schema.json",
+  "title": "Exact canonical sequence-to-site selection v0.1",
+  "description": "Optional targets.json record sequence_sites extension. Runtime validation also checks hashes, coverage, author identities and coordinate amino acids.",
+  "type": "object",
+  "required": ["schema_version", "accession", "isoform", "source_id", "sequence", "length", "sequence_sha256", "coordinates", "coordinate_model", "numbering", "mappings", "unresolved", "extracellular", "partners"],
+  "properties": {
+    "schema_version": {"const": "codex-surface-sequence-sites/v0.1"},
+    "accession": {"$ref": "#/$defs/identity"},
+    "isoform": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/identity"}]},
+    "source_id": {"$ref": "#/$defs/identity"},
+    "sequence": {"type": "string", "pattern": "^[ACDEFGHIKLMNPQRSTVWYUO]{1,10000}$"},
+    "length": {"type": "integer", "minimum": 1, "maximum": 10000},
+    "sequence_sha256": {"$ref": "#/$defs/hash"},
+    "coordinate_model": {"const": 1},
+    "numbering": {"const": "author"},
+    "coordinates": {
+      "type": "object", "required": ["path", "format", "bytes", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?(?:/|$))[A-Za-z0-9_./-]+\\.pdb$"},
+        "format": {"const": "pdb"}, "bytes": {"type": "integer", "minimum": 1, "maximum": 8388608},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "mappings": {
+      "type": "array", "maxItems": 10000,
+      "items": {
+        "type": "object", "required": ["canonical_position", "chain", "author_residue_number", "insertion_code"],
+        "properties": {
+          "canonical_position": {"type": "integer", "minimum": 1, "maximum": 10000},
+          "chain": {"$ref": "#/$defs/chain"}, "author_residue_number": {"type": "integer"},
+          "insertion_code": {"type": "string", "pattern": "^[A-Za-z0-9]?$"}
+        }
+      }
+    },
+    "unresolved": {"type": "array", "items": {"$ref": "#/$defs/span"}},
+    "extracellular": {
+      "type": "array", "items": {"allOf": [{"$ref": "#/$defs/span"}, {
+        "type": "object", "required": ["label", "source_id"],
+        "properties": {"label": {"type": "string", "minLength": 1}, "source_id": {"$ref": "#/$defs/identity"}}
+      }]}
+    },
+    "partners": {
+      "type": "array", "maxItems": 19,
+      "items": {
+        "type": "object", "required": ["partner_id", "accession", "label", "chain"],
+        "properties": {"partner_id": {"$ref": "#/$defs/identity"}, "accession": {"$ref": "#/$defs/identity"},
+          "label": {"type": "string", "minLength": 1}, "chain": {"$ref": "#/$defs/chain"}}
+      }
+    }
+  },
+  "$defs": {
+    "identity": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "chain": {"type": "string", "pattern": "^[A-Za-z0-9]$"},
+    "span": {"type": "object", "required": ["start", "end"], "properties": {"start": {"type": "integer", "minimum": 1}, "end": {"type": "integer", "minimum": 1}}}
+  }
+}

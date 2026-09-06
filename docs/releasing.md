@@ -21,8 +21,8 @@ Use Python 3.10 or later in an activated virtual environment. In the source chec
 
    The default build creates a source archive, then builds the wheel from that archive.
 
-3. Check that the source archive contains every reviewed file with its
-   recorded hash, including Git settings and the CI workflow:
+3. Check the complete source archive inventory and every reviewed file hash,
+   including Git settings and the CI workflow:
 
    ```bash
    python scripts/check_source_archive.py dist/codex_surface_atlas-0.1.0.tar.gz
@@ -35,6 +35,16 @@ Use Python 3.10 or later in an activated virtual environment. In the source chec
      --example examples/research-case
    ```
 
+   Both archive checks use the checkout's `export-policy.json` as the trusted
+   review record; use `--policy PATH` to select another reviewed policy. The
+   source archive must contain that exact policy and every reviewed file.
+   Extra files are rejected except the explicitly named setuptools metadata
+   files. The wheel maps reviewed package sources, schemas, and license files
+   to their installation paths, verifies their hashes, rejects extra payloads,
+   and checks the complete wheel RECORD inventory and hashes. Generated build
+   metadata is narrowly allowed; these checks do not independently establish
+   the trustworthiness of the build backend. Review build inputs and metadata.
+
    The check installs the wheel in a temporary environment outside the checkout.
    It exercises workspace creation, validation, screening merges, reports, and
    skill installation and removal. It exports the complete synthetic report
@@ -44,6 +54,10 @@ Use Python 3.10 or later in an activated virtual environment. In the source chec
    the copy with the installed CLI, builds its report, and checks local links.
    The example must include its required files. The check rejects machine-local
    artifact configuration, symlinks, and special files.
+
+   The installed tutorial additionally exercises evidence reconciliation,
+   independent binder-run import, exact assay joins, sequence/site resources,
+   action comparison, and all linked pages. Its observations are synthetic.
 
    To check an already exported report bundle without installing a wheel, run
    the reusable local-link checker against the directory containing its HTML
@@ -89,7 +103,11 @@ The check compares tracked paths with the policy, verifies staged bytes
 against working files, and runs the export content checks. It rejects extra
 tracked files, missing files, changed hashes, symlinks, and unresolved merge
 entries. It also scans the policy's contents, which cannot include a hash of
-itself. CI runs this check before the test suite.
+itself. CI runs this check before the test suite. This Git check intentionally
+covers tracked files only. Untracked files can still match packaging globs;
+always run both archive inventory checks before publication, and build from a
+clean reviewed export tree. A passing repository check alone does not approve
+a distribution.
 
 Keep private deny terms in a separate local release policy. The repository's
 policy contains only the rules and paths suitable for distribution. Generated
@@ -119,3 +137,29 @@ python scripts/check_distribution.py --report ../reviewed-example
 The check includes nested HTML pages and rejects missing linked files, duplicate
 HTML IDs, symlinks, and local links that leave the report directory. It does not
 fetch external URLs.
+
+## Before making a repository public
+
+Review the full Git history and release assets separately from the current
+source tree. The file policy does not inspect earlier commits or remote assets.
+Confirm redistribution rights and remove any sensitive material before changing
+visibility. Review `SECURITY.md` and decide whether to enable GitHub private
+vulnerability reporting; verify the private reporting form after enabling it.
+No release check or documentation change enables that remote feature.
+
+For the public default branch, require the seven `test` matrix checks in the
+Test workflow, require branches to be current before merging, disallow force
+pushes and deletion, and require conversations to be resolved. Apply the same
+checks to administrators. Choose a review requirement that matches the actual
+maintainer team; do not configure an impossible sole-maintainer approval gate.
+Verify the required check names against a completed workflow for that branch.
+
+Enable private vulnerability reporting, Dependabot alerts, secret scanning,
+and push protection when the repository's visibility and plan make those
+features available. Verify each setting after changing visibility; a checked-in
+policy or a successful CI run does not configure GitHub repository settings.
+
+Use [the 0.1.0 release notes](release-notes-0.1.0.md) for the initial alpha.
+Attach the verified wheel, source archive, and their SHA-256 checksums to a
+versioned release only after its exact revision passes CI and publication is
+authorized. Keep the tutorial clearly synthetic in release screenshots.

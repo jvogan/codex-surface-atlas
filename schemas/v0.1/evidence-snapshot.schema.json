@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jvogan/codex-surface-atlas/blob/main/schemas/v0.1/evidence-snapshot.schema.json",
+  "title": "Reviewed local evidence snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "data_kind",
+    "source",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex-surface-evidence-snapshot/v0.1"
+    },
+    "data_kind": {
+      "enum": [
+        "synthetic",
+        "public-source"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "query_id",
+        "title",
+        "query",
+        "source_class",
+        "retrieved_at",
+        "license",
+        "status"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "query": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "source_class": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "limitation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+        },
+        "query_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "blocked"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://[^/\\s]+(?:[^\\s]*)$"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "partial",
+                  "blocked"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "limitation"
+            ]
+          }
+        }
+      ]
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "record_id",
+          "entity_id",
+          "preferred_name",
+          "identifiers",
+          "reason",
+          "locator",
+          "disposition"
+        ],
+        "properties": {
+          "preferred_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "record_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+          },
+          "entity_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+          },
+          "identifiers": {
+            "type": "object",
+            "minProperties": 1,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            }
+          },
+          "disposition": {
+            "enum": [
+              "surface-target",
+              "excluded-from-surface-universe",
+              "unresolved"
+            ]
+          },
+          "target": {
+            "type": "object",
+            "required": [
+              "target_id",
+              "structure_tier",
+              "surface_evidence"
+            ],
+            "properties": {
+              "target_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"
+              },
+              "structure_tier": {
+                "enum": [
+                  "retained-unmodeled",
+                  "structure-a",
+                  "structure-b",
+                  "structure-c"
+                ]
+              },
+              "surface_evidence": {
+                "type": "object",
+                "required": [
+                  "basis"
+                ],
+                "properties": {
+                  "basis": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 20000,
+                    "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "disposition": {
+                  "const": "surface-target"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "target"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "target"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "data_kind": {
+            "const": "public-source"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "required": [
+              "url"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -81,6 +81,13 @@ def narrative_overview(b, plan, ledger, collections, binders, artifact_map, gene
     screens = collections.get("screening-results.json", [])
     interventions = collections.get("interventions.json", [])
     molecules = collections.get("molecular-library.json", [])
+    strict_runs = collections.get("binder-runs.json", [])
+    binder_count = len(strict_runs) if strict_runs else len(binders)
+    binder_unit = "independent runs imported" if strict_runs else "candidate records imported"
+    binder_href = "campaigns.html" if strict_runs else "binders.html"
+    binder_detail = ("Review each run's exact constructs, controls, observations, and promotion decisions."
+                     if strict_runs else "Open each candidate’s results to review its checks and selection status."
+                     if binders else "No normalized candidate records are included in this report.")
     image_record = next((r for r in structures if b.structure_image_artifact(r, artifact_map)[0]), None)
     figure = ""
     if image_record:
@@ -124,10 +131,13 @@ def narrative_overview(b, plan, ledger, collections, binders, artifact_map, gene
     <article class="lane"><span class="lane-index">01 / MOLECULES</span><h3>Defined-pocket screening</h3><p>Compare docking scores, saved poses, and reference controls.</p>
     <div class="lane-count">{len(screens):,}<span>screening records imported</span></div><p class="small">{'Open the screening results to compare individual runs and controls.' if screens else 'No normalized screening records are included in this report.'}</p><a href="screening.html">Inspect the molecular screen →</a></article>
     <article class="lane"><span class="lane-index">02 / PROTEIN BINDERS</span><h3>Protein-binder evaluation</h3><p>Review generated sequences, predicted complexes, and reference controls.</p>
-    <div class="lane-count">{len(binders):,}<span>candidate records imported</span></div><p class="small">{'Open each candidate’s results to review its checks and selection status.' if binders else 'No normalized candidate records are included in this report.'}</p><a href="binders.html">Inspect the binder campaign →</a></article></div></section>'''
+    <div class="lane-count">{binder_count:,}<span>{binder_unit}</span></div><p class="small">{binder_detail}</p><a href="{binder_href}">Inspect the binder campaign →</a></article></div></section>'''
     body += '<section class="section"><div class="section-heading"><div><p class="eyebrow">Report sections</p><h2>Explore the records</h2></div></div><div class="chapter-links">'
     for index, (href, title, text) in enumerate([
         ('explore.html', 'Target atlas', 'Compare target scores and open the supporting measurements.'),
+        ('action-comparison.html', 'Compare actions', 'Compare source support for delivery, blockade, or imaging and the next measurement.'),
+        ('sequence-sites.html', 'Sequence & sites', 'Select exact canonical intervals, verify mapped residues, and download FASTA.'),
+        ('assays.html', 'Assay returns', 'Inspect exact constructs, units, replicates, censoring, and control outcomes.'),
         ('structures.html', 'Structure library', 'Inspect structures, binding partners, and target constructs.'),
         ('treatments.html', 'Known interventions', 'Check which sources support each intervention’s target assignment.'),
         ('design-sources.html', 'Methods & provenance', 'Review design plans, tool availability, source records, and Binder Lane requests.')], 1):

@@ -7,7 +7,7 @@ selection, and computational handoffs.
 | Component | Use it for |
 | --- | --- |
 | Skill | Finding surface targets, comparing evidence, selecting sites and molecule formats, and calling the CLI to build the atlas and report. |
-| CLI | Initializing an atlas workspace, running the synthetic example, checking records, producing local report files, and exporting reviewed files. |
+| CLI | Initializing a workspace, replaying the complete tutorial, compiling local evidence, importing runs and assay returns, validating identities, producing reports, and exporting reviewed files. |
 
 Surface Atlas requires Python 3.10 or later. On macOS or Linux, create an
 isolated environment and install the CLI from a source checkout:
@@ -68,6 +68,18 @@ Atlas directory    -> CLI validates records and builds a local report
 ```
 
 ## Run the synthetic example
+
+For an end-to-end introduction, use [the complete replay tutorial](tutorial.md).
+It includes duplicate, excluded, and unresolved discoveries; action comparison;
+mapped sequence selections; independent runs; failed controls; and a censored
+assay return. It works from the installed wheel with no external services:
+
+```bash
+surface-atlas tutorial ./surface-atlas-tutorial --json
+surface-atlas validate ./surface-atlas-tutorial --json
+surface-atlas report ./surface-atlas-tutorial \
+  --output-root ./surface-atlas-reports --run-id tutorial --json
+```
 
 Run this first to check the installed CLI. Create the synthetic example at a
 new output location, validate it, and build a local report:

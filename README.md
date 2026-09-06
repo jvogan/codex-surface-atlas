@@ -36,6 +36,22 @@ with target pages, cited evidence, structures, and downloadable result files.
 Start with a disease state, a supplied molecule library, or an existing atlas.
 Choose which targets to investigate and which tools to use.
 
+## Included in the package
+
+| Installed capability | What you can do offline |
+| --- | --- |
+| [Complete replay tutorial](docs/tutorial.md) | Reproduce reviewed synthetic queries, deduplication, exclusions, unresolved records, sites, controls, and an assay return. |
+| [Evidence intake](docs/evidence-intake.md) | Compile supplied source snapshots into a new atlas and check the census against its hashed sources. |
+| [Action comparison](docs/action-comparison.md) | Switch between payload delivery, blockade, and imaging; inspect the source basis, missing criteria, and next measurement. |
+| [Sequence and sites](docs/sequence-sites.md) | Select a sequence interval, inspect verified PDB residue mappings in 3D, and export FASTA or a portable Codex request. |
+| [Campaign and assay intake](docs/research-intake.md) | Preserve independent runs, exact constructs, lineage, controls, failed gates, units, replicates, and censored measurements. |
+| Reports and reviewed exports | Build linked HTML, JSON, CSV, and coordinate downloads; check file integrity and exact export inventories. |
+
+Evidence retrieval, model execution, and experimental submission use separately
+installed plugins or companions. The CLI does not launch those services.
+This is alpha research software: recorded source support and computational
+results do not establish clinical suitability.
+
 ## Work with Rosalind plugins
 
 The [recipe guides](docs/recipes/README.md) show what to give Codex, which plugins
@@ -147,6 +163,18 @@ path. In the source checkout, that is `.venv/bin/surface-atlas` on macOS or
 Linux, or `.venv/Scripts/surface-atlas.exe` on Windows.
 
 ## Start with the synthetic example
+
+For the full workflow, run the [offline tutorial](docs/tutorial.md):
+
+```bash
+surface-atlas tutorial ./surface-atlas-tutorial --json
+surface-atlas validate ./surface-atlas-tutorial --json
+surface-atlas report ./surface-atlas-tutorial \
+  --output-root ./surface-atlas-reports --run-id tutorial --json
+```
+
+All tutorial observations and measurements are explicitly synthetic. Its guide
+lists expected counts, choices, hashes, and reproducible intake commands.
 
 Run the synthetic example to check your installation and explore target pages,
 structures, screening records, and downloads. All example records are invented.

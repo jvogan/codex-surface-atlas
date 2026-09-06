@@ -20,7 +20,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-test = ["pytest>=8", "jsonschema>=4"]
+test = ["pytest>=8", "jsonschema>=4", "build>=1", "setuptools>=77"]
 
 [project.scripts]
 surface-atlas = "surface_atlas.cli:main"

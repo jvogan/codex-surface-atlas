@@ -52,11 +52,15 @@ NAV_ITEMS = (
     ("overview", "Overview", "index.html"),
     ("explore", "Target atlas", "explore.html"),
     ("targets", "Target census", "targets.html"),
+    ("action-comparison", "Compare actions", "action-comparison.html"),
+    ("sequence-sites", "Sequence & sites", "sequence-sites.html"),
     ("treatments", "Interventions", "treatments.html"),
     ("molecular-library", "Molecules & screens", "molecular-library.html"),
     ("screening", "Screening readout", "screening.html"),
     ("structures", "Structures", "structures.html"),
     ("binders", "Designed binders", "binders.html"),
+    ("campaigns", "Campaign runs", "campaigns.html"),
+    ("assays", "Assay returns", "assays.html"),
     ("design-sources", "Methods & sources", "design-sources.html"),
     ("study", "Study & coverage", "study.html"),
 )
@@ -971,9 +975,13 @@ def page_html(
   <link rel="stylesheet" href="assets/workflows.css">
   <link rel="stylesheet" href="assets/diagrams.css">
   <link rel="stylesheet" href="assets/structure-preview.css">
+  <link rel="stylesheet" href="assets/sequence-sites.css">
+  <link rel="stylesheet" href="assets/action-comparison.css">
   <script defer src="assets/report.js"></script>
   <script defer src="assets/presentation.js"></script>
   <script defer src="assets/structure-preview.js"></script>
+  <script defer src="assets/sequence-sites.js"></script>
+  <script defer src="assets/action-comparison.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -3021,6 +3029,31 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
             return 1
     binders, binder_controls, binder_campaigns = load_optional_binder_data(root)
 
+    from .sequence_sites import validate_sequence_sites, render_sequence_sites
+    from .action_comparison import validate_action_evidence, render_action_comparison, build_action_comparison
+    from .research_intake import validate_optional_research, render_campaigns, render_assays
+    targets = collections.get("targets.json", [])
+    extension_errors = validate_sequence_sites(root, targets, collections.get("structures.json", []))
+    extension_errors.extend(validate_action_evidence(targets))
+    extension_errors.extend(validate_optional_research(root, atlas_id, targets))
+    from .evidence_intake import reconcile_evidence, has_managed_evidence
+    try:
+        if ledger.get("data_kind") in {"synthetic", "public-source"} or has_managed_evidence(root, ledger):
+            if not reconcile_evidence(root)["consistent"]:
+                extension_errors.append("search ledger differs from reconciled source evidence")
+    except (ValueError, OSError) as exc:
+        extension_errors.append(str(exc))
+    if extension_errors:
+        print("build_report: " + "; ".join(extension_errors), file=sys.stderr)
+        return 1
+    research_payloads = {}
+    for filename in ("binder-runs.json", "assay-results.json"):
+        if (root / filename).exists():
+            payload = read_json(root / filename, required=True)
+            research_payloads[filename] = payload
+            collections[filename] = payload["records"]
+            collection_metadata[filename] = {key: value for key, value in payload.items() if key != "records"}
+
     output_root = (args.output_root or root.parent / "results").resolve()
     final_run_dir = output_root / atlas_id / run_id
     if final_run_dir.exists():
@@ -3035,6 +3068,7 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     plan, ledger = derive_report_state(root, plan, ledger, collections, binders)
     artifact_records = dict(collections)
+    artifact_records["search-ledger.json"] = [ledger]
     try:
         artifact_map = copy_artifacts(
             root,
@@ -3071,6 +3105,10 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
         "diagrams.css",
         "structure-preview.css",
         "structure-preview.js",
+        "sequence-sites.css",
+        "sequence-sites.js",
+        "action-comparison.css",
+        "action-comparison.js",
     ):
         shutil.copy2(source_asset_dir / asset_name, run_dir / "assets" / asset_name)
     vendor_source_dir = source_asset_dir / "vendor"
@@ -3086,6 +3124,9 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
 
     profiles = [target_profile(record, index) for index, record in enumerate(collections.get("targets.json", []))]
     unique_slugs(profiles)
+    target_hrefs = {profile["id"]: f'target-{profile["slug"]}.html' for profile in profiles}
+    (run_dir / "data" / "action-comparison.json").write_text(
+        pretty_json(build_action_comparison(targets, target_hrefs)) + "\n", encoding="utf-8")
     plan_for_footer = dict(plan)
     plan_for_footer["_ledger"] = ledger
     library_metadata = collection_metadata.get("molecular-library.json", {})
@@ -3110,6 +3151,10 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
         ("screening.html", "screening", render_screen_readout(sys.modules[__name__], collections.get("screening-results.json", []), artifact_map, profiles, collection_metadata.get("screening-results.json"))),
         ("study.html", "study", study_body),
         ("targets.html", "targets", render_targets(profiles)),
+        ("action-comparison.html", "action-comparison", page_heading("Evidence and intended use", "Compare actions") + render_action_comparison(targets, target_hrefs)),
+        ("sequence-sites.html", "sequence-sites", page_heading("Molecular identity", "Sequence & sites") + render_sequence_sites(targets, artifact_map)),
+        ("campaigns.html", "campaigns", page_heading("Registered evidence", "Campaign runs", "Exact constructs, lineage, controls, and explicit promotion decisions.") + render_campaigns(research_payloads.get("binder-runs.json"), artifact_map, target_hrefs)),
+        ("assays.html", "assays", page_heading("Returned evidence", "Assay returns", "Measurements retain units, censoring, replicates, and control outcomes.") + render_assays(research_payloads.get("assay-results.json"), artifact_map, target_hrefs)),
         ("treatments.html", "treatments", render_treatments(collections.get("interventions.json", []))),
         (
             "molecular-library.html",
@@ -3135,6 +3180,13 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
     for profile in profiles:
         filename = f'target-{profile["slug"]}.html'
         body = render_target_dossier(profile, collections, artifact_map, binders, binder_controls)
+        run_count = sum(run["target_id"] == profile["id"] for run in collections.get("binder-runs.json", []))
+        assay_count = sum(record["target_id"] == profile["id"] for record in collections.get("assay-results.json", []))
+        if run_count or assay_count:
+            body += section("Registered runs and returned measurements", render_downloads([
+                (f"{run_count} independent campaign runs", "campaigns.html", False),
+                (f"{assay_count} assay return records", "assays.html", False),
+            ]), kicker="Exact construct provenance")
         (run_dir / filename).write_text(page_html(title=f"{profile['name']} dossier", current="targets", atlas_id=atlas_id, plan=plan_for_footer, body=body, generated_at=generated_at), encoding="utf-8")
         pages.append(filename)
 
@@ -3159,6 +3211,8 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
         "coverage_label": coverage_label(ledger),
         "pages": sorted(pages),
         "artifact_count": len(artifact_map),
+        "registered_binder_runs": len(collections.get("binder-runs.json", [])),
+        "assay_results": len(collections.get("assay-results.json", [])),
         "provider_calls": False,
         "external_urls_fetched": False,
         "claim_ceiling": plan.get("claim_ceiling", "not recorded"),
@@ -3181,6 +3235,8 @@ def _main(argv: list[str] | None, cleanup_paths: list[Path]) -> int:
         "targets": len(profiles),
         "structures": len(collections.get("structures.json", [])),
         "designed_binders": len(binders),
+        "registered_binder_runs": len(collections.get("binder-runs.json", [])),
+        "assay_results": len(collections.get("assay-results.json", [])),
         "provider_calls": False,
         "external_urls_fetched": False,
     }

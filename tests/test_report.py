@@ -368,6 +368,13 @@ class OfflineReportTests(unittest.TestCase):
         binder_artifact = binders["records"][0]["cofold_observations"][0]["artifacts"][0]
         binder_artifact["sha256"] = hashlib.sha256(binder_complex.read_bytes()).hexdigest()
         binder_artifact["bytes"] = binder_complex.stat().st_size
+        for record in binders["records"] + binders["controls"]:
+            record["sequence_sha256"] = hashlib.sha256(record["sequence"].encode()).hexdigest()
+            for observation in record.get("cofold_observations", []):
+                observation["target_id"] = record["target_id"]
+                observation["sequence_sha256"] = record["sequence_sha256"]
+                if "candidate_id" in record:
+                    observation["candidate_id"] = record["candidate_id"]
         save(self.root / "binders.json", binders)
 
         result, payload = self.build("20260904T010001Z")

@@ -82,9 +82,17 @@ result. Each scored complex should remain linked to its predicted complex,
 confidence artifacts, metric source, and design pose. Keep those companion
 check results with the candidate artifacts.
 
-The report reads `binder-results.json` when it is present. The CLI validator
-validates the required workspace collections; it does not validate this
-optional Binder Lane collection. Keep the companion's candidate records and
-validation artifacts available for review before building the report.
+The report reads `binder-results.json` when it is present. The validator checks
+legacy collection and target identities, sequence hashes, observation joins,
+and referenced artifacts before rendering. Keep the companion's candidate
+records and validation artifacts available for review.
+
+For new multi-run and assay workflows, use `binder-runs.json` with the
+`codex-surface-binder-run-collection/v0.1` schema and `import-binder-runs`.
+It registers exact target/candidate constructs, generator and evaluator
+versions, seeds, lineage, controls, stages, and promotion decisions. New
+`assay-results.json` records must join those exact registered constructs.
+See [installed workflows](installed-workflows.md); legacy results are not
+silently upgraded into strict run provenance.
 
 The collection claim ceiling is `computational-design-hypothesis`. A deposited positive control keeps its experimental structure provenance, while any generated sequence remains a computational design hypothesis.

@@ -22,6 +22,9 @@ Thumbs.db
 
 # Workspaces and reports created by the examples
 /surface-atlas-synthetic/
+/surface-atlas-tutorial/
+/tutorial/
+/reports/
 /surface-atlas-reports/
 /disease-surface-atlas/
 /results/

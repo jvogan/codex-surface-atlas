@@ -431,6 +431,7 @@
       const model = viewer.addModel(data, source.format, {keepH:false, doAssembly:false});
       const atoms = model.selectedAtoms({}); count += atoms.length;
       if (!atoms.length || count > MAX_ATOMS) throw new Error('This scene is empty or exceeds the 60,000-atom preview limit.');
+      if (atoms.some(atom=>![atom.x,atom.y,atom.z].every(Number.isFinite))) throw new Error('The coordinates contain invalid or nonfinite atom positions.');
       models.set(source.object_name, model);
     }
     sceneLayers = scene.layers.map(layer => {
@@ -439,9 +440,24 @@
           !Number.isFinite(layer.opacity) || layer.opacity < 0 || layer.opacity > 1) throw new Error('The figure’s molecular styling is unsupported.');
       const allowed = ['chain','resi','resn','hetflag','elem','invert'];
       if (!layer.selection || Object.keys(layer.selection).some(k => !allowed.includes(k))) throw new Error('The figure’s atom selection is unsupported.');
-      const selection = {...layer.selection, model:model.getID()};
-      if (!model.selectedAtoms(layer.selection).length) throw new Error('The named chain or residue is missing from these coordinates.');
-      return {...layer, selection, atomSet:new Set(model.selectedAtoms(layer.selection)), visible:true};
+      let selected = model.selectedAtoms(layer.selection);
+      if (layer.verified_residues !== undefined) {
+        const names = {ALA:'A',ARG:'R',ASN:'N',ASP:'D',CYS:'C',GLN:'Q',GLU:'E',GLY:'G',HIS:'H',ILE:'I',LEU:'L',LYS:'K',MET:'M',PHE:'F',PRO:'P',SER:'S',THR:'T',TRP:'W',TYR:'Y',VAL:'V',SEC:'U',PYL:'O'};
+        if (!Array.isArray(layer.verified_residues) || !layer.verified_residues.length || layer.verified_residues.length > 10000) throw new Error('The explicit residue map is unsupported.');
+        selected = [];
+        const seen = new Set();
+        for (const residue of layer.verified_residues) {
+          const key = JSON.stringify([residue.chain,residue.author_residue_number,residue.insertion_code]);
+          if (seen.has(key) || !Number.isInteger(residue.author_residue_number) || typeof residue.insertion_code !== 'string') throw new Error('The explicit residue map is ambiguous.');
+          seen.add(key);
+          const atoms = model.selectedAtoms({chain:residue.chain,resi:residue.author_residue_number}).filter(atom=>!atom.hetflag && (atom.icode || '') === residue.insertion_code);
+          if (!atoms.length || atoms.some(atom=>names[atom.resn] !== residue.amino_acid || ![atom.x,atom.y,atom.z].every(Number.isFinite))) throw new Error('The selected residue does not match its verified amino acid, finite coordinates and author numbering.');
+          selected.push(...atoms);
+        }
+      }
+      const selection = layer.verified_residues ? {index:selected.map(atom=>atom.index),model:model.getID()} : {...layer.selection, model:model.getID()};
+      if (!selected.length) throw new Error('The named chain or residue is missing from these coordinates.');
+      return {...layer, selection, atomSet:new Set(selected), visible:true};
     });
     homeSelection = {or:sceneLayers.map(layer => layer.selection)};
     applyLayers(); partsControls();

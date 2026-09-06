@@ -9,8 +9,28 @@ To share the report through a hosted URL, follow
 
 To tailor the report's comparisons, molecular views, and follow-up analyses,
 use [Compare results and choose the next analysis](recipes/compare-and-continue.md).
-That recipe asks Codex to extend the generated report for your project and
-check the resulting interactions against the source records.
+The generated report includes action comparison, verified sequence/site
+selection, campaign-run summaries, and assay-return readouts. That recipe helps
+you populate their contracts and extend project-specific analyses.
+
+## Compare actions, sites, and returned results
+
+**Compare actions** shows criteria for payload delivery, blockade, and imaging.
+Changing the action changes which supplied observations contribute to the
+displayed evidence order. Missing criteria stay unknown. Each target identifies
+the next measurement and how its result would change the comparison. See
+[action comparison](action-comparison.md) for the transparent ordering rule.
+
+**Sequence & sites** links a selected sequence interval to exact PDB residues,
+including insertion codes and unresolved positions. Download the selected FASTA
+or copy its source and coordinate identities into a Codex request. This view
+requires a validated `sequence_sites` record; it does not infer residue maps
+from matching numbers. See [sequence and sites](sequence-sites.md).
+
+**Campaign runs** and **Assay returns** retain each run's own constructs,
+controls, protocol, promotion decision, and measurements. Strict optional input
+collections are validated before rendering. Downloads include these collections
+and their source artifacts. See [research intake](research-intake.md).
 
 ## Compact, navigable report
 

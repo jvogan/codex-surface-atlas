@@ -1,5 +1,52 @@
 {
   "schema_version": "codex-surface-intervention-collection/v0.1",
   "atlas_id": "research-case-example",
-  "records": []
+  "records": [
+    {
+      "intervention_id": "I-RCSB-6Y0F-LINAGLIPTIN",
+      "name": "Linagliptin in the deposited FAP complex",
+      "target_id": "T-ENSG00000078098",
+      "action": "Binding at the deposited small-molecule site",
+      "molecular_format": "small molecule",
+      "status": "experimental structural observation",
+      "structure_id": "S-RCSB-6Y0F",
+      "site_id": "SITE-RCSB-6Y0F-linagliptin",
+      "evidence_class": "observed structural complex",
+      "source_refs": [{
+        "source_id": "RCSB:6Y0F",
+        "title": "RCSB PDB 6Y0F: human FAP with linagliptin",
+        "url": "https://www.rcsb.org/structure/6Y0F",
+        "retrieval_date": "2026-09-06",
+        "locator": "Entry title, experimental method, and ligand component 356"
+      }],
+      "limitations": [
+        "This record documents the deposited binding complex and its use as a structural reference.",
+        "It does not establish cancer efficacy, selectivity, an approved indication, or a treatment recommendation."
+      ],
+      "claim_ceiling": "deposited experimental binding complex"
+    },
+    {
+      "intervention_id": "I-RCSB-8BW0-TUSAMITAMAB-FAB",
+      "name": "Tusamitamab Fab in the deposited CEACAM5 complex",
+      "target_id": "T-ENSG00000105388",
+      "action": "Binding the CEACAM5 A3-B3 domains",
+      "molecular_format": "antibody Fab",
+      "status": "experimental structural observation",
+      "structure_id": "S-RCSB-8BW0",
+      "site_id": "SITE-RCSB-8BW0-tusamitamab-fab",
+      "evidence_class": "observed structural complex",
+      "source_refs": [{
+        "source_id": "RCSB:8BW0",
+        "title": "RCSB PDB 8BW0: CEACAM5 domains with tusamitamab Fab",
+        "url": "https://www.rcsb.org/structure/8BW0",
+        "retrieval_date": "2026-09-06",
+        "locator": "Entry title and experimental structure summary"
+      }],
+      "limitations": [
+        "The Fab complex is a binding-site reference; it is not an observation of an antibody-drug conjugate's payload response.",
+        "Clinical efficacy, safety, internalization, and tissue selectivity are not established by this structure."
+      ],
+      "claim_ceiling": "deposited experimental binding complex"
+    }
+  ]
 }

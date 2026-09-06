@@ -14,6 +14,17 @@ computational results.
 Coverage is partial. The docking and binder-design results are computational
 hypotheses, and the example contains no experimental validation of them.
 
+The Interventions page includes two source-linked binding-complex references:
+linagliptin with FAP in [6Y0F](https://www.rcsb.org/structure/6Y0F), and
+tusamitamab Fab with CEACAM5 in [8BW0](https://www.rcsb.org/structure/8BW0).
+These deposited structures document binding-site context; they do not establish
+efficacy, clinical status, internalization, or tissue selectivity. The exact
+entry lookups were reviewed on 2026-09-06.
+
+For a replay that also demonstrates exclusions, unresolved identities, action
+comparison, sequence mapping, independent runs, and assay intake, use the
+[complete synthetic tutorial](../../docs/tutorial.md).
+
 Validate and build the offline report from the repository root:
 
 ```bash

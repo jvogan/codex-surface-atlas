@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "codex-surface-assay-result-collection/v0.1",
+  "title": "assay-results.schema.json",
+  "description": "Shape contract. Runtime research_intake additionally verifies file bytes/hashes, identities, joins, controls, finite numbers and endpoint/unit compatibility.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "codex-surface-assay-result-collection/v0.1"
+    },
+    "atlas_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_status": {
+      "enum": [
+        "synthetic",
+        "research"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assay_result_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "experiment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_run_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "campaign_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_class": {
+            "const": "laboratory-assay-observation"
+          },
+          "candidate_construct": {
+            "$ref": "#/$defs/construct"
+          },
+          "target_construct": {
+            "$ref": "#/$defs/construct"
+          },
+          "identity_source": {
+            "$ref": "#/$defs/source"
+          },
+          "method": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "conditions": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/source"
+              },
+              "family": {
+                "enum": [
+                  "SPR",
+                  "BLI",
+                  "ITC",
+                  "MST",
+                  "ELISA",
+                  "radioligand",
+                  "cell-assay",
+                  "other-laboratory-assay"
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "version",
+              "conditions",
+              "source",
+              "family"
+            ]
+          },
+          "endpoint": {
+            "enum": [
+              "KD",
+              "IC50",
+              "EC50",
+              "kon",
+              "koff",
+              "response"
+            ]
+          },
+          "reading": {
+            "$ref": "#/$defs/reading"
+          },
+          "replicates": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "replicate_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "biological_sample_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "technical_replicate_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "reading": {
+                      "$ref": "#/$defs/reading"
+                    }
+                  },
+                  "required": [
+                    "replicate_id",
+                    "biological_sample_id",
+                    "technical_replicate_id",
+                    "reading"
+                  ]
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "replicate_gap": {
+            "type": "string",
+            "minLength": 1
+          },
+          "controls": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "control_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "role": {
+                      "enum": [
+                        "positive",
+                        "negative",
+                        "blank",
+                        "reference"
+                      ]
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "acceptance_rule": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "acceptance_status": {
+                      "enum": [
+                        "passed",
+                        "failed",
+                        "unresolved",
+                        "not-run"
+                      ]
+                    },
+                    "result_record_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "source": {
+                      "$ref": "#/$defs/source"
+                    }
+                  },
+                  "required": [
+                    "control_id",
+                    "role",
+                    "description",
+                    "acceptance_rule",
+                    "acceptance_status",
+                    "result_record_id",
+                    "source"
+                  ]
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "control_gap": {
+            "type": "string",
+            "minLength": 1
+          },
+          "aggregation": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "biological_sample_count": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "technical_reading_count": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "source": {
+                    "$ref": "#/$defs/source"
+                  }
+                },
+                "required": [
+                  "description",
+                  "biological_sample_count",
+                  "technical_reading_count",
+                  "source"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "assay_result_id",
+          "experiment_id",
+          "candidate_run_id",
+          "candidate_id",
+          "campaign_id",
+          "target_id",
+          "evidence_class",
+          "candidate_construct",
+          "target_construct",
+          "identity_source",
+          "method",
+          "endpoint",
+          "reading",
+          "replicates",
+          "controls",
+          "aggregation"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "replicates": {
+                  "type": "null"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "replicate_gap"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "controls": {
+                  "type": "null"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "control_gap"
+              ]
+            }
+          }
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "atlas_id",
+    "data_status",
+    "records"
+  ],
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "storage": {
+          "const": "workspace"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "bytes"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "artifact": {
+          "$ref": "#/$defs/artifact"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "artifact",
+        "locator"
+      ]
+    },
+    "construct": {
+      "type": "object",
+      "properties": {
+        "construct_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "string",
+          "pattern": "^[ACDEFGHIKLMNPQRSTVWYXBZUO]+$"
+        },
+        "sequence_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "modifications": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "construct_id",
+        "sequence",
+        "sequence_sha256",
+        "description",
+        "modifications",
+        "source"
+      ]
+    },
+    "reading": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "measured",
+            "failed",
+            "not-measured",
+            "inconclusive"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "relation": {
+          "enum": [
+            "=",
+            "<",
+            "<=",
+            ">",
+            ">=",
+            null
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "status",
+        "value",
+        "relation",
+        "unit",
+        "source"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "measured"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "relation": {
+                "enum": [
+                  "=",
+                  "<",
+                  "<=",
+                  ">",
+                  ">="
+                ]
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "required": [
+              "reason"
+            ],
+            "properties": {
+              "value": {
+                "type": "null"
+              },
+              "relation": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

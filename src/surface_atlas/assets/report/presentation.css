@@ -66,6 +66,8 @@ body { font-size: 16px; font-family: var(--font-sans); }
 @media (min-width: 1180px) {
   .atlas-header { position: fixed; inset: 0 auto 0 0; width: 225px; border-right: 1px solid var(--rule); border-bottom: none; z-index: 5; }
   .header-inner { flex-direction: column; align-items: stretch; justify-content: flex-start; padding: 2rem 1.3rem; height: 100%; gap: 2.3rem; }
+  .header-inner .brand { flex-shrink: 0; }
+  .header-inner .main-nav { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
   .brand { display: block; }.brand a { display: block; line-height: 1.1; max-width: 8ch; font-size: 1.9rem; }.brand-id { display: block; margin-top: .8rem; font-size: .58rem; overflow-wrap: anywhere; }
   .main-nav { display: flex; flex-direction: column; align-items: stretch; gap: .3rem; counter-reset: chapter; }.main-nav a { counter-increment: chapter; border: 0; padding: .7rem .5rem; font-size: .8rem; display: flex; gap: .8rem; }.main-nav a:before { content: counter(chapter, decimal-leading-zero); color: #687970; font: .65rem var(--font-mono); padding-top: .22rem; }.main-nav a[aria-current="page"] { background: #eff6f3; color: var(--atlas-green); }.main-nav a:hover { background: #f5f8f6; }
   .page-shell,.footer { margin-left: 225px; margin-right: 0; max-width: none; padding-left: clamp(2rem,4vw,5rem); padding-right: clamp(2rem,4vw,5rem); }
