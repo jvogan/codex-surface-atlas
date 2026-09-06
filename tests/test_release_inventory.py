@@ -136,6 +136,14 @@ def test_source_archive_requires_trusted_policy(project):
         SOURCE.check_source_archive(archive, trusted)
 
 
+def append_metadata_header(payload, header):
+    """Insert an attack header using the real metadata's line endings."""
+    newline = b'\r\n' if b'\r\n' in payload else b'\n'
+    headers, separator, body = payload.partition(newline + newline)
+    assert separator, 'metadata fixture needs a header/body separator'
+    return headers + newline + header + separator + body
+
+
 def rewrite_wheel_with_recomputed_record(wheel, destination, mutate):
     """Model an adversary who can rewrite both payload and every RECORD hash."""
     with ZipFile(wheel) as original:
@@ -167,10 +175,11 @@ def rewrite_wheel_with_recomputed_record(wheel, destination, mutate):
 def test_generated_metadata_tampering_rejected_even_with_recomputed_record(project, mutation):
     _, wheel = build(project)
     def mutate(content):
+        before = dict(content)
         metadata = next(name for name in content if name.endswith('/METADATA'))
         prefix = metadata.rsplit('/', 1)[0]
         def header(line):
-            content[metadata] = content[metadata].replace(b'\n\n', b'\n' + line + b'\n\n', 1)
+            content[metadata] = append_metadata_header(content[metadata], line)
         if mutation == 'dependency':
             header(b'Requires-Dist: injected-package>=1')
         elif mutation == 'dependency_url':
@@ -227,6 +236,7 @@ def test_generated_metadata_tampering_rejected_even_with_recomputed_record(proje
             for name in list(content):
                 if name.startswith(prefix + '/'):
                     content[name.replace(prefix, 'codex_surface_atlas-999.0.dist-info', 1)] = content.pop(name)
+        assert content != before, 'tampering fixture did not change the wheel'
     destination = project / 'tampered.whl'
     rewrite_wheel_with_recomputed_record(wheel, destination, mutate)
     with pytest.raises(WHEEL.DistributionCheckError):

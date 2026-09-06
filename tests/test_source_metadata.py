@@ -9,7 +9,7 @@ import pytest
 
 # Reuse the actual build fixture so source and wheel checks see the same backend
 # output, including conditional requirements. No mocked metadata serialization.
-from test_release_inventory import SOURCE, build, project  # noqa: F401
+from test_release_inventory import SOURCE, append_metadata_header, build, project  # noqa: F401
 
 
 @pytest.mark.parametrize('mutation', [
@@ -25,10 +25,11 @@ def test_source_generated_metadata_cannot_carry_unreviewed_content(project, muta
                  for member in archive.getmembers() if member.isfile()}
     root = next(iter(files)).split('/', 1)[0] + '/'
     egg = root + 'src/codex_surface_atlas.egg-info/'
+    before = dict(files)
     if mutation == 'root_dependency':
-        files[root + 'PKG-INFO'] = files[root + 'PKG-INFO'].replace(b'\n\n', b'\nRequires-Dist: unreviewed-dependency>=1\n\n', 1)
+        files[root + 'PKG-INFO'] = append_metadata_header(files[root + 'PKG-INFO'], b'Requires-Dist: unreviewed-dependency>=1')
     elif mutation == 'egg_unknown_header':
-        files[egg + 'PKG-INFO'] = files[egg + 'PKG-INFO'].replace(b'\n\n', b'\nX-Unreviewed: synthetic private note\n\n', 1)
+        files[egg + 'PKG-INFO'] = append_metadata_header(files[egg + 'PKG-INFO'], b'X-Unreviewed: synthetic private note')
     elif mutation == 'both_readme':
         for name in (root + 'PKG-INFO', egg + 'PKG-INFO'):
             files[name] += b'Unreviewed synthetic note.\n'
@@ -54,6 +55,7 @@ def test_source_generated_metadata_cannot_carry_unreviewed_content(project, muta
         files[egg + 'SOURCES.txt'] += b'README.md\n'
     elif mutation == 'missing_metadata':
         del files[root + 'PKG-INFO']
+    assert files != before, 'tampering fixture did not change the source archive'
     modified = project / 'modified.tar.gz'
     with tarfile.open(modified, 'w:gz') as archive:
         for name, data in files.items():

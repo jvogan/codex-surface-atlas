@@ -1285,7 +1285,7 @@
     {
       "kind": "python",
       "path": "tests/test_release_inventory.py",
-      "sha256": "a8fd34d44b4a751ac1e38f29a50db59479ef66947d099296aaa43a7660215151"
+      "sha256": "2ccf3efe39e450b8cc55a447f978ba1630280def1c9e83daacc46ee472e6c052"
     },
     {
       "kind": "python",
@@ -1365,7 +1365,7 @@
     {
       "kind": "python",
       "path": "tests/test_source_metadata.py",
-      "sha256": "1915ce687d8e83393b38334397fb278f479c726a7b64ab6a8a8c476253f36e8e"
+      "sha256": "dca9aeacc943c66ae49e92e1b0418c59c809d499c89c9de060a84524ce98cb9e"
     },
     {
       "kind": "python",
