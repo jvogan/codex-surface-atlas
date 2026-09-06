@@ -13,7 +13,8 @@ All tutorial observations and measurements are invented.
 Included workflows:
 
 - Compile reviewed local evidence snapshots into a new atlas and reconcile the
-  ledger against exact source bytes.
+  ledger against exact source bytes. Re-importing evidence replaces the managed
+  snapshot set in the new output; unreferenced snapshots fail validation.
 - Compare recorded support for payload delivery, blockade, and imaging, with
   explicit missing criteria and the next measurement that would change the order.
 - Select canonical sequence intervals, map them to exact PDB author residues and
@@ -25,7 +26,8 @@ Included workflows:
 - Register supplied libraries, merge independent screening runs, install the
   bundled Codex skill, and build offline HTML/JSON/CSV reports with local artifacts.
 - Verify exact reviewed inventories for repository exports, source archives, and
-  wheels, including packaged resources and wheel RECORD hashes.
+  wheels, including packaged resources, wheel RECORD hashes, and generated
+  metadata checked against the reviewed project configuration.
 
 The [three-target research example](../examples/research-case/README.md) adds
 selected public structural references and computational observations. Its two

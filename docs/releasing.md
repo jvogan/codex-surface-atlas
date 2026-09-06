@@ -36,14 +36,20 @@ Use Python 3.10 or later in an activated virtual environment. In the source chec
    ```
 
    Both archive checks use the checkout's `export-policy.json` as the trusted
-   review record; use `--policy PATH` to select another reviewed policy. The
+   review record; use `--policy PATH` to select another reviewed policy beside
+   its source tree. The checks also require the policy-pinned `pyproject.toml`
+   and README there as trusted metadata inputs. The
    source archive must contain that exact policy and every reviewed file.
    Extra files are rejected except the explicitly named setuptools metadata
    files. The wheel maps reviewed package sources, schemas, and license files
    to their installation paths, verifies their hashes, rejects extra payloads,
-   and checks the complete wheel RECORD inventory and hashes. Generated build
-   metadata is narrowly allowed; these checks do not independently establish
-   the trustworthiness of the build backend. Review build inputs and metadata.
+   and checks the complete wheel RECORD inventory and hashes. Generated metadata
+   must match the reviewed project identity, dependencies, extras, Python
+   requirement, entry points, licenses, and README. Wheel compatibility tags and
+   installation layout are checked; source manifest and dependency metadata are
+   checked too. Recomputing RECORD after changing metadata does not make an
+   altered wheel pass. These checks do not independently establish the
+   trustworthiness of the build backend. Review build inputs and metadata.
 
    The check installs the wheel in a temporary environment outside the checkout.
    It exercises workspace creation, validation, screening merges, reports, and

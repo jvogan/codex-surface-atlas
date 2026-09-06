@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import tarfile
 from pathlib import Path, PurePosixPath
@@ -15,6 +16,80 @@ GENERATED_FILES = {'PKG-INFO', 'setup.cfg'} | {
     for name in ('PKG-INFO', 'SOURCES.txt', 'dependency_links.txt',
                  'entry_points.txt', 'requires.txt', 'top_level.txt')
 }
+
+
+def _expected_requirements(project: dict) -> bytes:
+    """Reproduce the static setuptools requires.txt mapping without running it."""
+    from packaging.requirements import Requirement
+    groups: dict[str, list[str]] = {}
+    base: list[str] = []
+    for extra, values in project.get('optional-dependencies', {}).items():
+        groups.setdefault(extra, [])
+        for value in values:
+            requirement = Requirement(value)
+            group = extra + (':' + str(requirement.marker) if requirement.marker else '')
+            requirement.marker = None
+            line = str(requirement)
+            if line not in groups.setdefault(group, []):
+                groups[group].append(line)
+    for value in project.get('dependencies', []):
+        requirement = Requirement(value)
+        if requirement.marker:
+            group = ':' + str(requirement.marker)
+            requirement.marker = None
+            line = str(requirement)
+            if line not in groups.setdefault(group, []):
+                groups[group].append(line)
+        else:
+            base.append(str(requirement))
+    text = ''.join(line + '\n' for line in base)
+    for group, lines in sorted(groups.items()):
+        text += '\n[' + group + ']\n' + ''.join(line + '\n' for line in lines)
+    return text.encode('utf-8')
+
+
+def _check_generated_metadata(archive, files, policy, policy_path):
+    """Bind every generated sdist payload to reviewed inputs or file inventory."""
+    if 'pyproject.toml' not in files and not (set(files) & GENERATED_FILES):
+        # The small archive-inventory fixtures contain no Python distribution.
+        return
+    if policy_path is None:
+        raise ValueError('Generated source metadata requires an explicit trusted review policy.')
+    # Load the sibling checker by path so CLI and importlib-based tests behave
+    # identically, without modifying sys.path or requiring an installed package.
+    spec = importlib.util.spec_from_file_location('source_distribution_checks', Path(__file__).with_name('check_distribution.py'))
+    checks = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(checks)
+    reviewed = {entry['path']: entry['sha256'] for entry in policy['files']}
+    try:
+        contract = checks.trusted_project_contract(policy_path, reviewed)
+        egg = 'src/codex_surface_atlas.egg-info/'
+        required = {'PKG-INFO', 'setup.cfg', egg + 'PKG-INFO', egg + 'SOURCES.txt',
+                    egg + 'dependency_links.txt', egg + 'top_level.txt'}
+        requirements = _expected_requirements(contract['project'])
+        if requirements:
+            required.add(egg + 'requires.txt')
+        if contract['entry_points']:
+            required.add(egg + 'entry_points.txt')
+        missing = required - set(files)
+        if missing:
+            raise ValueError('Required generated source metadata is missing: ' + ', '.join(sorted(missing)))
+        read = lambda name: archive.extractfile(files[name]).read()
+        for name in ('PKG-INFO', egg + 'PKG-INFO'):
+            checks.check_core_metadata(read(name), contract)
+        if egg + 'entry_points.txt' in files:
+            checks.check_entry_points(read(egg + 'entry_points.txt'), contract)
+        checks.check_top_level(read(egg + 'top_level.txt').replace(b'\r\n', b'\n'), contract)
+        if read(egg + 'dependency_links.txt') not in (b'', b'\n', b'\r\n'):
+            raise ValueError('dependency_links.txt must be empty generated metadata.')
+        if egg + 'requires.txt' in files and read(egg + 'requires.txt').replace(b'\r\n', b'\n') != requirements:
+            raise ValueError('requires.txt differs from reviewed project dependencies.')
+        source_lines = read(egg + 'SOURCES.txt').decode('utf-8').splitlines()
+        expected_sources = set(files) - {'PKG-INFO', 'setup.cfg'}
+        if len(source_lines) != len(set(source_lines)) or set(source_lines) != expected_sources:
+            raise ValueError('SOURCES.txt differs from the complete source archive inventory.')
+    except (AssertionError, UnicodeError) as exc:
+        raise ValueError('Generated source metadata check failed: ' + str(exc)) from exc
 
 
 def check_source_archive(path: Path, policy_path: Path | None = None) -> int:
@@ -82,6 +157,7 @@ def check_source_archive(path: Path, policy_path: Path | None = None) -> int:
         extra = set(files) - reviewed - {'export-policy.json'} - GENERATED_FILES
         if extra:
             raise ValueError('Unreviewed source archive files: ' + ', '.join(sorted(extra)))
+        _check_generated_metadata(archive, files, policy, policy_path)
     return len(reviewed)
 
 

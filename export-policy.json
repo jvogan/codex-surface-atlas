@@ -113,7 +113,7 @@
     {
       "kind": "text",
       "path": "docs/evidence-intake.md",
-      "sha256": "03015ac176d707a54de392deb33ee29e246d9d9ebcf3e1755604a5a3660d4086"
+      "sha256": "59810cd9d01caac336f0c20eee8c59db39dd80641ff85e903ad2be6c57cd496f"
     },
     {
       "kind": "text",
@@ -228,12 +228,12 @@
     {
       "kind": "text",
       "path": "docs/release-notes-0.1.0.md",
-      "sha256": "6036296beb1cc06a209b73c40e09a991f47946d4d3f910a40f3466484e4c2354"
+      "sha256": "b284c7d253aeee5350622d88b4846a58c43073e5eff4e0ac9e31c120b439dd23"
     },
     {
       "kind": "text",
       "path": "docs/releasing.md",
-      "sha256": "75efff6e00d3c18f07ef2a312d9971b25abb53211ccb8029153b8acc14456876"
+      "sha256": "84144573859892349f001e9df037ad6b30d73af462020c1d2055f0b760f33ca4"
     },
     {
       "kind": "text",
@@ -586,7 +586,7 @@
     {
       "kind": "text",
       "path": "pyproject.toml",
-      "sha256": "6a80ac6b35377fe611d7c9933c87066ab4e8b9591f4bfbbe4b5ec13a0e8809ce"
+      "sha256": "2c0cd0a2c49a05949103e6e1035b056feec8a9b67396dd0987dbe4c239d5c48b"
     },
     {
       "kind": "text",
@@ -646,7 +646,7 @@
     {
       "kind": "python",
       "path": "scripts/check_distribution.py",
-      "sha256": "5796030137499d94e92b5f9f4313e7a48a33e41269319302623b38d5f33c47c0"
+      "sha256": "6ebda8b901cb2a9f4dd59aa37c7b2f5b18c2b22b28af66e08c36c6d7ebf3095e"
     },
     {
       "kind": "python",
@@ -656,7 +656,7 @@
     {
       "kind": "python",
       "path": "scripts/check_source_archive.py",
-      "sha256": "9267d4de24c09c97cad7e006595eff88c8ee65442ac194f5660a5faee1ddfad5"
+      "sha256": "4e1cf54f51a778f383f589cf14aa5ea5fbdaaf1cdca114584c55521a9284f01a"
     },
     {
       "kind": "text",
@@ -986,7 +986,7 @@
     {
       "kind": "python",
       "path": "src/surface_atlas/evidence_intake.py",
-      "sha256": "b6fd0a3fac56317ec3d6e2971348ca3e848a8c64d705afd18d012fee45639340"
+      "sha256": "49b71dd0559151f18980ea03c9f75cf16c36e335f5c6248ee0e30429f0910698"
     },
     {
       "kind": "python",
@@ -1239,7 +1239,7 @@
     {
       "kind": "python",
       "path": "tests/test_evidence_intake.py",
-      "sha256": "23fe04d15b1d38c4630dff2ce3165e391382ff6d236db1a00a1d047d989ac9c3"
+      "sha256": "2cab2b269f14cc21f9733adf01d9f39df9b5d8027619a73659730f7916365602"
     },
     {
       "kind": "python",
@@ -1285,7 +1285,7 @@
     {
       "kind": "python",
       "path": "tests/test_release_inventory.py",
-      "sha256": "d89393c06dfa94f128ba93043b39fbeda32eebc16e1e9208a1f7776458bd33e2"
+      "sha256": "a8fd34d44b4a751ac1e38f29a50db59479ef66947d099296aaa43a7660215151"
     },
     {
       "kind": "python",
@@ -1364,6 +1364,11 @@
     },
     {
       "kind": "python",
+      "path": "tests/test_source_metadata.py",
+      "sha256": "1915ce687d8e83393b38334397fb278f479c726a7b64ab6a8a8c476253f36e8e"
+    },
+    {
+      "kind": "python",
       "path": "tests/test_structure_preview.py",
       "sha256": "41c71a42f53cae83416a7630bd665fb0653f2a84d1c14a41ba39eb6887005f76"
     },
@@ -1385,8 +1390,8 @@
   ],
   "limits": {
     "max_file_bytes": 4515536,
-    "max_files": 272,
-    "max_total_bytes": 13080892
+    "max_files": 273,
+    "max_total_bytes": 13125400
   },
   "version": 1
 }

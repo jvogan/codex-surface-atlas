@@ -5,16 +5,22 @@ from __future__ import annotations
 
 import argparse
 import base64
+from collections import Counter
+import configparser
 import csv
 import io
 import hashlib
 import json
 import os
 import shutil
+from email.parser import Parser
+from email.policy import compat32
+from email.utils import formataddr
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
 import subprocess
 import stat
+import re
 import tempfile
 from urllib.parse import unquote, urlsplit
 import venv
@@ -161,6 +167,214 @@ def check_portable_example(directory: Path) -> Path:
     return root
 
 
+def trusted_project_contract(policy_path: Path, reviewed: dict[str, str] | None = None) -> dict:
+    """Derive generated metadata only from separately hash-reviewed project files.
+
+    These helpers are also used by the source-archive checker. A wheel's RECORD
+    and an sdist's own metadata are integrity claims, never their own authority.
+    """
+    if reviewed is None:
+        policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        _require(isinstance(policy, dict) and policy.get("version") == 1
+                 and isinstance(policy.get("files"), list), "trusted metadata policy is invalid")
+        reviewed = {}
+        for entry in policy["files"]:
+            _require(isinstance(entry, dict) and isinstance(entry.get("path"), str)
+                     and isinstance(entry.get("sha256"), str), "invalid metadata policy entry")
+            _require(entry["path"] not in reviewed, "duplicate metadata policy path")
+            reviewed[entry["path"]] = entry["sha256"]
+    root = policy_path.resolve().parent
+
+    def trusted_text(name: str) -> str:
+        path = PurePosixPath(name)
+        _require(not path.is_absolute() and ".." not in path.parts and "\\" not in name
+                 and path.as_posix() == name, "unsafe trusted metadata source path")
+        source = root.joinpath(*path.parts)
+        _require(name in reviewed, "review policy is missing metadata source: " + name)
+        _require(not source.is_symlink() and source.is_file()
+                 and source.resolve().is_relative_to(root), "metadata source is not a local regular file: " + name)
+        data = source.read_bytes()
+        _require(hashlib.sha256(data).hexdigest() == reviewed[name],
+                 "trusted metadata source differs from review policy: " + name)
+        try:
+            return data.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+        except UnicodeError as exc:
+            raise DistributionCheckError("metadata source is not UTF-8: " + name) from exc
+
+    try:
+        import tomllib
+    except ImportError:  # Python 3.10; explicitly included in the test extra.
+        try:
+            import tomli as tomllib
+        except ImportError as exc:
+            raise DistributionCheckError("Python 3.10 release checks require tomli; install the test extra") from exc
+    try:
+        config = tomllib.loads(trusted_text("pyproject.toml"))
+    except tomllib.TOMLDecodeError as exc:
+        raise DistributionCheckError("trusted pyproject.toml is invalid TOML") from exc
+    project = config.get("project", {})
+    _require(isinstance(project, dict), "trusted project table is missing")
+    supported = {"name", "version", "description", "readme", "requires-python", "license",
+                 "license-files", "authors", "maintainers", "keywords", "classifiers",
+                 "dependencies", "optional-dependencies", "scripts", "gui-scripts", "entry-points", "urls"}
+    _require(not set(project) - supported, "unsupported or dynamic trusted project metadata field")
+    _require(project.get("name") == "codex-surface-atlas"
+             and isinstance(project.get("version"), str), "unexpected trusted project identity")
+    _require(config.get("build-system", {}).get("build-backend") == "setuptools.build_meta",
+             "unsupported metadata build backend")
+    from packaging.markers import Marker
+    from packaging.requirements import Requirement
+    from packaging.utils import canonicalize_name
+    from packaging.version import Version
+
+    version = str(Version(project["version"]))
+    metadata = {"metadata-version": ["2.4"], "name": [project["name"]], "version": [version]}
+
+    def single(field, key):
+        if key in project:
+            _require(isinstance(project[key], str), "unsupported project metadata: " + key)
+            metadata[field] = [project[key]]
+    single("summary", "description")
+    single("requires-python", "requires-python")
+    single("license-expression", "license")
+    for plural, field in (("authors", "author"), ("maintainers", "maintainer")):
+        names, emails = [], []
+        for person in project.get(plural, []):
+            _require(isinstance(person, dict) and not set(person) - {"name", "email"},
+                     "unsupported project author/maintainer")
+            if person.get("email"):
+                emails.append(formataddr((person.get("name", ""), person["email"])))
+            elif person.get("name"):
+                names.append(person["name"])
+        if names:
+            metadata[field] = [", ".join(names)]
+        if emails:
+            metadata[field + "-email"] = [", ".join(emails)]
+    if project.get("keywords"):
+        metadata["keywords"] = [",".join(project["keywords"])]
+    if project.get("classifiers"):
+        metadata["classifier"] = project["classifiers"]
+    if project.get("urls"):
+        metadata["project-url"] = [f"{key}, {value}" for key, value in project["urls"].items()]
+    license_files = project.get("license-files", [])
+    _require(isinstance(license_files, list) and all(isinstance(name, str) and name in reviewed for name in license_files),
+             "license-files must name explicitly reviewed files")
+    if license_files:
+        metadata["license-file"] = license_files
+    description = ""
+    if "readme" in project:
+        readme = project["readme"]
+        if isinstance(readme, str):
+            content_types = {".md": "text/markdown", ".rst": "text/x-rst", ".txt": "text/plain"}
+            content_type = content_types.get(Path(readme).suffix.lower())
+            _require(content_type is not None, "unsupported trusted readme suffix")
+        else:
+            _require(isinstance(readme, dict) and set(readme) == {"file", "content-type"},
+                     "trusted readme must reference a reviewed source file")
+            content_type, readme = readme["content-type"], readme["file"]
+        description = trusted_text(readme)
+        metadata["description-content-type"] = [content_type]
+    dependencies = [str(Requirement(value)) for value in project.get("dependencies", [])]
+    extras = []
+    for extra, requirements in project.get("optional-dependencies", {}).items():
+        normalized = canonicalize_name(extra)
+        _require(normalized not in extras, "duplicate normalized project extra")
+        extras.append(normalized)
+        for value in requirements:
+            requirement = Requirement(value)
+            condition = f'extra == "{normalized}"'
+            if requirement.marker:
+                condition = f"({requirement.marker}) and {condition}"
+            requirement.marker = Marker(condition)
+            dependencies.append(str(requirement))
+    if extras:
+        metadata["provides-extra"] = extras
+    if dependencies:
+        metadata["requires-dist"] = dependencies
+    entry_points = dict(project.get("entry-points", {}))
+    for field, group in (("scripts", "console_scripts"), ("gui-scripts", "gui_scripts")):
+        if project.get(field):
+            _require(group not in entry_points, "duplicate trusted entry point group")
+            entry_points[group] = project[field]
+    return {"metadata": metadata, "description": description, "entry_points": entry_points,
+            "top_level": b"surface_atlas\n", "project": project, "name": project["name"],
+            "version": version, "dist_info": "codex_surface_atlas-" + version + ".dist-info"}
+
+
+def _metadata_message(payload: bytes, label: str):
+    try:
+        decoded = payload.decode("utf-8")
+    except UnicodeError as exc:
+        raise DistributionCheckError(label + " is not UTF-8") from exc
+    message = Parser(policy=compat32).parsestr(decoded)
+    _require(not message.defects and not message.is_multipart(), label + " is malformed")
+    return message
+
+
+def check_core_metadata(payload: bytes, contract: dict) -> None:
+    """Verify METADATA or PKG-INFO headers and description against trusted inputs."""
+    from packaging.requirements import InvalidRequirement, Requirement
+    message = _metadata_message(payload, "core metadata")
+    actual = {}
+    for field, value in message.items():
+        actual.setdefault(field.lower(), []).append(value)
+    # Current setuptools may mark license-file dynamic in both sdist and wheel.
+    dynamic = actual.pop("dynamic", [])
+    _require(dynamic in ([], ["license-file"]), "unreviewed dynamic metadata field")
+    _require(set(actual) == set(contract["metadata"]), "unreviewed or missing core metadata fields")
+    for field, expected in contract["metadata"].items():
+        values = actual[field]
+        if field == "requires-dist":
+            try:
+                values = [str(Requirement(value)) for value in values]
+            except InvalidRequirement as exc:
+                raise DistributionCheckError("invalid metadata dependency") from exc
+        _require(Counter(values) == Counter(expected), "core metadata differs from reviewed project: " + field)
+    description = message.get_payload()
+    _require(isinstance(description, str)
+             and description.replace("\r\n", "\n") == contract["description"],
+             "core metadata description differs from reviewed README")
+
+
+def check_entry_points(payload: bytes, contract: dict) -> None:
+    parser = configparser.ConfigParser(interpolation=None, strict=True)
+    parser.optionxform = str
+    try:
+        parser.read_string(payload.decode("utf-8"))
+    except (UnicodeError, configparser.Error) as exc:
+        raise DistributionCheckError("malformed entry_points.txt") from exc
+    _require(not parser.defaults(), "entry point defaults are not allowed")
+    actual = {section: dict(parser.items(section)) for section in parser.sections()}
+    _require(actual == contract["entry_points"], "entry points differ from reviewed project")
+    expected = "\n".join(
+        f"[{group}]\n" + "".join(f"{name} = {value}\n" for name, value in sorted(entries.items()))
+        for group, entries in sorted(contract["entry_points"].items())
+    ).encode("utf-8")
+    _require(payload.replace(b"\r\n", b"\n") == expected,
+             "entry_points.txt contains unreviewed formatting or text")
+
+
+def check_top_level(payload: bytes, contract: dict) -> None:
+    _require(payload.replace(b"\r\n", b"\n") == contract["top_level"], "top_level.txt differs from reviewed package")
+
+
+def check_wheel_metadata(payload: bytes) -> None:
+    from packaging.version import Version
+    message = _metadata_message(payload, "WHEEL")
+    fields = {}
+    for name, value in message.items():
+        fields.setdefault(name.lower(), []).append(value)
+    _require(set(fields) == {"wheel-version", "generator", "root-is-purelib", "tag"},
+             "unreviewed or missing WHEEL fields")
+    _require(fields["wheel-version"] == ["1.0"] and fields["root-is-purelib"] == ["true"]
+             and fields["tag"] == ["py3-none-any"], "unexpected WHEEL install layout or compatibility tags")
+    generator = re.fullmatch(r"(?:setuptools|bdist_wheel) \(([0-9]+(?:\.[0-9]+){1,3})\)",
+                             fields["generator"][0]) if len(fields["generator"]) == 1 else None
+    _require(generator is not None and str(Version(generator.group(1))) == generator.group(1),
+             "unexpected WHEEL generator")
+    _require(message.get_payload() in ("", "\n"), "unexpected WHEEL body")
+
+
 def check_wheel_inventory(wheel: Path, policy_path: Path) -> int:
     """Verify every installed payload against a separately reviewed source policy."""
     policy = json.loads(policy_path.read_text(encoding="utf-8"))
@@ -174,6 +388,7 @@ def check_wheel_inventory(wheel: Path, policy_path: Path) -> int:
         name = entry["path"]
         _require(name not in reviewed, "duplicate review policy path")
         reviewed[name] = entry["sha256"]
+    contract = trusted_project_contract(policy_path, reviewed)
     with ZipFile(wheel) as bundle:
         names = set()
         for member in bundle.infolist():
@@ -191,7 +406,7 @@ def check_wheel_inventory(wheel: Path, policy_path: Path) -> int:
         metadata = [name for name in names if name.endswith(".dist-info/METADATA")]
         _require(len(metadata) == 1, "wheel needs exactly one metadata directory")
         prefix = metadata[0].removesuffix("/METADATA")
-        _require("/" not in prefix and prefix.startswith("codex_surface_atlas-"),
+        _require(prefix == contract["dist_info"],
                  "unexpected wheel metadata directory")
         data_prefix = prefix.removesuffix(".dist-info") + ".data/data/"
         expected = {name.removeprefix("src/"): digest for name, digest in reviewed.items()
@@ -209,6 +424,15 @@ def check_wheel_inventory(wheel: Path, policy_path: Path) -> int:
                  + ", ".join(sorted(set(expected) - names)))
         _require(names <= set(expected) | generated, "unreviewed wheel files: "
                  + ", ".join(sorted(names - set(expected) - generated)))
+        required_metadata = {prefix + "/" + name for name in ("METADATA", "WHEEL", "top_level.txt", "RECORD")}
+        if contract["entry_points"]:
+            required_metadata.add(prefix + "/entry_points.txt")
+        _require(required_metadata <= names, "required generated wheel metadata is missing")
+        check_core_metadata(bundle.read(prefix + "/METADATA"), contract)
+        check_wheel_metadata(bundle.read(prefix + "/WHEEL"))
+        check_top_level(bundle.read(prefix + "/top_level.txt"), contract)
+        if prefix + "/entry_points.txt" in names:
+            check_entry_points(bundle.read(prefix + "/entry_points.txt"), contract)
         for name, digest in expected.items():
             _require(hashlib.sha256(bundle.read(name)).hexdigest() == digest,
                      "reviewed wheel file differs: " + name)

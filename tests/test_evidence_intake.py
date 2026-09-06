@@ -305,3 +305,86 @@ def test_zero_result_complete_query_still_has_explicit_scoped_provenance(tmp_pat
     assert ledger['coverage_state'] == 'complete_within_recorded_scope'
     assert len(ledger['sources']) == 1
     assert 'supplied reviewed queries' in ledger['limitations'][0]
+
+
+def test_reingest_replaces_managed_snapshots_without_touching_source_or_other_artifacts(managed, tmp_path):
+    before = {p.relative_to(managed).as_posix(): p.read_bytes() for p in managed.rglob('*') if p.is_file()}
+    unrelated = managed / 'evidence' / 'retained-note.txt'
+    unrelated.write_text('Unrelated reviewed source note must survive.')
+    source = write(tmp_path / 'new-source.json', snapshot('Q-NEW', [record('BETA')]))
+    output = tmp_path / 'reingested'
+    intake.ingest_evidence([source], managed, output)
+    expected = intake.compile_snapshots([source], 'intake-test')
+    assert {p.relative_to(output).as_posix() for p in (output/'evidence/snapshots').iterdir()} == set(expected['snapshots'])
+    assert not set(expected['snapshots']) & {name for name in before if name.startswith('evidence/snapshots/')}
+    assert (output/'evidence/retained-note.txt').read_bytes() == unrelated.read_bytes()
+    assert all((managed/name).read_bytes() == raw for name,raw in before.items())
+    assert intake.reconcile_evidence(output)['consistent']
+    from surface_atlas.validator import validate_workspace
+    assert validate_workspace(output)['valid']
+
+
+def test_reingest_keeps_explicitly_resupplied_snapshot(managed, tmp_path):
+    old = next((managed/'evidence/snapshots').iterdir())
+    source = write(tmp_path/'new-source.json', snapshot('Q-NEW', [record('BETA')]))
+    note = managed/'retained-reference.md'
+    note.write_text('Retain provenance at ' + old.relative_to(managed).as_posix())
+    output = tmp_path/'reingested'
+    intake.ingest_evidence([old,source], managed, output)
+    assert len(list((output/'evidence/snapshots').iterdir())) == 2
+    assert (output/note.name).read_bytes() == note.read_bytes()
+    assert intake.reconcile_evidence(output)['consistent']
+
+
+@pytest.mark.parametrize('filename', ['retained-reference.md', 'retained-record.json', 'escaped-record.json'])
+def test_reingest_refuses_to_strand_meaningful_reference(managed, tmp_path, filename):
+    old = next((managed/'evidence/snapshots').iterdir())
+    reference = old.relative_to(managed).as_posix()
+    content = json.dumps({'artifact': {'path': reference}}) if filename.endswith('.json') else '[source](' + reference + ')'
+    if filename == 'escaped-record.json': content = content.replace('/', '\\/')
+    (managed/filename).write_text(content)
+    source = write(tmp_path/'new-source.json', snapshot('Q-NEW', [record('BETA')]))
+    output = tmp_path/'refused'
+    with pytest.raises(intake.EvidenceError, match='retained artifact references'):
+        intake.ingest_evidence([source], managed, output)
+    assert old.exists() and not output.exists()
+    assert not list(tmp_path.glob('.evidence-*'))
+
+
+@pytest.mark.parametrize('shape', ['nested-directory', 'unmanaged-file', 'directory-is-file'])
+def test_reingest_rejects_unexpected_managed_directory_shape(managed, tmp_path, shape):
+    directory = managed/'evidence/snapshots'
+    if shape == 'nested-directory': (directory/'nested').mkdir()
+    elif shape == 'unmanaged-file': (directory/'notes.txt').write_text('Do not silently delete this artifact.')
+    else:
+        shutil.rmtree(directory); directory.write_text('Not a managed directory')
+    source = write(tmp_path/'new-source.json', snapshot('Q-NEW', [record('BETA')]))
+    output = tmp_path/'refused'
+    with pytest.raises(intake.EvidenceError, match='directory shape'):
+        intake.ingest_evidence([source], managed, output)
+    assert not output.exists()
+
+
+def test_reconciliation_validation_and_report_reject_unreferenced_managed_snapshot(managed, tmp_path, capsys):
+    stale = write(tmp_path/'stale-source.json', snapshot('Q-STALE', [record('BETA')])).read_bytes()
+    path = managed/'evidence/snapshots'/f'{hashlib.sha256(stale).hexdigest()}.json'
+    path.write_bytes(stale)
+    with pytest.raises(intake.EvidenceError, match='unreferenced'):
+        intake.reconcile_evidence(managed)
+    from surface_atlas import validator, report_builder
+    assert not validator.validate_workspace(managed)['valid']
+    assert report_builder.main([str(managed), '--output-root', str(tmp_path/'reports'), '--run-id', 'stale', '--json']) == 1
+    assert 'unreferenced' in capsys.readouterr().err
+    assert not list((tmp_path/'reports').rglob('index.html'))
+
+
+def test_reingest_validation_failure_keeps_original_snapshots(managed, tmp_path, monkeypatch):
+    from surface_atlas import validator
+    before = {p.name:p.read_bytes() for p in (managed/'evidence/snapshots').iterdir()}
+    source = write(tmp_path/'new-source.json', snapshot('Q-NEW', [record('BETA')]))
+    monkeypatch.setattr(validator, 'validate_workspace', lambda _: {'valid': False, 'errors': ['deliberate reingest failure']})
+    output = tmp_path/'failed-reingest'
+    with pytest.raises(intake.EvidenceError, match='invalid atlas'):
+        intake.ingest_evidence([source], managed, output)
+    assert {p.name:p.read_bytes() for p in (managed/'evidence/snapshots').iterdir()} == before
+    assert not output.exists() and not list(tmp_path.glob('.evidence-*'))

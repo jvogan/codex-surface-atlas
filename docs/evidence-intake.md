@@ -23,6 +23,15 @@ modified. Symlinks and special files in the base are rejected. Workspaces with
 machine-local artifact roots must first be materialized into portable files.
 A failed intake removes its temporary staging directory.
 
+When the base already contains managed evidence, intake replaces the managed
+snapshot set in the new workspace with exactly the supplied snapshots. Old
+snapshots stay in the unchanged base; they are not carried into the new output.
+Unrelated workspace artifacts are preserved. If a retained artifact refers to a
+snapshot being removed, include that snapshot in the inputs or update the
+reference explicitly before intake. The resulting workspace must still
+validate. Reconciliation rejects unreferenced files in the managed
+snapshot directory instead of treating a matching ledger alone as sufficient.
+
 ## Source snapshot contract
 
 Use the [snapshot schema](../schemas/v0.1/evidence-snapshot.schema.json). The
@@ -125,7 +134,8 @@ latest recorded retrieval instant.
 ## Reconcile without rewriting provenance
 
 Reconciliation verifies snapshot checksums, byte lengths, canonical artifact
-paths, normalized projections, and source-derived ledger metadata. A missing
+paths, the complete managed snapshot inventory, normalized projections, and
+source-derived ledger metadata. A missing or unreferenced
 snapshot, altered source field, identity mismatch, or false coverage claim is
 an error. Later annotations may be added to targets, including action evidence
 or sequence/site mappings, as long as every source-derived field is preserved.

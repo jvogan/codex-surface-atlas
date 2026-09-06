@@ -233,6 +233,54 @@ def compile_snapshots(paths: list[str | Path], atlas_id: str) -> dict[str, Any]:
     return {"documents": documents, "snapshots": snapshots, "counts": counts, "data_kind": data_kind}
 
 
+def _managed_snapshot_paths(root: Path) -> set[str]:
+    """Inspect only the flat hash-named managed namespace; never adopt other files."""
+    directory = root / "evidence" / "snapshots"
+    _require(not (root / "evidence").is_symlink() and not directory.is_symlink(), "unsafe managed snapshot directory")
+    _require(not (root / "evidence").exists() or (root / "evidence").is_dir(), "unsafe managed snapshot parent directory shape")
+    if not directory.exists():
+        return set()
+    _require(directory.is_dir(), "unsafe managed snapshot directory shape")
+    paths = set()
+    for path in directory.iterdir():
+        _require(not path.is_symlink() and path.is_file() and re.fullmatch(r"[a-f0-9]{64}\.json", path.name) is not None,
+                 "unsafe managed snapshot directory shape: expected only flat hash-named JSON snapshots")
+        value, raw = _read(path)
+        _require(hashlib.sha256(raw).hexdigest() == path.stem, "managed snapshot filename does not match its bytes")
+        validate_snapshot(value)
+        paths.add(path.relative_to(root).as_posix())
+    return paths
+
+
+def _reject_retained_snapshot_references(root: Path, removed: set[str], replaced: set[str], documents: dict[str, Any]) -> None:
+    """Do not silently strand another record or document when replacing intake."""
+    if not removed:
+        return
+    needles = [path.encode("utf-8") for path in removed]
+    overlap = max(map(len, needles)) - 1
+    for path in root.rglob("*"):
+        relative = path.relative_to(root).as_posix()
+        if not path.is_file() or relative in replaced or relative.startswith("evidence/snapshots/"):
+            continue
+        if path.suffix.lower() == ".json":
+            try:
+                decoded = json.dumps(json.loads(path.read_bytes()), ensure_ascii=False).encode("utf-8")
+            except (ValueError, UnicodeError):
+                decoded = b""  # Raw scanning below still covers non-JSON content.
+            _require(not any(needle in decoded for needle in needles),
+                     "a retained artifact references a removed managed snapshot; include that snapshot or explicitly update the reference before intake")
+        with path.open("rb") as handle:
+            tail = b""
+            while chunk := handle.read(1024 * 1024):
+                data = tail + chunk
+                _require(not any(needle in data for needle in needles),
+                         "a retained artifact references a removed managed snapshot; include that snapshot or explicitly update the reference before intake")
+                tail = data[-overlap:]
+    serialized = json.dumps(documents, ensure_ascii=False).encode("utf-8")
+    _require(not any(needle in serialized for needle in needles),
+             "new evidence references a removed managed snapshot; include that snapshot in the input set")
+
+
 def ingest_evidence(inputs: list[str | Path], atlas_directory: str | Path, output_directory: str | Path) -> dict[str, Any]:
     """Create a new portable atlas snapshot; never modify the source workspace."""
     _require(not Path(atlas_directory).is_symlink(), "atlas workspace must not be a symlink")
@@ -250,10 +298,16 @@ def ingest_evidence(inputs: list[str | Path], atlas_directory: str | Path, outpu
     _require(not (root / ".surface-atlas-local.json").exists(), "materialize external artifacts before portable evidence intake")
     for path in root.rglob("*"):
         _require(not path.is_symlink() and (path.is_file() or path.is_dir()), "atlas must contain only regular files and directories")
+    inherited_snapshots = _managed_snapshot_paths(root)
+    removed_snapshots = inherited_snapshots - set(compiled["snapshots"])
+    _reject_retained_snapshot_references(root, removed_snapshots, set(compiled["documents"]), compiled["documents"])
     output.parent.mkdir(parents=True, exist_ok=True)
     stage = Path(tempfile.mkdtemp(prefix=".evidence-", dir=output.parent))
     try:
         shutil.copytree(root, stage, dirs_exist_ok=True)
+        inherited_directory = stage / "evidence" / "snapshots"
+        if inherited_directory.exists():
+            shutil.rmtree(inherited_directory)
         for relative, data in compiled["snapshots"].items():
             target = stage / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -341,6 +395,9 @@ def reconcile_evidence(atlas_directory: str | Path, output: str | Path | None = 
     if has_managed_evidence(root, ledger):
         _require(bool(snapshot_sources) and len(snapshot_sources) == len(ledger["sources"]),
                  "managed evidence requires snapshot artifacts on every source")
+        managed_paths = _managed_snapshot_paths(root)
+        referenced_paths = {source["artifact"].get("path") for source in snapshot_sources if isinstance(source["artifact"].get("path"), str)}
+        _require(managed_paths == referenced_paths, "managed snapshot inventory contains unreferenced or missing source snapshots")
         paths = []
         for source in snapshot_sources:
             artifact = source["artifact"]
