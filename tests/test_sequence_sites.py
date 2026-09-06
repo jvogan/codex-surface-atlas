@@ -105,7 +105,7 @@ class SequenceSitesTests(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which('node'), 'Node is needed for browser logic checks')
     def test_browser_selects_exact_insertion_code_and_rechecks_identity(self):
-        script=(Path(__file__).parents[1]/'src/surface_atlas/assets/report/structure-preview.js').read_text()
+        script=(Path(__file__).parents[1]/'src/surface_atlas/assets/report/structure-preview.js').read_text(encoding='utf-8')
         start=script.index('      let selected = model.selectedAtoms(layer.selection);')
         end=script.index('      const selection = layer.verified_residues',start)
         helper='function select(model, layer) {\n'+script[start:end]+'\nreturn selected;\n}'

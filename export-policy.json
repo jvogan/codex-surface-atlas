@@ -1355,7 +1355,7 @@
     {
       "kind": "python",
       "path": "tests/test_sequence_sites.py",
-      "sha256": "02611d8d655d3cfa04ce0d79cf14e69913261c1af7655d64fe0fd5722c530fb1"
+      "sha256": "3ad9a1e8a6fe6c6d121c547afc2a7d89eb1bbe5c2a99fe50375b39d3ff865ca8"
     },
     {
       "kind": "python",
